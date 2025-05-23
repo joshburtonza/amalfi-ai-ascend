@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
 const About = () => {
@@ -37,10 +38,17 @@ const About = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Founder */}
                 <div className="flex flex-col items-center glassmorphic p-6 rounded-2xl border border-amalfi-emerald/10 transition-all duration-300 hover:shadow-glow-md">
-                  <div className="w-40 h-40 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-amalfi-emerald mb-4 shadow-glow-sm">
-                    <img alt="Joshua Burton" style={{
-                    objectPosition: "50% 40%"
-                  }} className="w-full h-full object-center scale-125 object-fill" src="/lovable-uploads/6b1aadce-bf68-4277-9744-2fb114379290.jpg" />
+                  <div className="w-48 h-48 md:w-52 md:h-52 rounded-full overflow-hidden border-2 border-amalfi-emerald mb-4 shadow-glow-sm">
+                    <div className="w-full h-full overflow-hidden">
+                      <img 
+                        alt="Joshua Burton" 
+                        className="w-full h-full object-cover" 
+                        src="/lovable-uploads/6b1aadce-bf68-4277-9744-2fb114379290.jpg"
+                        style={{
+                          transform: "scale(1.5) translateY(10px)",
+                        }} 
+                      />
+                    </div>
                   </div>
                   <h4 className="text-xl font-bold text-amalfi-white mb-1">Joshua Burton</h4>
                   <p className="text-amalfi-emerald font-medium">Founder</p>
@@ -48,10 +56,17 @@ const About = () => {
                 
                 {/* Co-Founder */}
                 <div className="flex flex-col items-center glassmorphic p-6 rounded-2xl border border-amalfi-emerald/10 transition-all duration-300 hover:shadow-glow-md">
-                  <div className="w-40 h-40 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-amalfi-emerald mb-4 shadow-glow-sm">
-                    <img src="/lovable-uploads/3f5ce215-5fdb-482b-a244-2b67dafc76df.png" alt="Cian Ferreira" className="w-full h-full object-cover object-center scale-125" style={{
-                    objectPosition: "50% 45%"
-                  }} />
+                  <div className="w-48 h-48 md:w-52 md:h-52 rounded-full overflow-hidden border-2 border-amalfi-emerald mb-4 shadow-glow-sm">
+                    <div className="w-full h-full overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/3f5ce215-5fdb-482b-a244-2b67dafc76df.png" 
+                        alt="Cian Ferreira" 
+                        className="w-full h-full object-cover" 
+                        style={{
+                          transform: "scale(1.5) translateY(15px)",
+                        }}
+                      />
+                    </div>
                   </div>
                   <h4 className="text-xl font-bold text-amalfi-white mb-1">Cian Ferreira</h4>
                   <p className="text-amalfi-emerald font-medium">Co-Founder</p>
