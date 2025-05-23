@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -7,7 +6,6 @@ import { Mail, Phone, MessageSquare, Send } from "lucide-react";
 import emailjs from 'emailjs-com';
 import { toast } from "@/hooks/use-toast";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from '@/components/ui/dialog';
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -17,7 +15,11 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showDebugDialog, setShowDebugDialog] = useState(false);
-  const [debugInfo, setDebugInfo] = useState({ serviceId: '', templateId: '', publicKey: '' });
+  const [debugInfo, setDebugInfo] = useState({
+    serviceId: '',
+    templateId: '',
+    publicKey: ''
+  });
 
   // Initialize EmailJS when the component loads
   useEffect(() => {
@@ -29,41 +31,43 @@ const Contact = () => {
       console.error("Error initializing EmailJS:", error);
     }
   }, []);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { id, value } = e.target;
-    setFormData(prev => ({ ...prev, [id]: value }));
+    const {
+      id,
+      value
+    } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Validate form
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: "Missing Information",
         description: "Please fill all required fields.",
-        variant: "destructive",
+        variant: "destructive"
       });
       return;
     }
-
     setIsSubmitting(true);
-
     try {
       // IMPORTANT: Make sure these EXACTLY match your EmailJS account settings
       // Double-check for any typos or extra spaces
       const serviceId = 'service_ode758p';
       const templateId = 'template_gilwpsc'; // Updated to the correct template ID
       const publicKey = 'SrFyjLIV1DL34WKye';
-      
+
       // Update the debug info
       setDebugInfo({
         serviceId,
         templateId,
         publicKey
       });
-      
+
       // CRITICAL: These parameter names MUST EXACTLY match what's defined in your EmailJS template
       // Check for case sensitivity and spelling
       const templateParams = {
@@ -74,7 +78,6 @@ const Contact = () => {
         to_name: "Josh",
         reply_to: formData.email
       };
-      
       console.log("Attempting to send email with:", {
         serviceId,
         templateId,
@@ -83,18 +86,11 @@ const Contact = () => {
       });
 
       // Try to send email with EmailJS
-      const response = await emailjs.send(
-        serviceId,
-        templateId,
-        templateParams,
-        publicKey
-      );
-
+      const response = await emailjs.send(serviceId, templateId, templateParams, publicKey);
       console.log("Email sent successfully:", response);
-
       toast({
         title: "Message Sent!",
-        description: "We'll be in touch with you shortly.",
+        description: "We'll be in touch with you shortly."
       });
 
       // Clear form
@@ -106,12 +102,12 @@ const Contact = () => {
       });
     } catch (error) {
       console.error("Error sending email:", error);
-      
+
       // Detailed error message with additional context
       let errorMessage;
       if (error instanceof Error) {
         errorMessage = `Error: ${error.message}`;
-        
+
         // Additional debugging for specific error cases
         if (error.message.includes("template") && error.message.includes("not found")) {
           errorMessage += "\n\nPossible issues:\n- The template ID may be incorrect\n- The template may not exist in your EmailJS account\n- Your account may not be active";
@@ -121,28 +117,27 @@ const Contact = () => {
       } else {
         errorMessage = "Failed to send your message. Please try again later.";
       }
-        
       toast({
         title: "Email Sending Failed",
         description: errorMessage,
-        variant: "destructive",
+        variant: "destructive"
       });
-      
+
       // Show the debug dialog for troubleshooting
       setShowDebugDialog(true);
     } finally {
       setIsSubmitting(false);
     }
   };
-
-  return (
-    <section id="contact" className="py-24 relative overflow-hidden">
+  return <section id="contact" className="py-24 relative overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-amalfi-black via-amalfi-black to-amalfi-emerald/10 z-0"></div>
       
       {/* Glow Effects */}
       <div className="absolute top-0 right-1/4 w-64 h-64 bg-amalfi-teal/10 rounded-full blur-3xl animate-glow-pulse"></div>
-      <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-amalfi-emerald/10 rounded-full blur-3xl animate-glow-pulse" style={{ animationDelay: '1.5s' }}></div>
+      <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-amalfi-emerald/10 rounded-full blur-3xl animate-glow-pulse" style={{
+      animationDelay: '1.5s'
+    }}></div>
       
       <div className="max-container relative z-10">
         <div className="mb-12 text-center">
@@ -163,28 +158,13 @@ const Contact = () => {
                   <label htmlFor="name" className="text-sm text-amalfi-white/80">
                     Full Name *
                   </label>
-                  <Input 
-                    id="name"
-                    placeholder="Your name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="bg-amalfi-black/50 border-amalfi-emerald/20 focus:border-amalfi-emerald/60 glassmorphic focus:shadow-glow-sm placeholder:text-amalfi-teal/50 text-amalfi-white"
-                    required
-                  />
+                  <Input id="name" placeholder="Your name" value={formData.name} onChange={handleChange} className="bg-amalfi-black/50 border-amalfi-emerald/20 focus:border-amalfi-emerald/60 glassmorphic focus:shadow-glow-sm placeholder:text-amalfi-teal/50 text-amalfi-white" required />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm text-amalfi-white/80">
                     Email Address *
                   </label>
-                  <Input 
-                    id="email"
-                    type="email"
-                    placeholder="Your email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="bg-amalfi-black/50 border-amalfi-emerald/20 focus:border-amalfi-emerald/60 glassmorphic focus:shadow-glow-sm placeholder:text-amalfi-teal/50 text-amalfi-white"
-                    required
-                  />
+                  <Input id="email" type="email" placeholder="Your email" value={formData.email} onChange={handleChange} className="bg-amalfi-black/50 border-amalfi-emerald/20 focus:border-amalfi-emerald/60 glassmorphic focus:shadow-glow-sm placeholder:text-amalfi-teal/50 text-amalfi-white" required />
                 </div>
               </div>
               
@@ -192,37 +172,18 @@ const Contact = () => {
                 <label htmlFor="company" className="text-sm text-amalfi-white/80">
                   Company
                 </label>
-                <Input 
-                  id="company"
-                  placeholder="Your company name"
-                  value={formData.company}
-                  onChange={handleChange}
-                  className="bg-amalfi-black/50 border-amalfi-emerald/20 focus:border-amalfi-emerald/60 glassmorphic focus:shadow-glow-sm placeholder:text-amalfi-teal/50 text-amalfi-white"
-                />
+                <Input id="company" placeholder="Your company name" value={formData.company} onChange={handleChange} className="bg-amalfi-black/50 border-amalfi-emerald/20 focus:border-amalfi-emerald/60 glassmorphic focus:shadow-glow-sm placeholder:text-amalfi-teal/50 text-amalfi-white" />
               </div>
               
               <div className="space-y-2">
                 <label htmlFor="message" className="text-sm text-amalfi-white/80">
                   Message *
                 </label>
-                <Textarea 
-                  id="message"
-                  placeholder="Tell us about your project needs..."
-                  rows={5}
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="bg-amalfi-black/50 border-amalfi-emerald/20 focus:border-amalfi-emerald/60 glassmorphic focus:shadow-glow-sm placeholder:text-amalfi-teal/50 text-amalfi-white resize-none"
-                  required
-                />
+                <Textarea id="message" placeholder="Tell us about your project needs..." rows={5} value={formData.message} onChange={handleChange} className="bg-amalfi-black/50 border-amalfi-emerald/20 focus:border-amalfi-emerald/60 glassmorphic focus:shadow-glow-sm placeholder:text-amalfi-teal/50 text-amalfi-white resize-none" required />
               </div>
               
               <div>
-                <Button 
-                  className="btn-gradient text-amalfi-white font-medium px-8 py-6 shadow-glow-md hover:shadow-glow-lg transition-all hover:scale-105 w-full"
-                  size="lg"
-                  type="submit"
-                  disabled={isSubmitting}
-                >
+                <Button className="btn-gradient text-amalfi-white font-medium px-8 py-6 shadow-glow-md hover:shadow-glow-lg transition-all hover:scale-105 w-full" size="lg" type="submit" disabled={isSubmitting}>
                   <span className="mr-2">{isSubmitting ? 'Sending...' : 'Send Message'}</span>
                   <Send size={18} />
                 </Button>
@@ -267,7 +228,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-amalfi-white mb-1">Live Chat</h4>
-                    <p className="text-amalfi-white/80">Chat with our support team in real-time through our web app or mobile application.</p>
+                    <p className="text-amalfi-white/80">Use our  Amalfi Ai Agent to discovery what we can do for you.</p>
                   </div>
                 </div>
               </div>
@@ -320,19 +281,13 @@ const Contact = () => {
               </ul>
             </div>
             <div className="pt-2">
-              <Button 
-                variant="outline" 
-                className="border-amalfi-emerald/50 text-amalfi-teal hover:bg-amalfi-emerald/10"
-                onClick={() => setShowDebugDialog(false)}
-              >
+              <Button variant="outline" className="border-amalfi-emerald/50 text-amalfi-teal hover:bg-amalfi-emerald/10" onClick={() => setShowDebugDialog(false)}>
                 Close
               </Button>
             </div>
           </div>
         </DialogContent>
       </Dialog>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;
