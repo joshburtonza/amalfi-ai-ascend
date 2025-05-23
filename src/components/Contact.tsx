@@ -49,7 +49,7 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // EmailJS configuration
+      // EmailJS configuration - make sure these exactly match your EmailJS account settings
       const serviceId = 'service_ode758p';
       const templateId = 'template_x3u9van';
       const publicKey = 'SrFyjLIV1DL34WKye';
@@ -61,18 +61,21 @@ const Contact = () => {
         publicKey
       });
       
+      // Make sure these parameter names exactly match what's defined in your EmailJS template
       const templateParams = {
-        to_name: "Josh", // Recipient name
         from_name: formData.name,
-        reply_to: formData.email,
+        from_email: formData.email,
         company: formData.company || "Not specified",
-        message: formData.message
+        message: formData.message,
+        to_name: "Josh",
+        reply_to: formData.email
       };
       
       console.log("Attempting to send email with:", {
         serviceId,
         templateId,
-        params: templateParams
+        templateParams,
+        publicKey: publicKey.substring(0, 5) + '...' // Only log part of the key for security
       });
 
       const response = await emailjs.send(
@@ -101,11 +104,11 @@ const Contact = () => {
       
       // More detailed error message
       const errorMessage = error instanceof Error 
-        ? error.message
+        ? `Error: ${error.message}`
         : "Failed to send your message. Please try again later.";
         
       toast({
-        title: "Error",
+        title: "Email Sending Failed",
         description: errorMessage,
         variant: "destructive",
       });
@@ -276,6 +279,17 @@ const Contact = () => {
             <div>
               <h4 className="text-amalfi-teal font-semibold">Public Key:</h4>
               <p className="text-amalfi-white/80 font-mono">{debugInfo.publicKey}</p>
+            </div>
+            <div>
+              <h4 className="text-amalfi-teal font-semibold">Template Parameters:</h4>
+              <ul className="list-disc pl-5 text-amalfi-white/80 space-y-1">
+                <li>from_name: User's name</li>
+                <li>from_email: User's email</li>
+                <li>company: User's company</li>
+                <li>message: User's message</li>
+                <li>to_name: "Josh"</li>
+                <li>reply_to: User's email</li>
+              </ul>
             </div>
             <div>
               <h4 className="text-amalfi-teal font-semibold">Common Issues:</h4>
