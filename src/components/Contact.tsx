@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MessageSquare } from "lucide-react";
+import { Mail, Phone, MessageSquare, Send } from "lucide-react";
 import emailjs from 'emailjs-com';
 import { toast } from "@/hooks/use-toast";
 
@@ -42,10 +42,18 @@ const Contact = () => {
         to_name: "Josh", // Recipient name
         from_name: formData.name,
         reply_to: formData.email,
-        company: formData.company,
-        message: formData.message,
-        to_email: "josh@amalfiai.com" // Make sure your EmailJS template includes this variable
+        company: formData.company || "Not specified",
+        message: formData.message
       };
+
+      // Make sure to initialize EmailJS before sending (optional but recommended)
+      emailjs.init("SrFyjLIV1DL34WKye");
+      
+      console.log("Attempting to send email with:", {
+        serviceId: 'service_ode758p',
+        templateId: 'template_57lygjm',
+        params: templateParams
+      });
 
       await emailjs.send(
         'service_ode758p', // Your EmailJS service ID
@@ -68,9 +76,15 @@ const Contact = () => {
       });
     } catch (error) {
       console.error("Error sending email:", error);
+      
+      // More detailed error message
+      const errorMessage = error instanceof Error 
+        ? error.message
+        : "Failed to send your message. Please try again later.";
+        
       toast({
         title: "Error",
-        description: "Failed to send your message. Please try again later.",
+        description: errorMessage,
         variant: "destructive",
       });
     } finally {
@@ -167,7 +181,7 @@ const Contact = () => {
                   disabled={isSubmitting}
                 >
                   <span className="mr-2">{isSubmitting ? 'Sending...' : 'Send Message'}</span>
-                  <Mail size={18} />
+                  <Send size={18} />
                 </Button>
               </div>
             </form>
