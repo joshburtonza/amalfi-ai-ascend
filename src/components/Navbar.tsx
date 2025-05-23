@@ -38,8 +38,14 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
           <NavLinks />
-          <Button variant="outline" className="border border-amalfi-emerald/30 hover:border-amalfi-emerald/80 text-amalfi-white bg-transparent hover:bg-amalfi-emerald/10 transition-all hover:shadow-glow-sm">
-            Let&apos;s Chat
+          <Button 
+            variant="outline" 
+            className="border border-amalfi-emerald/30 hover:border-amalfi-emerald/80 text-amalfi-white bg-transparent hover:bg-amalfi-emerald/10 transition-all hover:shadow-glow-sm"
+            asChild
+          >
+            <a href="https://soarai.app.n8n.cloud/form/889b9500-9b97-40fd-a200-193ace0f0cca" target="_blank" rel="noopener noreferrer">
+              Let&apos;s Chat
+            </a>
           </Button>
         </div>
 
@@ -67,8 +73,14 @@ const Navbar = () => {
         >
           <div className="flex flex-col items-center justify-center h-full space-y-8">
             <NavLinks mobile setIsMobileMenuOpen={setIsMobileMenuOpen} />
-            <Button variant="outline" className="border border-amalfi-emerald/30 hover:border-amalfi-emerald/80 text-amalfi-white bg-transparent hover:bg-amalfi-emerald/10 transition-all hover:shadow-glow-sm">
-              Let&apos;s Chat
+            <Button 
+              variant="outline" 
+              className="border border-amalfi-emerald/30 hover:border-amalfi-emerald/80 text-amalfi-white bg-transparent hover:bg-amalfi-emerald/10 transition-all hover:shadow-glow-sm"
+              asChild
+            >
+              <a href="https://soarai.app.n8n.cloud/form/889b9500-9b97-40fd-a200-193ace0f0cca" target="_blank" rel="noopener noreferrer">
+                Let&apos;s Chat
+              </a>
             </Button>
           </div>
         </div>

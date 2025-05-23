@@ -41,8 +41,11 @@ const Hero = () => {
               variant="outline" 
               className="bg-white/10 text-amalfi-white font-medium text-lg px-8 py-6 transition-all border-2 border-white hover:bg-white hover:text-amalfi-black shadow-glow-md hover:shadow-glow-lg"
               size="lg"
+              asChild
             >
-              Let&apos;s Chat
+              <a href="https://soarai.app.n8n.cloud/form/889b9500-9b97-40fd-a200-193ace0f0cca" target="_blank" rel="noopener noreferrer">
+                Let&apos;s Chat
+              </a>
             </Button>
           </div>
         </div>
