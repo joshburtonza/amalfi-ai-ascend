@@ -33,8 +33,11 @@ const Hero = () => {
             <Button 
               className="btn-gradient text-amalfi-white font-medium text-lg px-8 py-6 shadow-glow-md hover:shadow-glow-lg transition-all hover:scale-105"
               size="lg"
+              asChild
             >
-              Get Started
+              <a href="#contact">
+                Book Discovery Call
+              </a>
             </Button>
             
             <Button 
