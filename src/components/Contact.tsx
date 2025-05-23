@@ -51,13 +51,13 @@ const Contact = () => {
       
       console.log("Attempting to send email with:", {
         serviceId: 'service_ode758p',
-        templateId: 'template_57lygjm',
+        templateId: 'template_x3u9van', // Updated template ID
         params: templateParams
       });
 
       await emailjs.send(
         'service_ode758p', // Your EmailJS service ID
-        'template_57lygjm', // Your EmailJS template ID
+        'template_x3u9van', // Updated to the new template ID
         templateParams,
         'SrFyjLIV1DL34WKye' // Your EmailJS public key
       );
