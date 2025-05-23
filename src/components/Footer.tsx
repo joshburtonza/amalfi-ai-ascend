@@ -52,9 +52,7 @@ const Footer = () => {
                 <a href="mailto:hello@amalfi-ai.com" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">admin@amalfiai.com</a>
               </li>
               <li>
-                <a href="tel:+27123456789" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">
-                  +27 12 345 6789
-                </a>
+                <a href="tel:+27123456789" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">+27 81 270 5358</a>
               </li>
             </ul>
           </div>
