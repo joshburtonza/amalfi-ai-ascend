@@ -77,13 +77,24 @@ const Navbar = () => {
   );
 };
 
-const NavLinks = ({ mobile = false, setIsMobileMenuOpen = () => {} }) => {
+interface NavLinksProps {
+  mobile?: boolean;
+  setIsMobileMenuOpen?: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const NavLinks: React.FC<NavLinksProps> = ({ mobile = false, setIsMobileMenuOpen }) => {
   const navItems = [
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
     { label: 'Features', href: '#features' },
     { label: 'Contact', href: '#contact' },
   ];
+
+  const handleClick = () => {
+    if (mobile && setIsMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+  };
 
   return (
     <>
@@ -94,7 +105,7 @@ const NavLinks = ({ mobile = false, setIsMobileMenuOpen = () => {} }) => {
           className={`text-amalfi-white hover:text-amalfi-emerald transition-colors ${
             mobile ? 'text-xl py-2' : ''
           }`}
-          onClick={() => mobile && setIsMobileMenuOpen(false)}
+          onClick={handleClick}
         >
           {item.label}
         </a>
