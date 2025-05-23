@@ -71,19 +71,19 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden fixed inset-0 z-40 glassmorphic">
+          <div className="md:hidden fixed inset-0 top-0 z-40 glassmorphic">
             <div className="flex flex-col items-center justify-center h-full space-y-6">
               <Button 
                 variant="ghost" 
                 size="sm" 
-                className="absolute top-4 right-4 text-amalfi-white p-1" 
+                className="absolute top-4 right-4 text-amalfi-white p-2" 
                 onClick={handleMobileMenuClose}
                 aria-label="Close menu"
               >
                 <span className="block w-6 h-0.5 bg-amalfi-emerald rotate-45"></span>
-                <span className="block w-6 h-0.5 bg-amalfi-emerald -rotate-45 -translate-y-0.5"></span>
+                <span className="block w-6 h-0.5 bg-amalfi-emerald -rotate-45 -mt-0.5"></span>
               </Button>
-              <NavLinks mobile setIsMobileMenuOpen={setIsMobileMenuOpen} />
+              <MobileNavLinks setIsMobileMenuOpen={setIsMobileMenuOpen} />
               <Button 
                 variant="outline" 
                 className="border border-amalfi-emerald/30 hover:border-amalfi-emerald/80 text-amalfi-white bg-transparent hover:bg-amalfi-emerald/10 transition-all hover:shadow-glow-sm"
@@ -102,12 +102,39 @@ const Navbar = () => {
   );
 };
 
+// Desktop Navigation Links
 interface NavLinksProps {
   mobile?: boolean;
   setIsMobileMenuOpen?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const NavLinks: React.FC<NavLinksProps> = ({ mobile = false, setIsMobileMenuOpen }) => {
+const NavLinks = () => {
+  const navItems = [
+    { label: 'Home', href: '#home' },
+    { label: 'About', href: '#about' },
+    { label: 'Features', href: '#features' },
+    { label: 'Solutions', href: '#solutions' },
+    { label: 'Success Stories', href: '#success' },
+    { label: 'Contact', href: '#contact' },
+  ];
+
+  return (
+    <>
+      {navItems.map((item) => (
+        <a
+          key={item.label}
+          href={item.href}
+          className="text-amalfi-white hover:text-amalfi-emerald transition-colors text-sm lg:text-base"
+        >
+          {item.label}
+        </a>
+      ))}
+    </>
+  );
+};
+
+// Mobile Navigation Links - separated to ensure they only appear in the mobile menu
+const MobileNavLinks: React.FC<{ setIsMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>> }> = ({ setIsMobileMenuOpen }) => {
   const navItems = [
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
@@ -118,9 +145,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ mobile = false, setIsMobileMenuOpen
   ];
 
   const handleClick = () => {
-    if (mobile && setIsMobileMenuOpen) {
-      setIsMobileMenuOpen(false);
-    }
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -129,9 +154,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ mobile = false, setIsMobileMenuOpen
         <a
           key={item.label}
           href={item.href}
-          className={`text-amalfi-white hover:text-amalfi-emerald transition-colors ${
-            mobile ? 'text-xl py-2' : 'text-sm lg:text-base'
-          }`}
+          className="text-amalfi-white hover:text-amalfi-emerald transition-colors text-xl py-2"
           onClick={handleClick}
         >
           {item.label}
