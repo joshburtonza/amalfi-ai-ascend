@@ -54,7 +54,7 @@ const Contact = () => {
       // IMPORTANT: Make sure these EXACTLY match your EmailJS account settings
       // Double-check for any typos or extra spaces
       const serviceId = 'service_ode758p';
-      const templateId = 'template_x3u9van';
+      const templateId = 'template_gilwpsc'; // Updated to the correct template ID
       const publicKey = 'SrFyjLIV1DL34WKye';
       
       // Update the debug info
