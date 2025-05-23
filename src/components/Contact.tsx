@@ -6,7 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, MessageSquare, Send } from "lucide-react";
 import emailjs from 'emailjs-com';
 import { toast } from "@/hooks/use-toast";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from '@/components/ui/dialog';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -22,7 +22,9 @@ const Contact = () => {
   // Initialize EmailJS when the component loads
   useEffect(() => {
     try {
+      // Make sure to use your correct public key here
       emailjs.init("SrFyjLIV1DL34WKye");
+      console.log("EmailJS initialized successfully");
     } catch (error) {
       console.error("Error initializing EmailJS:", error);
     }
@@ -49,7 +51,8 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // EmailJS configuration - make sure these exactly match your EmailJS account settings
+      // IMPORTANT: Make sure these EXACTLY match your EmailJS account settings
+      // Double-check for any typos or extra spaces
       const serviceId = 'service_ode758p';
       const templateId = 'template_x3u9van';
       const publicKey = 'SrFyjLIV1DL34WKye';
@@ -61,7 +64,8 @@ const Contact = () => {
         publicKey
       });
       
-      // Make sure these parameter names exactly match what's defined in your EmailJS template
+      // CRITICAL: These parameter names MUST EXACTLY match what's defined in your EmailJS template
+      // Check for case sensitivity and spelling
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
@@ -78,6 +82,7 @@ const Contact = () => {
         publicKey: publicKey.substring(0, 5) + '...' // Only log part of the key for security
       });
 
+      // Try to send email with EmailJS
       const response = await emailjs.send(
         serviceId,
         templateId,
@@ -102,10 +107,20 @@ const Contact = () => {
     } catch (error) {
       console.error("Error sending email:", error);
       
-      // More detailed error message
-      const errorMessage = error instanceof Error 
-        ? `Error: ${error.message}`
-        : "Failed to send your message. Please try again later.";
+      // Detailed error message with additional context
+      let errorMessage;
+      if (error instanceof Error) {
+        errorMessage = `Error: ${error.message}`;
+        
+        // Additional debugging for specific error cases
+        if (error.message.includes("template") && error.message.includes("not found")) {
+          errorMessage += "\n\nPossible issues:\n- The template ID may be incorrect\n- The template may not exist in your EmailJS account\n- Your account may not be active";
+        } else if (error.message.includes("service")) {
+          errorMessage += "\n\nPossible issues:\n- The service ID may be incorrect\n- The service may not be active in your EmailJS account";
+        }
+      } else {
+        errorMessage = "Failed to send your message. Please try again later.";
+      }
         
       toast({
         title: "Email Sending Failed",
@@ -113,7 +128,7 @@ const Contact = () => {
         variant: "destructive",
       });
       
-      // Show the debug dialog for admins
+      // Show the debug dialog for troubleshooting
       setShowDebugDialog(true);
     } finally {
       setIsSubmitting(false);
@@ -261,11 +276,14 @@ const Contact = () => {
         </div>
       </div>
       
-      {/* Debug Dialog for Admins */}
+      {/* Debug Dialog for Troubleshooting */}
       <Dialog open={showDebugDialog} onOpenChange={setShowDebugDialog}>
         <DialogContent className="bg-amalfi-black text-amalfi-white border-amalfi-emerald/30">
           <DialogHeader>
             <DialogTitle className="text-amalfi-white">EmailJS Debug Information</DialogTitle>
+            <DialogDescription className="text-amalfi-teal/80">
+              Use this information to troubleshoot EmailJS issues
+            </DialogDescription>
           </DialogHeader>
           <div className="space-y-4">
             <div>
@@ -298,6 +316,7 @@ const Contact = () => {
                 <li>Template variables may not match what your code is sending</li>
                 <li>Service ID may be incorrect or the service is not active</li>
                 <li>Public key may be incorrect or invalid</li>
+                <li>EmailJS account may be inactive or restricted</li>
               </ul>
             </div>
             <div className="pt-2">
