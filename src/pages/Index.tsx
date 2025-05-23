@@ -21,7 +21,7 @@ const Index = () => {
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
           window.scrollTo({
-            top: targetElement.offsetTop,
+            top: (targetElement as HTMLElement).offsetTop,
             behavior: 'smooth'
           });
         }
