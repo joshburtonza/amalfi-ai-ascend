@@ -42,7 +42,8 @@ const About = () => {
                     <img 
                       src="/lovable-uploads/f69443ae-ed22-4fad-afd3-6441748d249d.png" 
                       alt="Joshua Burton" 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-center scale-125"
+                      style={{ objectPosition: "50% 30%" }}
                     />
                   </div>
                   <h4 className="text-xl font-bold text-amalfi-white mb-1">Joshua Burton</h4>
@@ -55,7 +56,8 @@ const About = () => {
                     <img 
                       src="/lovable-uploads/3f5ce215-5fdb-482b-a244-2b67dafc76df.png" 
                       alt="Cian Ferreira" 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-center scale-125"
+                      style={{ objectPosition: "50% 30%" }}
                     />
                   </div>
                   <h4 className="text-xl font-bold text-amalfi-white mb-1">Cian Ferreira</h4>
