@@ -38,9 +38,9 @@ const About = () => {
                 {/* Founder */}
                 <div className="flex flex-col items-center glassmorphic p-6 rounded-2xl border border-amalfi-emerald/10 transition-all duration-300 hover:shadow-glow-md">
                   <div className="w-40 h-40 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-amalfi-emerald mb-4 shadow-glow-sm">
-                    <img src="/lovable-uploads/f69443ae-ed22-4fad-afd3-6441748d249d.png" alt="Joshua Burton" style={{
+                    <img alt="Joshua Burton" style={{
                     objectPosition: "50% 40%"
-                  }} className="w-full h-full object-center scale-125 object-fill" />
+                  }} className="w-full h-full object-center scale-125 object-fill" src="/lovable-uploads/6b1aadce-bf68-4277-9744-2fb114379290.jpg" />
                   </div>
                   <h4 className="text-xl font-bold text-amalfi-white mb-1">Joshua Burton</h4>
                   <p className="text-amalfi-emerald font-medium">Founder</p>
