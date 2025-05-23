@@ -1,16 +1,15 @@
-
 import React from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
-
 const About = () => {
-  return (
-    <section id="about" className="py-24 relative overflow-hidden">
+  return <section id="about" className="py-24 relative overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-amalfi-black via-amalfi-black to-amalfi-teal/20 z-0"></div>
       
       {/* Glow Effects */}
       <div className="absolute top-0 left-1/4 w-72 h-72 bg-amalfi-emerald/10 rounded-full blur-3xl animate-glow-pulse"></div>
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amalfi-teal/10 rounded-full blur-3xl animate-glow-pulse" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amalfi-teal/10 rounded-full blur-3xl animate-glow-pulse" style={{
+      animationDelay: '1s'
+    }}></div>
       
       <div className="max-container relative z-10">
         <div className="glassmorphic rounded-3xl p-8 md:p-12 border border-amalfi-emerald/10 shadow-glow-sm">
@@ -39,12 +38,9 @@ const About = () => {
                 {/* Founder */}
                 <div className="flex flex-col items-center glassmorphic p-6 rounded-2xl border border-amalfi-emerald/10 transition-all duration-300 hover:shadow-glow-md">
                   <div className="w-40 h-40 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-amalfi-emerald mb-4 shadow-glow-sm">
-                    <img 
-                      src="/lovable-uploads/f69443ae-ed22-4fad-afd3-6441748d249d.png" 
-                      alt="Joshua Burton" 
-                      className="w-full h-full object-cover object-center scale-125"
-                      style={{ objectPosition: "50% 40%" }}
-                    />
+                    <img src="/lovable-uploads/f69443ae-ed22-4fad-afd3-6441748d249d.png" alt="Joshua Burton" style={{
+                    objectPosition: "50% 40%"
+                  }} className="w-full h-full object-center scale-125 object-fill" />
                   </div>
                   <h4 className="text-xl font-bold text-amalfi-white mb-1">Joshua Burton</h4>
                   <p className="text-amalfi-emerald font-medium">Founder</p>
@@ -53,12 +49,9 @@ const About = () => {
                 {/* Co-Founder */}
                 <div className="flex flex-col items-center glassmorphic p-6 rounded-2xl border border-amalfi-emerald/10 transition-all duration-300 hover:shadow-glow-md">
                   <div className="w-40 h-40 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-amalfi-emerald mb-4 shadow-glow-sm">
-                    <img 
-                      src="/lovable-uploads/3f5ce215-5fdb-482b-a244-2b67dafc76df.png" 
-                      alt="Cian Ferreira" 
-                      className="w-full h-full object-cover object-center scale-125"
-                      style={{ objectPosition: "50% 45%" }}
-                    />
+                    <img src="/lovable-uploads/3f5ce215-5fdb-482b-a244-2b67dafc76df.png" alt="Cian Ferreira" className="w-full h-full object-cover object-center scale-125" style={{
+                    objectPosition: "50% 45%"
+                  }} />
                   </div>
                   <h4 className="text-xl font-bold text-amalfi-white mb-1">Cian Ferreira</h4>
                   <p className="text-amalfi-emerald font-medium">Co-Founder</p>
@@ -73,8 +66,6 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
