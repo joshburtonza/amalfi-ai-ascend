@@ -39,7 +39,7 @@ const Hero = () => {
             
             <Button 
               variant="outline" 
-              className="text-amalfi-white border-amalfi-emerald/50 hover:bg-transparent hover:border-amalfi-emerald font-medium text-lg px-8 py-6 transition-all hover:shadow-glow-sm"
+              className="bg-white/10 text-amalfi-white font-medium text-lg px-8 py-6 transition-all border-2 border-white hover:bg-white hover:text-amalfi-black shadow-glow-md hover:shadow-glow-lg"
               size="lg"
             >
               Let&apos;s Chat
