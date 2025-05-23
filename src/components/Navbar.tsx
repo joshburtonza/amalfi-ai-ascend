@@ -22,6 +22,11 @@ const Navbar = () => {
     };
   }, []);
 
+  // Close mobile menu when clicking on a link
+  const handleMobileMenuClose = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <nav 
       className={`fixed w-full z-50 transition-all duration-300 ${
@@ -65,26 +70,33 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div 
-          className={`md:hidden fixed inset-0 z-40 glassmorphic transition-all duration-300 ${
-            isMobileMenuOpen 
-              ? 'opacity-100 pointer-events-auto' 
-              : 'opacity-0 pointer-events-none'
-          }`}
-        >
-          <div className="flex flex-col items-center justify-center h-full space-y-6">
-            <NavLinks mobile setIsMobileMenuOpen={setIsMobileMenuOpen} />
-            <Button 
-              variant="outline" 
-              className="border border-amalfi-emerald/30 hover:border-amalfi-emerald/80 text-amalfi-white bg-transparent hover:bg-amalfi-emerald/10 transition-all hover:shadow-glow-sm"
-              asChild
-            >
-              <a href="https://soarai.app.n8n.cloud/form/889b9500-9b97-40fd-a200-193ace0f0cca" target="_blank" rel="noopener noreferrer">
-                Let&apos;s Chat
-              </a>
-            </Button>
+        {isMobileMenuOpen && (
+          <div className="md:hidden fixed inset-0 z-40 glassmorphic">
+            <div className="flex flex-col items-center justify-center h-full space-y-6">
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="absolute top-4 right-4 text-amalfi-white p-1" 
+                onClick={handleMobileMenuClose}
+                aria-label="Close menu"
+              >
+                <span className="block w-6 h-0.5 bg-amalfi-emerald rotate-45"></span>
+                <span className="block w-6 h-0.5 bg-amalfi-emerald -rotate-45 -translate-y-0.5"></span>
+              </Button>
+              <NavLinks mobile setIsMobileMenuOpen={setIsMobileMenuOpen} />
+              <Button 
+                variant="outline" 
+                className="border border-amalfi-emerald/30 hover:border-amalfi-emerald/80 text-amalfi-white bg-transparent hover:bg-amalfi-emerald/10 transition-all hover:shadow-glow-sm"
+                asChild
+                onClick={handleMobileMenuClose}
+              >
+                <a href="https://soarai.app.n8n.cloud/form/889b9500-9b97-40fd-a200-193ace0f0cca" target="_blank" rel="noopener noreferrer">
+                  Let&apos;s Chat
+                </a>
+              </Button>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </nav>
   );
