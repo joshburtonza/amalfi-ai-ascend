@@ -31,7 +31,7 @@ const Navbar = () => {
     <nav 
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'glassmorphic py-2 shadow-glow-sm' 
+          ? 'bg-amalfi-black/80 backdrop-blur-sm py-2' 
           : 'bg-transparent py-3 md:py-5'
       }`}
     >
@@ -71,7 +71,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden fixed inset-0 top-0 z-40 glassmorphic">
+          <div className="md:hidden fixed inset-0 top-0 z-40 bg-amalfi-black/95 backdrop-blur-sm">
             <div className="flex flex-col items-center justify-center h-full space-y-6">
               <Button 
                 variant="ghost" 
