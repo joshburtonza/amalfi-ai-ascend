@@ -38,7 +38,7 @@ const About = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Founder */}
                 <div className="flex flex-col items-center glassmorphic p-6 rounded-2xl border border-amalfi-emerald/10 transition-all duration-300 hover:shadow-glow-md">
-                  <div className="w-36 h-36 rounded-full overflow-hidden border-2 border-amalfi-emerald mb-4 shadow-glow-sm">
+                  <div className="w-40 h-40 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-amalfi-emerald mb-4 shadow-glow-sm">
                     <img 
                       src="/lovable-uploads/f69443ae-ed22-4fad-afd3-6441748d249d.png" 
                       alt="Joshua Burton" 
@@ -52,7 +52,7 @@ const About = () => {
                 
                 {/* Co-Founder */}
                 <div className="flex flex-col items-center glassmorphic p-6 rounded-2xl border border-amalfi-emerald/10 transition-all duration-300 hover:shadow-glow-md">
-                  <div className="w-36 h-36 rounded-full overflow-hidden border-2 border-amalfi-emerald mb-4 shadow-glow-sm">
+                  <div className="w-40 h-40 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-amalfi-emerald mb-4 shadow-glow-sm">
                     <img 
                       src="/lovable-uploads/3f5ce215-5fdb-482b-a244-2b67dafc76df.png" 
                       alt="Cian Ferreira" 
