@@ -1,11 +1,12 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, MessageSquare, Send } from "lucide-react";
 import emailjs from 'emailjs-com';
 import { toast } from "@/hooks/use-toast";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,6 +16,17 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showDebugDialog, setShowDebugDialog] = useState(false);
+  const [debugInfo, setDebugInfo] = useState({ serviceId: '', templateId: '', publicKey: '' });
+
+  // Initialize EmailJS when the component loads
+  useEffect(() => {
+    try {
+      emailjs.init("SrFyjLIV1DL34WKye");
+    } catch (error) {
+      console.error("Error initializing EmailJS:", error);
+    }
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
@@ -38,6 +50,17 @@ const Contact = () => {
 
     try {
       // EmailJS configuration
+      const serviceId = 'service_ode758p';
+      const templateId = 'template_x3u9van';
+      const publicKey = 'SrFyjLIV1DL34WKye';
+      
+      // Update the debug info
+      setDebugInfo({
+        serviceId,
+        templateId,
+        publicKey
+      });
+      
       const templateParams = {
         to_name: "Josh", // Recipient name
         from_name: formData.name,
@@ -45,22 +68,21 @@ const Contact = () => {
         company: formData.company || "Not specified",
         message: formData.message
       };
-
-      // Make sure to initialize EmailJS before sending (optional but recommended)
-      emailjs.init("SrFyjLIV1DL34WKye");
       
       console.log("Attempting to send email with:", {
-        serviceId: 'service_ode758p',
-        templateId: 'template_x3u9van', // Updated template ID
+        serviceId,
+        templateId,
         params: templateParams
       });
 
-      await emailjs.send(
-        'service_ode758p', // Your EmailJS service ID
-        'template_x3u9van', // Updated to the new template ID
+      const response = await emailjs.send(
+        serviceId,
+        templateId,
         templateParams,
-        'SrFyjLIV1DL34WKye' // Your EmailJS public key
+        publicKey
       );
+
+      console.log("Email sent successfully:", response);
 
       toast({
         title: "Message Sent!",
@@ -87,6 +109,9 @@ const Contact = () => {
         description: errorMessage,
         variant: "destructive",
       });
+      
+      // Show the debug dialog for admins
+      setShowDebugDialog(true);
     } finally {
       setIsSubmitting(false);
     }
@@ -232,6 +257,47 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      
+      {/* Debug Dialog for Admins */}
+      <Dialog open={showDebugDialog} onOpenChange={setShowDebugDialog}>
+        <DialogContent className="bg-amalfi-black text-amalfi-white border-amalfi-emerald/30">
+          <DialogHeader>
+            <DialogTitle className="text-amalfi-white">EmailJS Debug Information</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4">
+            <div>
+              <h4 className="text-amalfi-teal font-semibold">Service ID:</h4>
+              <p className="text-amalfi-white/80 font-mono">{debugInfo.serviceId}</p>
+            </div>
+            <div>
+              <h4 className="text-amalfi-teal font-semibold">Template ID:</h4>
+              <p className="text-amalfi-white/80 font-mono">{debugInfo.templateId}</p>
+            </div>
+            <div>
+              <h4 className="text-amalfi-teal font-semibold">Public Key:</h4>
+              <p className="text-amalfi-white/80 font-mono">{debugInfo.publicKey}</p>
+            </div>
+            <div>
+              <h4 className="text-amalfi-teal font-semibold">Common Issues:</h4>
+              <ul className="list-disc pl-5 text-amalfi-white/80 space-y-1">
+                <li>Template ID does not exist in your EmailJS account</li>
+                <li>Template variables may not match what your code is sending</li>
+                <li>Service ID may be incorrect or the service is not active</li>
+                <li>Public key may be incorrect or invalid</li>
+              </ul>
+            </div>
+            <div className="pt-2">
+              <Button 
+                variant="outline" 
+                className="border-amalfi-emerald/50 text-amalfi-teal hover:bg-amalfi-emerald/10"
+                onClick={() => setShowDebugDialog(false)}
+              >
+                Close
+              </Button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
