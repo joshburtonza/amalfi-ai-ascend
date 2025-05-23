@@ -7,23 +7,15 @@ const Hero = () => {
     <section 
       id="home"
       className="relative min-h-screen w-full bg-amalfi-black flex items-center pt-20"
+      style={{
+        backgroundImage: "url('/lovable-uploads/2ea9419c-2ca9-4637-9fb4-d62623538574.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center bottom",
+        backgroundRepeat: "no-repeat",
+      }}
     >
-      {/* Animated Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-amalfi-black via-amalfi-teal/20 to-amalfi-emerald/20"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-[30vh] bg-gradient-to-t from-amalfi-black to-transparent"></div>
-        
-        {/* Wave Elements */}
-        <div className="absolute bottom-[10%] w-full h-[60vh] opacity-20 animate-wave" style={{ animationDelay: '0s' }}>
-          <div className="w-full h-full bg-gradient-to-r from-amalfi-teal to-amalfi-emerald rounded-[100%] blur-3xl"></div>
-        </div>
-        <div className="absolute bottom-[5%] w-full h-[40vh] opacity-20 animate-wave" style={{ animationDelay: '0.5s' }}>
-          <div className="w-full h-full bg-gradient-to-r from-amalfi-emerald to-amalfi-teal rounded-[100%] blur-3xl"></div>
-        </div>
-        <div className="absolute bottom-[15%] w-full h-[20vh] opacity-20 animate-wave" style={{ animationDelay: '1s' }}>
-          <div className="w-full h-full bg-gradient-to-r from-amalfi-teal/80 to-amalfi-emerald/80 rounded-[100%] blur-3xl"></div>
-        </div>
-      </div>
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-amalfi-black/80 to-transparent"></div>
       
       {/* Content */}
       <div className="max-container relative z-10">
