@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -47,10 +48,10 @@ const Contact = () => {
       };
 
       await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your actual EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your actual EmailJS template ID
+        'service_ode758p', // Your EmailJS service ID
+        'template_57lygjm', // Your EmailJS template ID
         templateParams,
-        'YOUR_USER_ID' // Replace with your actual EmailJS user ID
+        'SrFyjLIV1DL34WKye' // Your EmailJS public key
       );
 
       toast({
