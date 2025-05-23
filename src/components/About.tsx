@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
 
 const About = () => {
   return (
@@ -28,6 +29,39 @@ const About = () => {
               <p className="text-lg md:text-xl">
                 Our clients are ambitious small and medium-sized businesses (SMBs) ready to scale, streamline, and innovate. Whether you're a digital agency, logistics company, or a fast-growing local brand, we make AI accessible, aesthetic, and impactful for your everyday operations.
               </p>
+            </div>
+            
+            {/* Team Members Section */}
+            <div className="mt-16">
+              <h3 className="text-2xl md:text-3xl font-bold mb-8 text-gradient text-center">Our Team</h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Founder */}
+                <div className="flex flex-col items-center glassmorphic p-6 rounded-2xl border border-amalfi-emerald/10 transition-all duration-300 hover:shadow-glow-md">
+                  <div className="w-36 h-36 rounded-full overflow-hidden border-2 border-amalfi-emerald mb-4 shadow-glow-sm">
+                    <img 
+                      src="/lovable-uploads/f69443ae-ed22-4fad-afd3-6441748d249d.png" 
+                      alt="Joshua Burton" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h4 className="text-xl font-bold text-amalfi-white mb-1">Joshua Burton</h4>
+                  <p className="text-amalfi-emerald font-medium">Founder</p>
+                </div>
+                
+                {/* Co-Founder */}
+                <div className="flex flex-col items-center glassmorphic p-6 rounded-2xl border border-amalfi-emerald/10 transition-all duration-300 hover:shadow-glow-md">
+                  <div className="w-36 h-36 rounded-full overflow-hidden border-2 border-amalfi-emerald mb-4 shadow-glow-sm">
+                    <img 
+                      src="/lovable-uploads/3f5ce215-5fdb-482b-a244-2b67dafc76df.png" 
+                      alt="Cian Ferreira" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h4 className="text-xl font-bold text-amalfi-white mb-1">Cian Ferreira</h4>
+                  <p className="text-amalfi-emerald font-medium">Co-Founder</p>
+                </div>
+              </div>
             </div>
             
             {/* Decorative Element */}
