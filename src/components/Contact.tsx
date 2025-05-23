@@ -1,11 +1,84 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, MessageSquare } from "lucide-react";
+import emailjs from 'emailjs-com';
+import { toast } from "@/hooks/use-toast";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Validate form
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Use EmailJS service
+      // Note: These are public keys - they are meant to be used in the browser
+      // You will need to sign up for EmailJS and replace these with your own keys
+      const templateParams = {
+        to_name: "Josh",
+        from_name: formData.name,
+        reply_to: formData.email,
+        company: formData.company,
+        message: formData.message
+      };
+
+      await emailjs.send(
+        'service_placeholder', // Replace with your EmailJS service ID
+        'template_placeholder', // Replace with your EmailJS template ID
+        templateParams,
+        'user_placeholder' // Replace with your EmailJS user ID
+      );
+
+      toast({
+        title: "Message Sent!",
+        description: "We'll be in touch with you shortly.",
+      });
+
+      // Clear form
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send your message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
       {/* Background Gradient */}
@@ -28,27 +101,33 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Form - Takes up 2/3 of the space on larger screens */}
           <div className="lg:col-span-2">
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm text-amalfi-white/80">
-                    Full Name
+                    Full Name *
                   </label>
                   <Input 
                     id="name"
                     placeholder="Your name"
+                    value={formData.name}
+                    onChange={handleChange}
                     className="bg-amalfi-black/50 border-amalfi-emerald/20 focus:border-amalfi-emerald/60 glassmorphic focus:shadow-glow-sm placeholder:text-amalfi-teal/50 text-amalfi-white"
+                    required
                   />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm text-amalfi-white/80">
-                    Email Address
+                    Email Address *
                   </label>
                   <Input 
                     id="email"
                     type="email"
                     placeholder="Your email"
+                    value={formData.email}
+                    onChange={handleChange}
                     className="bg-amalfi-black/50 border-amalfi-emerald/20 focus:border-amalfi-emerald/60 glassmorphic focus:shadow-glow-sm placeholder:text-amalfi-teal/50 text-amalfi-white"
+                    required
                   />
                 </div>
               </div>
@@ -60,19 +139,24 @@ const Contact = () => {
                 <Input 
                   id="company"
                   placeholder="Your company name"
+                  value={formData.company}
+                  onChange={handleChange}
                   className="bg-amalfi-black/50 border-amalfi-emerald/20 focus:border-amalfi-emerald/60 glassmorphic focus:shadow-glow-sm placeholder:text-amalfi-teal/50 text-amalfi-white"
                 />
               </div>
               
               <div className="space-y-2">
                 <label htmlFor="message" className="text-sm text-amalfi-white/80">
-                  Message
+                  Message *
                 </label>
                 <Textarea 
                   id="message"
                   placeholder="Tell us about your project needs..."
                   rows={5}
+                  value={formData.message}
+                  onChange={handleChange}
                   className="bg-amalfi-black/50 border-amalfi-emerald/20 focus:border-amalfi-emerald/60 glassmorphic focus:shadow-glow-sm placeholder:text-amalfi-teal/50 text-amalfi-white resize-none"
+                  required
                 />
               </div>
               
@@ -80,8 +164,10 @@ const Contact = () => {
                 <Button 
                   className="btn-gradient text-amalfi-white font-medium px-8 py-6 shadow-glow-md hover:shadow-glow-lg transition-all hover:scale-105 w-full"
                   size="lg"
+                  type="submit"
+                  disabled={isSubmitting}
                 >
-                  <span className="mr-2">Send Message</span>
+                  <span className="mr-2">{isSubmitting ? 'Sending...' : 'Send Message'}</span>
                   <Mail size={18} />
                 </Button>
               </div>
