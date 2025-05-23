@@ -18,20 +18,20 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-amalfi-black/80 to-transparent"></div>
       
       {/* Content */}
-      <div className="max-container relative z-10">
+      <div className="max-container relative z-10 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-amalfi-white leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-amalfi-white leading-tight">
             Unlock AI Excellence with{" "}
             <span className="text-gradient">Amalfi AI</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-amalfi-white/90 mb-10 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl md:text-2xl text-amalfi-white/90 mb-8 sm:mb-10 max-w-2xl mx-auto">
             Premium AI Automation Solutions for Modern Businesses
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button 
-              className="btn-gradient text-amalfi-white font-medium text-lg px-8 py-6 shadow-glow-md hover:shadow-glow-lg transition-all hover:scale-105"
+              className="btn-gradient text-amalfi-white font-medium text-base md:text-lg px-6 sm:px-8 py-5 sm:py-6 shadow-glow-md hover:shadow-glow-lg transition-all hover:scale-105 whitespace-nowrap"
               size="lg"
               asChild
             >
@@ -42,7 +42,7 @@ const Hero = () => {
             
             <Button 
               variant="outline" 
-              className="bg-white/10 text-amalfi-white font-medium text-lg px-8 py-6 transition-all border-2 border-white hover:bg-white hover:text-amalfi-black shadow-glow-md hover:shadow-glow-lg"
+              className="bg-white/10 text-amalfi-white font-medium text-base md:text-lg px-6 sm:px-8 py-5 sm:py-6 transition-all border-2 border-white hover:bg-white hover:text-amalfi-black shadow-glow-md hover:shadow-glow-lg whitespace-nowrap"
               size="lg"
               asChild
             >

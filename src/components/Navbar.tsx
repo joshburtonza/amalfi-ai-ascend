@@ -26,17 +26,17 @@ const Navbar = () => {
     <nav 
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'glassmorphic py-3 shadow-glow-sm' 
-          : 'bg-transparent py-5'
+          ? 'glassmorphic py-2 shadow-glow-sm' 
+          : 'bg-transparent py-3 md:py-5'
       }`}
     >
-      <div className="max-container flex items-center justify-between">
+      <div className="max-container flex items-center justify-between px-4 sm:px-6">
         <div className="flex items-center">
           <Logo />
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
           <NavLinks />
           <Button 
             variant="outline" 
@@ -54,8 +54,9 @@ const Navbar = () => {
           <Button 
             variant="ghost" 
             size="sm" 
-            className="text-amalfi-white" 
+            className="text-amalfi-white p-1" 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
           >
             <span className={`block w-6 relative ${isMobileMenuOpen ? 'h-0' : 'h-0.5 bg-amalfi-emerald'} transition-all`}></span>
             <span className={`block mt-1.5 w-6 h-0.5 bg-amalfi-emerald transition-all ${isMobileMenuOpen ? 'rotate-45' : ''}`}></span>
@@ -71,7 +72,7 @@ const Navbar = () => {
               : 'opacity-0 pointer-events-none'
           }`}
         >
-          <div className="flex flex-col items-center justify-center h-full space-y-8">
+          <div className="flex flex-col items-center justify-center h-full space-y-6">
             <NavLinks mobile setIsMobileMenuOpen={setIsMobileMenuOpen} />
             <Button 
               variant="outline" 
@@ -117,7 +118,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ mobile = false, setIsMobileMenuOpen
           key={item.label}
           href={item.href}
           className={`text-amalfi-white hover:text-amalfi-emerald transition-colors ${
-            mobile ? 'text-xl py-2' : ''
+            mobile ? 'text-xl py-2' : 'text-sm lg:text-base'
           }`}
           onClick={handleClick}
         >
