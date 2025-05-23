@@ -5,6 +5,7 @@ import Hero from '../components/Hero';
 import About from '../components/About';
 import Features from '../components/Features';
 import SolutionEcosystem from '../components/SolutionEcosystem';
+import ClientSuccess from '../components/ClientSuccess';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
@@ -35,6 +36,7 @@ const Index = () => {
       <About />
       <Features />
       <SolutionEcosystem />
+      <ClientSuccess />
       <Contact />
       <Footer />
     </div>

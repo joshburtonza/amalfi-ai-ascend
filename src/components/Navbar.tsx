@@ -88,6 +88,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ mobile = false, setIsMobileMenuOpen
     { label: 'About', href: '#about' },
     { label: 'Features', href: '#features' },
     { label: 'Solutions', href: '#solutions' },
+    { label: 'Success Stories', href: '#success' },
     { label: 'Contact', href: '#contact' },
   ];
 
