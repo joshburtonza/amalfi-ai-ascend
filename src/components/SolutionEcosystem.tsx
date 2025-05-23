@@ -104,8 +104,8 @@ const SolutionEcosystem = () => {
               <div className="bg-amalfi-black/30 flex items-center justify-center p-8 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-amalfi-black to-amalfi-teal/30 opacity-80"></div>
                 <img 
-                  src="/lovable-uploads/72de146d-3fae-404a-b3be-acfba75767a7.png" 
-                  alt="AI Automation Platform" 
+                  src="/lovable-uploads/c992728c-8637-4a6b-a323-db67c759b05e.png" 
+                  alt="Amalfi AI Automation Ecosystem" 
                   className="relative z-10 max-w-full h-auto rounded-xl shadow-glow-sm"
                 />
               </div>
