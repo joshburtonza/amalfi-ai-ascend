@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
@@ -9,6 +8,7 @@ interface TestimonialProps {
   title: string;
   location: string;
   className?: string;
+  style?: React.CSSProperties; // Added style prop to the interface
 }
 
 const Testimonial: React.FC<TestimonialProps> = ({
@@ -17,9 +17,10 @@ const Testimonial: React.FC<TestimonialProps> = ({
   title,
   location,
   className,
+  style, // Added style prop to the destructuring
 }) => {
   return (
-    <Card className={cn("glassmorphic border-amalfi-emerald/30 hover:border-amalfi-emerald/50 transition-all duration-300 hover:shadow-glow-sm h-full", className)}>
+    <Card className={cn("glassmorphic border-amalfi-emerald/30 hover:border-amalfi-emerald/50 transition-all duration-300 hover:shadow-glow-sm h-full", className)} style={style}>
       <CardContent className="p-8 flex flex-col h-full">
         <div className="mb-6 text-amalfi-emerald">
           <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-75">
