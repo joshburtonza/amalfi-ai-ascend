@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -37,22 +36,21 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Use EmailJS service
-      // Note: These are public keys - they are meant to be used in the browser
-      // You will need to sign up for EmailJS and replace these with your own keys
+      // EmailJS configuration
       const templateParams = {
-        to_name: "Josh",
+        to_name: "Josh", // Recipient name
         from_name: formData.name,
         reply_to: formData.email,
         company: formData.company,
-        message: formData.message
+        message: formData.message,
+        to_email: "josh@amalfiai.com" // Make sure your EmailJS template includes this variable
       };
 
       await emailjs.send(
-        'service_placeholder', // Replace with your EmailJS service ID
-        'template_placeholder', // Replace with your EmailJS template ID
+        'YOUR_SERVICE_ID', // Replace with your actual EmailJS service ID
+        'YOUR_TEMPLATE_ID', // Replace with your actual EmailJS template ID
         templateParams,
-        'user_placeholder' // Replace with your EmailJS user ID
+        'YOUR_USER_ID' // Replace with your actual EmailJS user ID
       );
 
       toast({
