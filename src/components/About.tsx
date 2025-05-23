@@ -45,7 +45,7 @@ const About = () => {
                         className="w-full h-full object-cover" 
                         src="/lovable-uploads/6b1aadce-bf68-4277-9744-2fb114379290.jpg"
                         style={{
-                          transform: "scale(1.5) translateY(12px)",
+                          transform: "scale(1.5) translateY(27px)",
                         }} 
                       />
                     </div>
@@ -63,7 +63,7 @@ const About = () => {
                         alt="Cian Ferreira" 
                         className="w-full h-full object-cover" 
                         style={{
-                          transform: "scale(1.5) translateY(17px)",
+                          transform: "scale(1.5) translateY(32px)",
                         }}
                       />
                     </div>
