@@ -8,7 +8,7 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen w-full bg-amalfi-black flex items-center pt-20"
       style={{
-        backgroundImage: "url('/lovable-uploads/2ea9419c-2ca9-4637-9fb4-d62623538574.png')",
+        backgroundImage: "url('/lovable-uploads/9bb8f7b5-a01b-4363-96f7-918cc27305ef.png')",
         backgroundSize: "cover",
         backgroundPosition: "center bottom",
         backgroundRepeat: "no-repeat",
