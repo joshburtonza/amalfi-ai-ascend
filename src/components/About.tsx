@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
 
@@ -37,7 +36,7 @@ const About = () => {
             <div className="mt-12 md:mt-16">
               <h3 className="text-xl md:text-3xl font-bold mb-6 md:mb-8 text-gradient text-center">Our Team</h3>
               
-              <div className="flex justify-center">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
                 {/* Founder */}
                 <div className="flex flex-col items-center glassmorphic p-5 md:p-6 rounded-2xl border border-amalfi-emerald/10 transition-all duration-300 hover:shadow-glow-md">
                   <div className="w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-2 border-amalfi-emerald mb-4 shadow-glow-sm">
@@ -54,6 +53,21 @@ const About = () => {
                   </div>
                   <h4 className="text-lg md:text-xl font-bold text-amalfi-white mb-1">Joshua Burton</h4>
                   <p className="text-amalfi-emerald font-medium">Founder</p>
+                </div>
+                
+                {/* Co-Founder */}
+                <div className="flex flex-col items-center glassmorphic p-5 md:p-6 rounded-2xl border border-amalfi-emerald/10 transition-all duration-300 hover:shadow-glow-md">
+                  <div className="w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-2 border-amalfi-emerald mb-4 shadow-glow-sm">
+                    <div className="w-full h-full overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/bbbe09c8-5a08-44e6-a343-151adaf1bf84.png" 
+                        alt="Cheyenne Horn" 
+                        className="w-full h-full object-cover" 
+                      />
+                    </div>
+                  </div>
+                  <h4 className="text-lg md:text-xl font-bold text-amalfi-white mb-1">Cheyenne Horn</h4>
+                  <p className="text-amalfi-emerald font-medium">Co-Founder</p>
                 </div>
               </div>
             </div>
