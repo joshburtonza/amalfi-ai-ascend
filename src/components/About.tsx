@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
 
@@ -44,10 +45,7 @@ const About = () => {
                       <img 
                         alt="Joshua Burton" 
                         className="w-full h-full object-cover" 
-                        src="/lovable-uploads/6b1aadce-bf68-4277-9744-2fb114379290.jpg"
-                        style={{
-                          transform: "scale(1.5) translateY(27px)",
-                        }} 
+                        src="/lovable-uploads/c82f3a29-2a00-4659-9f03-92a11af68d26.png"
                       />
                     </div>
                   </div>
