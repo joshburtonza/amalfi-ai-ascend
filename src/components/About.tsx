@@ -1,16 +1,18 @@
 
 import React from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
+
 const About = () => {
-  return <section id="about" className="py-16 md:py-24 relative overflow-hidden">
+  return (
+    <section id="about" className="py-16 md:py-24 relative overflow-hidden">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-amalfi-black via-amalfi-black to-amalfi-teal/20 z-0"></div>
       
       {/* Glow Effects */}
       <div className="absolute top-0 left-1/4 w-72 h-72 bg-amalfi-emerald/10 rounded-full blur-3xl animate-glow-pulse"></div>
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-amalfi-teal/10 rounded-full blur-3xl animate-glow-pulse" style={{
-      animationDelay: '1s'
-    }}></div>
+        animationDelay: '1s'
+      }}></div>
       
       <div className="max-container relative z-10 px-4 sm:px-6">
         <div className="glassmorphic rounded-3xl p-6 md:p-12 border border-amalfi-emerald/10 shadow-glow-sm">
@@ -35,7 +37,7 @@ const About = () => {
             <div className="mt-12 md:mt-16">
               <h3 className="text-xl md:text-3xl font-bold mb-6 md:mb-8 text-gradient text-center">Our Team</h3>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+              <div className="flex justify-center">
                 {/* Founder */}
                 <div className="flex flex-col items-center glassmorphic p-5 md:p-6 rounded-2xl border border-amalfi-emerald/10 transition-all duration-300 hover:shadow-glow-md">
                   <div className="w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-2 border-amalfi-emerald mb-4 shadow-glow-sm">
@@ -53,24 +55,6 @@ const About = () => {
                   <h4 className="text-lg md:text-xl font-bold text-amalfi-white mb-1">Joshua Burton</h4>
                   <p className="text-amalfi-emerald font-medium">Founder</p>
                 </div>
-                
-                {/* Co-Founder */}
-                <div className="flex flex-col items-center glassmorphic p-5 md:p-6 rounded-2xl border border-amalfi-emerald/10 transition-all duration-300 hover:shadow-glow-md">
-                  <div className="w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-2 border-amalfi-emerald mb-4 shadow-glow-sm">
-                    <div className="w-full h-full overflow-hidden">
-                      <img 
-                        src="/lovable-uploads/3f5ce215-5fdb-482b-a244-2b67dafc76df.png" 
-                        alt="Cian Ferreira" 
-                        className="w-full h-full object-cover" 
-                        style={{
-                          transform: "scale(1.5) translateY(32px)",
-                        }}
-                      />
-                    </div>
-                  </div>
-                  <h4 className="text-lg md:text-xl font-bold text-amalfi-white mb-1">Cian Ferreira</h4>
-                  <p className="text-amalfi-emerald font-medium">Co-Founder</p>
-                </div>
               </div>
             </div>
             
@@ -81,6 +65,8 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default About;
