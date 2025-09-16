@@ -66,12 +66,22 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Amalfi AI Theme Colors
-				amalfi: {
-					black: '#090E11',
-					emerald: '#35BEB7',
-					teal: '#1C8EA7',
-					white: '#F6FFF8',
+				// Black + Pastel Theme Colors
+				pastel: {
+					pink: 'hsl(var(--pastel-pink))',
+					sky: 'hsl(var(--pastel-sky))',
+					mint: 'hsl(var(--pastel-mint))',
+					lilac: 'hsl(var(--pastel-lilac))',
+					teal: 'hsl(var(--pastel-teal))',
+					butter: 'hsl(var(--pastel-butter))',
+				},
+				app: {
+					bg: '#0a0a0b',        /* near-black background */
+					panel: '#101113',      /* card backgrounds */
+					panel2: '#0e0f12',     /* deeper surfaces */
+					border: '#1c1d22',     /* borders */
+					text: '#f4f4f5',       /* primary white text */
+					muted: '#a1a1aa',      /* secondary gray text */
 				},
 			},
 			borderRadius: {
@@ -172,7 +182,8 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'amalfi-gradient': 'linear-gradient(135deg, #090E11 0%, #1C8EA7 50%, #35BEB7 100%)',
+				'brand-gradient': 'linear-gradient(135deg, hsl(var(--pastel-pink)), hsl(var(--pastel-sky)), hsl(var(--pastel-mint)))',
+				'pastel-gradient': 'linear-gradient(135deg, #ffd6e7, #dde6ff, #cff1ff)',
 			},
 			boxShadow: {
 				'glow-sm': '0 0 15px hsl(var(--glow-color))',

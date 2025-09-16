@@ -7,68 +7,73 @@
 
 @layer base {
   :root {
-    /* Core Theme Colors */
-    --background: 217 33% 6%;
-    --foreground: 0 0% 98%;
-    --card: 217 33% 8%;
-    --card-foreground: 0 0% 98%;
-    --popover: 217 33% 8%;
-    --popover-foreground: 0 0% 98%;
+    /* Core Theme Colors - Black + Pastel */
+    --background: 240 11% 4%;          /* #0a0a0b near-black */
+    --foreground: 240 5% 96%;          /* #f4f4f5 white text */
+    --card: 240 8% 7%;                 /* #101113 card backgrounds */
+    --card-foreground: 240 5% 96%;     /* #f4f4f5 white text */
+    --popover: 240 8% 7%;              /* #101113 popover backgrounds */
+    --popover-foreground: 240 5% 96%;  /* #f4f4f5 white text */
     
-    /* Primary Brand Colors */
-    --primary: 174 66% 47%;
-    --primary-foreground: 217 33% 6%;
-    --primary-glow: 174 66% 60%;
-    --primary-dark: 174 66% 35%;
+    /* Pastel Brand Colors */
+    --primary: 330 100% 91%;           /* #ffd6e7 pastel pink */
+    --primary-foreground: 240 11% 4%;  /* #0a0a0b black text on pink */
+    --primary-glow: 330 100% 95%;      /* lighter pink for glow */
+    --primary-dark: 330 100% 85%;      /* darker pink variant */
     
-    /* Secondary & Accent */
-    --secondary: 217 33% 12%;
-    --secondary-foreground: 0 0% 98%;
-    --accent: 174 66% 47%;
-    --accent-foreground: 217 33% 6%;
-    --muted: 217 20% 15%;
-    --muted-foreground: 0 0% 65%;
+    /* Secondary & Accent - Pastel Sky */
+    --secondary: 240 8% 10%;           /* #1c1d22 dark panels */
+    --secondary-foreground: 240 5% 96%; /* #f4f4f5 white text */
+    --accent: 228 100% 93%;            /* #dde6ff pastel sky blue */
+    --accent-foreground: 240 11% 4%;   /* #0a0a0b black text on blue */
+    --muted: 240 8% 10%;               /* #1c1d22 muted backgrounds */
+    --muted-foreground: 240 5% 67%;    /* #a1a1aa muted text */
     
     /* Status Colors */
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 240 5% 96%;
     --success: 142 76% 36%;
-    --success-foreground: 0 0% 98%;
+    --success-foreground: 240 5% 96%;
     --warning: 48 96% 53%;
-    --warning-foreground: 217 33% 6%;
+    --warning-foreground: 240 11% 4%;
     
     /* UI Elements */
-    --border: 217 20% 20%;
-    --input: 217 20% 15%;
-    --ring: 174 66% 47%;
+    --border: 240 8% 14%;              /* #1c1d22 borders */
+    --input: 240 8% 10%;               /* #1c1d22 input backgrounds */
+    --ring: 330 100% 91%;              /* #ffd6e7 focus rings */
     --radius: 0.75rem;
     
-    /* Gradient Stops */
-    --gradient-primary: 174 66% 47%;
-    --gradient-secondary: 190 66% 47%;
-    --gradient-tertiary: 206 66% 47%;
+    /* Pastel Gradient System */
+    --gradient-primary: 330 100% 91%;    /* #ffd6e7 pastel pink */
+    --gradient-secondary: 228 100% 93%;  /* #dde6ff pastel sky */
+    --gradient-tertiary: 186 100% 91%;   /* #cff1ff pastel mint */
+    
+    /* Additional Pastel Colors */
+    --pastel-pink: 330 100% 91%;         /* #ffd6e7 */
+    --pastel-sky: 228 100% 93%;          /* #dde6ff */
+    --pastel-mint: 186 100% 91%;         /* #cff1ff */
+    --pastel-lilac: 255 100% 93%;        /* #E4D9FF */
+    --pastel-teal: 163 70% 88%;          /* #C7F0E9 */
+    --pastel-butter: 49 91% 85%;         /* #FCEAB5 */
     
     /* Glass & Effects */
-    --glass-bg: 217 33% 8% / 0.8;
-    --glass-border: 0 0% 100% / 0.1;
-    --shadow-color: 174 66% 47% / 0.4;
-    --glow-color: 174 66% 60% / 0.6;
+    --glass-bg: 240 8% 7% / 0.8;         /* dark glass with opacity */
+    --glass-border: 330 100% 91% / 0.2;  /* pink glass border */
+    --shadow-color: 330 100% 91% / 0.4;  /* pink shadow */
+    --glow-color: 330 100% 95% / 0.6;    /* pink glow */
     
     /* Sidebar */
-    --sidebar-background: 217 33% 6%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 174 66% 47%;
-    --sidebar-primary-foreground: 217 33% 6%;
-    --sidebar-accent: 217 33% 12%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 217 20% 20%;
-    --sidebar-ring: 174 66% 47%;
+    --sidebar-background: 240 11% 4%;
+    --sidebar-foreground: 240 5% 96%;
+    --sidebar-primary: 330 100% 91%;
+    --sidebar-primary-foreground: 240 11% 4%;
+    --sidebar-accent: 240 8% 10%;
+    --sidebar-accent-foreground: 240 5% 96%;
+    --sidebar-border: 240 8% 14%;
+    --sidebar-ring: 330 100% 91%;
   }
 
-  .dark {
-    --background: 217 33% 6%;
-    --foreground: 0 0% 98%;
-  }
+  /* No dark mode override needed - using black + pastel as default */
 }
 
 @layer base {
@@ -113,9 +118,9 @@
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r;
     background-image: linear-gradient(135deg, 
-      hsl(var(--gradient-primary)), 
-      hsl(var(--gradient-secondary)), 
-      hsl(var(--gradient-tertiary))
+      hsl(var(--pastel-pink)), 
+      hsl(var(--pastel-sky)), 
+      hsl(var(--pastel-mint))
     );
   }
   
@@ -126,31 +131,41 @@
   .btn-gradient {
     @apply bg-gradient-to-r shadow-lg hover:shadow-xl transition-all duration-300;
     background-image: linear-gradient(135deg, 
-      hsl(var(--gradient-primary)), 
-      hsl(var(--gradient-secondary))
+      hsl(var(--pastel-pink)), 
+      hsl(var(--pastel-sky))
     );
   }
   
   .btn-gradient:hover {
     background-image: linear-gradient(135deg, 
-      hsl(var(--primary-glow)), 
-      hsl(var(--gradient-secondary))
+      hsl(var(--pastel-pink)), 
+      hsl(var(--pastel-mint))
     );
     box-shadow: 0 0 40px hsl(var(--glow-color));
   }
   
   .bg-gradient-hero {
     background: radial-gradient(ellipse at top, 
-      hsl(var(--gradient-primary) / 0.3) 0%, 
-      hsl(var(--background)) 50%
+      hsl(var(--pastel-pink) / 0.2) 0%, 
+      hsl(var(--pastel-sky) / 0.1) 30%,
+      hsl(var(--background)) 70%
     );
   }
   
   .bg-gradient-section {
     background: linear-gradient(135deg, 
       hsl(var(--background)) 0%, 
-      hsl(var(--gradient-primary) / 0.05) 50%,
+      hsl(var(--pastel-mint) / 0.05) 30%,
+      hsl(var(--pastel-sky) / 0.03) 70%,
       hsl(var(--background)) 100%
+    );
+  }
+  
+  .bg-brand-gradient {
+    background-image: linear-gradient(135deg, 
+      hsl(var(--pastel-pink)), 
+      hsl(var(--pastel-sky)), 
+      hsl(var(--pastel-mint))
     );
   }
   
