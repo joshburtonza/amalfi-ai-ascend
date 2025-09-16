@@ -66,14 +66,14 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Black + Pastel Theme Colors
-				pastel: {
-					pink: 'hsl(var(--pastel-pink))',
-					sky: 'hsl(var(--pastel-sky))',
-					mint: 'hsl(var(--pastel-mint))',
-					lilac: 'hsl(var(--pastel-lilac))',
-					teal: 'hsl(var(--pastel-teal))',
-					butter: 'hsl(var(--pastel-butter))',
+				// Chrome Theme Colors
+				chrome: {
+					blue: 'hsl(var(--chrome-blue))',
+					silver: 'hsl(var(--chrome-silver))',
+					steel: 'hsl(var(--chrome-steel))',
+					platinum: 'hsl(var(--chrome-platinum))',
+					titanium: 'hsl(var(--chrome-titanium))',
+					mercury: 'hsl(var(--chrome-mercury))',
 				},
 				app: {
 					bg: '#0a0a0b',        /* near-black background */
@@ -182,8 +182,8 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'brand-gradient': 'linear-gradient(135deg, hsl(var(--pastel-pink)), hsl(var(--pastel-sky)), hsl(var(--pastel-mint)))',
-				'pastel-gradient': 'linear-gradient(135deg, #ffd6e7, #dde6ff, #cff1ff)',
+				'brand-gradient': 'linear-gradient(135deg, hsl(var(--chrome-blue)), hsl(var(--chrome-silver)), hsl(var(--chrome-platinum)))',
+				'chrome-gradient': 'linear-gradient(135deg, #87ceeb, #d1dce8, #e6e6e6)',
 			},
 			boxShadow: {
 				'glow-sm': '0 0 15px hsl(var(--glow-color))',

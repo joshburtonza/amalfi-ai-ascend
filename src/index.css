@@ -15,17 +15,17 @@
     --popover: 240 8% 7%;              /* #101113 popover backgrounds */
     --popover-foreground: 240 5% 96%;  /* #f4f4f5 white text */
     
-    /* Pastel Brand Colors */
-    --primary: 330 100% 91%;           /* #ffd6e7 pastel pink */
-    --primary-foreground: 240 11% 4%;  /* #0a0a0b black text on pink */
-    --primary-glow: 330 100% 95%;      /* lighter pink for glow */
-    --primary-dark: 330 100% 85%;      /* darker pink variant */
+    /* Chrome Brand Colors */
+    --primary: 200 100% 85%;           /* #87ceeb chrome blue */
+    --primary-foreground: 240 11% 4%;  /* #0a0a0b black text on chrome */
+    --primary-glow: 200 100% 90%;      /* lighter chrome for glow */
+    --primary-dark: 200 100% 75%;      /* darker chrome variant */
     
-    /* Secondary & Accent - Pastel Sky */
+    /* Secondary & Accent - Chrome Silver */
     --secondary: 240 8% 10%;           /* #1c1d22 dark panels */
     --secondary-foreground: 240 5% 96%; /* #f4f4f5 white text */
-    --accent: 228 100% 93%;            /* #dde6ff pastel sky blue */
-    --accent-foreground: 240 11% 4%;   /* #0a0a0b black text on blue */
+    --accent: 210 40% 88%;             /* #d1dce8 chrome silver */
+    --accent-foreground: 240 11% 4%;   /* #0a0a0b black text on silver */
     --muted: 240 8% 10%;               /* #1c1d22 muted backgrounds */
     --muted-foreground: 240 5% 67%;    /* #a1a1aa muted text */
     
@@ -40,37 +40,37 @@
     /* UI Elements */
     --border: 240 8% 14%;              /* #1c1d22 borders */
     --input: 240 8% 10%;               /* #1c1d22 input backgrounds */
-    --ring: 330 100% 91%;              /* #ffd6e7 focus rings */
+    --ring: 200 100% 85%;              /* chrome blue focus rings */
     --radius: 0.75rem;
     
-    /* Pastel Gradient System */
-    --gradient-primary: 330 100% 91%;    /* #ffd6e7 pastel pink */
-    --gradient-secondary: 228 100% 93%;  /* #dde6ff pastel sky */
-    --gradient-tertiary: 186 100% 91%;   /* #cff1ff pastel mint */
+    /* Chrome Gradient System */
+    --gradient-primary: 200 100% 85%;    /* chrome blue */
+    --gradient-secondary: 210 40% 88%;   /* chrome silver */
+    --gradient-tertiary: 220 60% 80%;    /* steel blue */
     
-    /* Additional Pastel Colors */
-    --pastel-pink: 330 100% 91%;         /* #ffd6e7 */
-    --pastel-sky: 228 100% 93%;          /* #dde6ff */
-    --pastel-mint: 186 100% 91%;         /* #cff1ff */
-    --pastel-lilac: 255 100% 93%;        /* #E4D9FF */
-    --pastel-teal: 163 70% 88%;          /* #C7F0E9 */
-    --pastel-butter: 49 91% 85%;         /* #FCEAB5 */
+    /* Chrome Color Palette */
+    --chrome-blue: 200 100% 85%;         /* #87ceeb bright chrome */
+    --chrome-silver: 210 40% 88%;        /* #d1dce8 metallic silver */
+    --chrome-steel: 220 60% 80%;         /* #99b3d1 steel blue */
+    --chrome-platinum: 0 0% 90%;         /* #e6e6e6 platinum */
+    --chrome-titanium: 210 20% 75%;      /* #bcc5cf titanium */
+    --chrome-mercury: 200 30% 85%;       /* #c7d9e3 mercury */
     
-    /* Glass & Effects */
+    /* Glass & Chrome Effects */
     --glass-bg: 240 8% 7% / 0.8;         /* dark glass with opacity */
-    --glass-border: 330 100% 91% / 0.2;  /* pink glass border */
-    --shadow-color: 330 100% 91% / 0.4;  /* pink shadow */
-    --glow-color: 330 100% 95% / 0.6;    /* pink glow */
+    --glass-border: 200 100% 85% / 0.3;  /* chrome glass border */
+    --shadow-color: 200 100% 85% / 0.6;  /* chrome shadow */
+    --glow-color: 200 100% 90% / 0.8;    /* intense chrome glow */
     
     /* Sidebar */
     --sidebar-background: 240 11% 4%;
     --sidebar-foreground: 240 5% 96%;
-    --sidebar-primary: 330 100% 91%;
+    --sidebar-primary: 200 100% 85%;
     --sidebar-primary-foreground: 240 11% 4%;
     --sidebar-accent: 240 8% 10%;
     --sidebar-accent-foreground: 240 5% 96%;
     --sidebar-border: 240 8% 14%;
-    --sidebar-ring: 330 100% 91%;
+    --sidebar-ring: 200 100% 85%;
   }
 
   /* No dark mode override needed - using black + pastel as default */
@@ -118,9 +118,9 @@
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r;
     background-image: linear-gradient(135deg, 
-      hsl(var(--pastel-pink)), 
-      hsl(var(--pastel-sky)), 
-      hsl(var(--pastel-mint))
+      hsl(var(--chrome-blue)), 
+      hsl(var(--chrome-silver)), 
+      hsl(var(--chrome-platinum))
     );
   }
   
@@ -131,23 +131,23 @@
   .btn-gradient {
     @apply bg-gradient-to-r shadow-lg hover:shadow-xl transition-all duration-300;
     background-image: linear-gradient(135deg, 
-      hsl(var(--pastel-pink)), 
-      hsl(var(--pastel-sky))
+      hsl(var(--chrome-blue)), 
+      hsl(var(--chrome-silver))
     );
   }
   
   .btn-gradient:hover {
     background-image: linear-gradient(135deg, 
-      hsl(var(--pastel-pink)), 
-      hsl(var(--pastel-mint))
+      hsl(var(--chrome-blue)), 
+      hsl(var(--chrome-platinum))
     );
-    box-shadow: 0 0 40px hsl(var(--glow-color));
+    box-shadow: 0 0 60px hsl(var(--glow-color));
   }
   
   .bg-gradient-hero {
     background: radial-gradient(ellipse at top, 
-      hsl(var(--pastel-pink) / 0.2) 0%, 
-      hsl(var(--pastel-sky) / 0.1) 30%,
+      hsl(var(--chrome-blue) / 0.3) 0%, 
+      hsl(var(--chrome-silver) / 0.2) 30%,
       hsl(var(--background)) 70%
     );
   }
@@ -155,31 +155,33 @@
   .bg-gradient-section {
     background: linear-gradient(135deg, 
       hsl(var(--background)) 0%, 
-      hsl(var(--pastel-mint) / 0.05) 30%,
-      hsl(var(--pastel-sky) / 0.03) 70%,
+      hsl(var(--chrome-steel) / 0.08) 30%,
+      hsl(var(--chrome-blue) / 0.05) 70%,
       hsl(var(--background)) 100%
     );
   }
   
   .chrome-glow {
-    filter: drop-shadow(0 0 8px hsl(var(--pastel-sky) / 0.6)) 
-            drop-shadow(0 0 16px hsl(var(--pastel-mint) / 0.4))
-            drop-shadow(0 0 24px hsl(var(--pastel-pink) / 0.3));
+    filter: drop-shadow(0 0 15px hsl(var(--chrome-blue) / 0.8)) 
+            drop-shadow(0 0 25px hsl(var(--chrome-silver) / 0.6))
+            drop-shadow(0 0 35px hsl(var(--chrome-blue) / 0.4))
+            drop-shadow(0 0 45px hsl(var(--chrome-platinum) / 0.3));
     transition: all 0.3s ease;
   }
   
   .chrome-glow-intense {
-    filter: drop-shadow(0 0 12px hsl(var(--pastel-sky) / 0.8)) 
-            drop-shadow(0 0 24px hsl(var(--pastel-mint) / 0.6))
-            drop-shadow(0 0 36px hsl(var(--pastel-pink) / 0.5))
-            drop-shadow(0 0 48px hsl(var(--pastel-sky) / 0.3));
+    filter: drop-shadow(0 0 20px hsl(var(--chrome-blue) / 1)) 
+            drop-shadow(0 0 40px hsl(var(--chrome-silver) / 0.8))
+            drop-shadow(0 0 60px hsl(var(--chrome-blue) / 0.6))
+            drop-shadow(0 0 80px hsl(var(--chrome-platinum) / 0.4))
+            drop-shadow(0 0 100px hsl(var(--chrome-blue) / 0.3));
   }
   
   .bg-brand-gradient {
     background-image: linear-gradient(135deg, 
-      hsl(var(--pastel-pink)), 
-      hsl(var(--pastel-sky)), 
-      hsl(var(--pastel-mint))
+      hsl(var(--chrome-blue)), 
+      hsl(var(--chrome-silver)), 
+      hsl(var(--chrome-platinum))
     );
   }
   
