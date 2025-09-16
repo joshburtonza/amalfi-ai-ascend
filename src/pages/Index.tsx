@@ -42,7 +42,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="bg-amalfi-black min-h-screen">
+    <div className="bg-background min-h-screen">
       <Navbar />
       <Hero />
       <About />
