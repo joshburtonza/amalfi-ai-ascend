@@ -6,50 +6,88 @@ const Hero = () => {
   return (
     <section 
       id="home"
-      className="relative min-h-screen w-full bg-amalfi-black flex items-center pt-20"
-      style={{
-        backgroundImage: "url('/lovable-uploads/9bb8f7b5-a01b-4363-96f7-918cc27305ef.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center bottom",
-        backgroundRepeat: "no-repeat",
-      }}
+      className="relative min-h-screen w-full bg-background flex items-center pt-20 overflow-hidden"
     >
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-amalfi-black/80 to-transparent"></div>
+      {/* Dynamic background with gradients */}
+      <div className="absolute inset-0 bg-gradient-hero"></div>
+      
+      {/* Background image with enhanced overlay */}
+      <div 
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage: "url('/lovable-uploads/9bb8f7b5-a01b-4363-96f7-918cc27305ef.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center bottom",
+          backgroundRepeat: "no-repeat",
+        }}
+      ></div>
+      
+      {/* Floating elements */}
+      <div className="absolute top-20 right-10 w-20 h-20 bg-primary/20 rounded-full blur-xl animate-float"></div>
+      <div className="absolute bottom-20 left-10 w-32 h-32 bg-primary-glow/20 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-1/2 right-20 w-16 h-16 bg-primary/30 rounded-full blur-lg animate-pulse-glow"></div>
       
       {/* Content */}
       <div className="max-container relative z-10 px-4 sm:px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-amalfi-white leading-tight">
-            Unlock AI Excellence with{" "}
-            <span className="text-gradient">Amalfi AI</span>
-          </h1>
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="animate-slide-up">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 text-foreground leading-tight tracking-tight">
+              Unlock AI Excellence with{" "}
+              <span className="text-gradient animate-pulse-glow">Amalfi AI</span>
+            </h1>
+          </div>
           
-          <p className="text-lg sm:text-xl md:text-2xl text-amalfi-white/90 mb-8 sm:mb-10 max-w-2xl mx-auto">
-            Premium AI Automation Solutions for Modern Businesses
-          </p>
+          <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            <p className="text-xl sm:text-2xl md:text-3xl text-muted-foreground mb-10 sm:mb-12 max-w-3xl mx-auto font-light leading-relaxed">
+              Premium AI Automation Solutions for{" "}
+              <span className="text-gradient-subtle font-medium">Modern Businesses</span>
+            </p>
+          </div>
           
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <div className="animate-slide-up flex flex-col sm:flex-row justify-center gap-6" style={{ animationDelay: '0.4s' }}>
             <Button 
-              className="btn-gradient text-amalfi-white font-medium text-base md:text-lg px-6 sm:px-8 py-5 sm:py-6 shadow-glow-md hover:shadow-glow-lg transition-all hover:scale-105 whitespace-nowrap"
-              size="lg"
+              variant="gradient"
+              size="xl"
+              className="group relative overflow-hidden"
               asChild
             >
-              <a href="#contact">
-                Book Discovery Call
+              <a href="#contact" className="relative z-10">
+                <span className="flex items-center gap-2">
+                  Book Discovery Call
+                  <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </span>
               </a>
             </Button>
             
             <Button 
-              variant="outline" 
-              className="bg-white/10 text-amalfi-white font-medium text-base md:text-lg px-6 sm:px-8 py-5 sm:py-6 transition-all border-2 border-white hover:bg-white hover:text-amalfi-black shadow-glow-md hover:shadow-glow-lg whitespace-nowrap"
-              size="lg"
+              variant="glass"
+              size="xl"
+              className="group border-primary/30 hover:border-primary/60 text-foreground"
               asChild
             >
-              <a href="https://soarai.app.n8n.cloud/form/889b9500-9b97-40fd-a200-193ace0f0cca" target="_blank" rel="noopener noreferrer">
-                Let&apos;s Chat
+              <a href="https://soarai.app.n8n.cloud/form/889b9500-9b97-40fd-a200-193ace0f0cca" target="_blank" rel="noopener noreferrer" className="relative z-10">
+                <span className="flex items-center gap-2">
+                  Let's Chat
+                  <svg className="w-5 h-5 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                  </svg>
+                </span>
               </a>
             </Button>
+          </div>
+          
+          {/* Trust indicators */}
+          <div className="animate-slide-up mt-16 flex flex-col items-center gap-4" style={{ animationDelay: '0.6s' }}>
+            <p className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Trusted by innovative companies</p>
+            <div className="flex items-center gap-8 opacity-60">
+              <div className="text-xs font-medium">Enterprise Grade</div>
+              <div className="w-1 h-1 bg-muted-foreground rounded-full"></div>
+              <div className="text-xs font-medium">24/7 Support</div>
+              <div className="w-1 h-1 bg-muted-foreground rounded-full"></div>
+              <div className="text-xs font-medium">Scalable Solutions</div>
+            </div>
           </div>
         </div>
       </div>
