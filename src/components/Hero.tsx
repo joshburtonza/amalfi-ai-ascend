@@ -15,7 +15,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 opacity-30"
         style={{
-          backgroundImage: "url('/lovable-uploads/automation-workflow-3d.png')",
+          backgroundImage: "url('/lovable-uploads/9bb8f7b5-a01b-4363-96f7-918cc27305ef.png')",
           backgroundSize: "cover",
           backgroundPosition: "center bottom",
           backgroundRepeat: "no-repeat",

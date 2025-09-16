@@ -124,7 +124,7 @@ const SolutionEcosystem = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary-glow/5"></div>
                 <div className="relative z-10 animate-float">
                   <img 
-                    src="/lovable-uploads/c992728c-8637-4a6b-a323-db67c759b05e.png" 
+                    src="/lovable-uploads/automation-workflow-ecosystem.png" 
                     alt="AI Automation Platform Dashboard" 
                     className="max-w-full h-auto rounded-xl shadow-glow-lg hover:shadow-glow-xl transition-all duration-500"
                   />
