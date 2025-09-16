@@ -9,7 +9,7 @@ const Logo = () => {
         <img 
           src={logoImage} 
           alt="Amalfi AI" 
-          className="h-10 w-auto chrome-glow hover:chrome-glow-intense transition-all duration-300"
+          className="h-16 w-auto chrome-glow hover:chrome-glow-intense transition-all duration-300"
         />
       </a>
     </div>
