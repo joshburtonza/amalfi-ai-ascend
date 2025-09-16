@@ -22,10 +22,7 @@ const Hero = () => {
         }}
       ></div>
       
-      {/* Floating elements */}
-      <div className="absolute top-20 right-10 w-20 h-20 bg-primary/20 rounded-full blur-xl animate-float"></div>
-      <div className="absolute bottom-20 left-10 w-32 h-32 bg-primary-glow/20 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }}></div>
-      <div className="absolute top-1/2 right-20 w-16 h-16 bg-primary/30 rounded-full blur-lg animate-pulse-glow"></div>
+      {/* Clean background - no floating elements */}
       
       {/* Content */}
       <div className="max-container relative z-10 px-4 sm:px-6">
@@ -33,7 +30,7 @@ const Hero = () => {
           <div className="animate-slide-up">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 text-foreground leading-tight tracking-tight">
               Unlock AI Excellence with{" "}
-              <span className="text-gradient animate-pulse-glow">Amalfi AI</span>
+              <span className="text-gradient">Amalfi AI</span>
             </h1>
           </div>
           
