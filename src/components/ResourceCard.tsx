@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from '@/components/ui/card';
+import { GlowCard } from '@/components/ui/spotlight-card';
 import { Button } from '@/components/ui/button';
 import { FileText, Download, ArrowRight } from 'lucide-react';
 
@@ -41,9 +41,9 @@ const ResourceCard = ({
   };
 
   return (
-    <Card className="glassmorphic rounded-2xl overflow-hidden hover-lift group transition-all duration-300 border-hsl(var(--border))">
+    <GlowCard customSize className="rounded-2xl overflow-hidden hover-lift group transition-all duration-300 h-full flex flex-col">
       {image && (
-        <div className="relative h-48 overflow-hidden">
+        <div className="relative h-48 overflow-hidden rounded-t-2xl">
           <img 
             src={image} 
             alt={title}
@@ -53,8 +53,8 @@ const ResourceCard = ({
         </div>
       )}
       
-      <div className="p-6">
-        <div className="flex items-center gap-3 mb-4">
+      <div className="p-6 flex-1 flex flex-col">
+        <div className="flex items-center gap-3 mb-4 flex-wrap">
           <span className={`text-sm font-semibold ${getTypeColor()}`}>
             {getTypeLabel()}
           </span>
@@ -72,11 +72,11 @@ const ResourceCard = ({
           {title}
         </h3>
         
-        <p className="text-muted-foreground mb-6 line-clamp-3">
+        <p className="text-muted-foreground mb-6 line-clamp-3 flex-1">
           {excerpt}
         </p>
         
-        <Button variant="ghost" className="p-0 h-auto hover:bg-transparent group/btn">
+        <Button variant="ghost" className="p-0 h-auto hover:bg-transparent group/btn self-start">
           {type === 'whitepaper' ? (
             <>
               <Download className="mr-2 h-4 w-4" />
@@ -90,7 +90,7 @@ const ResourceCard = ({
           )}
         </Button>
       </div>
-    </Card>
+    </GlowCard>
   );
 };
 

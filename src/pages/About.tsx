@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { GlowCard } from '@/components/ui/spotlight-card';
 import { Target, Users, Shield, Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -66,19 +67,19 @@ const About = () => {
       <section className="py-20 px-4">
         <div className="max-container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            <div className="glassmorphic p-8 rounded-2xl">
+            <GlowCard customSize className="p-8 rounded-2xl h-full">
               <h2 className="text-3xl font-bold mb-4">Our Vision</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 AI as an infrastructure layer, not an add-on. We envision a future where AI is as fundamental to business operations as cloud computing or the internet—seamlessly integrated, reliably operated, and strategically leveraged.
               </p>
-            </div>
+            </GlowCard>
             
-            <div className="glassmorphic p-8 rounded-2xl">
+            <GlowCard customSize className="p-8 rounded-2xl h-full">
               <h2 className="text-3xl font-bold mb-4">Our Mission</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 To empower organizations with AI infrastructure that scales. We partner with ambitious teams to design, implement, and sustain AI systems that deliver measurable business value and competitive advantage.
               </p>
-            </div>
+            </GlowCard>
           </div>
         </div>
       </section>
@@ -97,8 +98,8 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {founders.map((founder, index) => (
-              <div key={index} className="glassmorphic rounded-2xl overflow-hidden hover-lift">
-                <div className="aspect-square overflow-hidden">
+              <GlowCard key={index} customSize className="rounded-2xl overflow-hidden hover-lift h-full">
+                <div className="aspect-square overflow-hidden rounded-t-2xl">
                   <img 
                     src={founder.image} 
                     alt={founder.name}
@@ -110,7 +111,7 @@ const About = () => {
                   <p className="text-hsl(var(--amalfi-teal)) font-semibold mb-4">{founder.title}</p>
                   <p className="text-muted-foreground leading-relaxed">{founder.bio}</p>
                 </div>
-              </div>
+              </GlowCard>
             ))}
           </div>
         </div>
@@ -130,13 +131,13 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {values.map((value, index) => (
-              <div key={index} className="glassmorphic p-8 rounded-2xl hover-lift">
+              <GlowCard key={index} customSize className="p-8 rounded-2xl hover-lift h-full">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-hsl(var(--amalfi-teal)/0.2) to-hsl(var(--amalfi-teal)/0.05) flex items-center justify-center mb-6">
                   <value.icon className="w-8 h-8 text-hsl(var(--amalfi-teal))" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4">{value.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{value.description}</p>
-              </div>
+              </GlowCard>
             ))}
           </div>
         </div>
@@ -145,7 +146,7 @@ const About = () => {
       {/* CTA */}
       <section className="py-20 px-4">
         <div className="max-container">
-          <div className="glassmorphic p-12 rounded-3xl text-center max-w-3xl mx-auto">
+          <GlowCard customSize className="p-12 rounded-3xl text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to Build Your AI Backbone?
             </h2>
@@ -160,7 +161,7 @@ const About = () => {
                 <a href="/services">Explore Our Services</a>
               </Button>
             </div>
-          </div>
+          </GlowCard>
         </div>
       </section>
 

@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ContactForm from '../components/Contact';
+import { GlowCard } from '@/components/ui/spotlight-card';
 import { Button } from '@/components/ui/button';
 import { Calendar, Download, Mail, Phone, MapPin } from 'lucide-react';
 
@@ -29,7 +30,7 @@ const Contact = () => {
       <section className="py-12 px-4">
         <div className="max-container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
-            <div className="glassmorphic p-8 rounded-2xl text-center hover-lift">
+            <GlowCard customSize className="p-8 rounded-2xl text-center hover-lift h-full">
               <div className="w-16 h-16 rounded-full bg-gradient-to-br from-hsl(var(--amalfi-teal)/0.2) to-hsl(var(--amalfi-teal)/0.05) flex items-center justify-center mx-auto mb-6">
                 <Calendar className="w-8 h-8 text-hsl(var(--amalfi-teal))" />
               </div>
@@ -40,9 +41,9 @@ const Contact = () => {
               <Button size="lg" className="w-full">
                 Book a Call
               </Button>
-            </div>
+            </GlowCard>
 
-            <div className="glassmorphic p-8 rounded-2xl text-center hover-lift">
+            <GlowCard customSize className="p-8 rounded-2xl text-center hover-lift h-full">
               <div className="w-16 h-16 rounded-full bg-gradient-to-br from-hsl(var(--amalfi-teal)/0.2) to-hsl(var(--amalfi-teal)/0.05) flex items-center justify-center mx-auto mb-6">
                 <Download className="w-8 h-8 text-hsl(var(--amalfi-teal))" />
               </div>
@@ -53,7 +54,7 @@ const Contact = () => {
               <Button size="lg" variant="outline" className="w-full">
                 Download Audit
               </Button>
-            </div>
+            </GlowCard>
           </div>
         </div>
       </section>

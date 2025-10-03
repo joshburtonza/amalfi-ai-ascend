@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ResourceCard from '../components/ResourceCard';
+import { GlowCard } from '@/components/ui/spotlight-card';
 import { FileText, BookOpen, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -83,9 +84,9 @@ const Resources = () => {
       {/* Featured Whitepaper */}
       <section className="py-12 px-4">
         <div className="max-container">
-          <div className="glassmorphic p-12 rounded-3xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-hsl(var(--amalfi-teal)/0.1) to-transparent" />
-            <div className="relative z-10 max-w-2xl">
+          <GlowCard customSize className="p-12 rounded-3xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-hsl(var(--amalfi-teal)/0.1) to-transparent pointer-events-none" />
+            <div className="relative z-20 max-w-2xl">
               <div className="inline-block px-4 py-2 bg-hsl(var(--amalfi-teal)/0.1) rounded-full mb-6">
                 <span className="text-sm font-semibold text-hsl(var(--amalfi-teal))">Featured Resource</span>
               </div>
@@ -103,7 +104,7 @@ const Resources = () => {
                 </Button>
               </div>
             </div>
-          </div>
+          </GlowCard>
         </div>
       </section>
 
@@ -151,7 +152,7 @@ const Resources = () => {
       {/* Newsletter Signup */}
       <section className="py-20 px-4">
         <div className="max-container">
-          <div className="glassmorphic p-12 rounded-3xl text-center max-w-3xl mx-auto">
+          <GlowCard customSize className="p-12 rounded-3xl text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Stay Updated on AI Infrastructure
             </h2>
@@ -166,7 +167,7 @@ const Resources = () => {
               />
               <Button size="lg">Subscribe</Button>
             </div>
-          </div>
+          </GlowCard>
         </div>
       </section>
 

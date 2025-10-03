@@ -1,6 +1,6 @@
 import React from 'react';
 import { LucideIcon } from 'lucide-react';
-import { Card } from '@/components/ui/card';
+import { GlowCard } from '@/components/ui/spotlight-card';
 
 interface ServiceCardProps {
   icon: LucideIcon;
@@ -11,7 +11,7 @@ interface ServiceCardProps {
 
 const ServiceCard = ({ icon: Icon, title, description, deliverables }: ServiceCardProps) => {
   return (
-    <Card className="glassmorphic p-8 rounded-2xl hover-lift group transition-all duration-300 border-hsl(var(--border))">
+    <GlowCard customSize className="p-8 h-full hover-lift group transition-all duration-300">
       <div className="mb-6 w-16 h-16 rounded-2xl bg-gradient-to-br from-hsl(var(--amalfi-teal)/0.2) to-hsl(var(--amalfi-teal)/0.05) flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
         <Icon className="w-8 h-8 text-hsl(var(--amalfi-teal))" />
       </div>
@@ -35,7 +35,7 @@ const ServiceCard = ({ icon: Icon, title, description, deliverables }: ServiceCa
           ))}
         </ul>
       </div>
-    </Card>
+    </GlowCard>
   );
 };
 

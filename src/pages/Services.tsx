@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ServiceCard from '../components/ServiceCard';
+import { GlowCard } from '@/components/ui/spotlight-card';
 import { Brain, GitBranch, Cog, Activity, Shield, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -127,24 +128,24 @@ const Services = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="glassmorphic p-8 rounded-2xl text-center">
+            <GlowCard customSize className="p-8 text-center h-full">
               <h3 className="text-2xl font-bold mb-4">Project-Based</h3>
               <p className="text-muted-foreground">
                 Fixed-scope engagements for specific AI initiatives with clear deliverables and timelines.
               </p>
-            </div>
-            <div className="glassmorphic p-8 rounded-2xl text-center">
+            </GlowCard>
+            <GlowCard customSize className="p-8 text-center h-full">
               <h3 className="text-2xl font-bold mb-4">Retainer Partnership</h3>
               <p className="text-muted-foreground">
                 Ongoing strategic partnership for continuous AI evolution and optimization.
               </p>
-            </div>
-            <div className="glassmorphic p-8 rounded-2xl text-center">
+            </GlowCard>
+            <GlowCard customSize className="p-8 text-center h-full">
               <h3 className="text-2xl font-bold mb-4">Build-Operate-Transfer</h3>
               <p className="text-muted-foreground">
                 We build, operate, and transfer AI systems to your team with full knowledge transfer.
               </p>
-            </div>
+            </GlowCard>
           </div>
 
           <div className="text-center">

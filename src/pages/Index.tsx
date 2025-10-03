@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import ProcessTimeline from '../components/ProcessTimeline';
 import Footer from '../components/Footer';
+import { GlowCard } from '@/components/ui/spotlight-card';
 import { Button } from '@/components/ui/button';
 
 const Index = () => {
@@ -16,7 +17,7 @@ const Index = () => {
       {/* CTA Section */}
       <section className="py-20 px-4">
         <div className="max-container">
-          <div className="glassmorphic p-12 md:p-16 rounded-3xl text-center max-w-4xl mx-auto">
+          <GlowCard customSize className="p-12 md:p-16 rounded-3xl text-center max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gradient">
               Future-Proof Your Business with AI Infrastructure
             </h2>
@@ -31,7 +32,7 @@ const Index = () => {
                 <a href="/services">Explore Our Services</a>
               </Button>
             </div>
-          </div>
+          </GlowCard>
         </div>
       </section>
 
