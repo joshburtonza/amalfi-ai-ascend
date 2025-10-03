@@ -52,8 +52,10 @@ function FloatingPaths({ position }: { position: number }) {
 
 export function BackgroundPaths({
     title = "Background Paths",
+    topContent,
 }: {
     title?: string;
+    topContent?: React.ReactNode;
 }) {
     const words = title.split(" ");
 
@@ -71,6 +73,11 @@ export function BackgroundPaths({
                     transition={{ duration: 2 }}
                     className="max-w-4xl mx-auto"
                 >
+                    {topContent && (
+                        <div className="mb-12">
+                            {topContent}
+                        </div>
+                    )}
                     <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold mb-8 tracking-tighter">
                         {words.map((word, wordIndex) => (
                             <span
