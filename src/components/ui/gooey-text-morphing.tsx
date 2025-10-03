@@ -21,11 +21,21 @@ export function GooeyText({
   const text1Ref = React.useRef<HTMLSpanElement>(null);
   const text2Ref = React.useRef<HTMLSpanElement>(null);
 
+  const longest = React.useMemo(() => {
+    return texts.reduce((a, b) => (a.length >= b.length ? a : b), "");
+  }, [texts]);
+
   React.useEffect(() => {
     let textIndex = texts.length - 1;
     let time = new Date();
     let morph = 0;
     let cooldown = cooldownTime;
+
+    // Initialize text so there's no initial blank/jump
+    if (text1Ref.current && text2Ref.current) {
+      text1Ref.current.textContent = texts[textIndex % texts.length];
+      text2Ref.current.textContent = texts[(textIndex + 1) % texts.length];
+    }
 
     const setMorph = (fraction: number) => {
       if (text1Ref.current && text2Ref.current) {
@@ -87,12 +97,12 @@ export function GooeyText({
     animate();
 
     return () => {
-      // Cleanup function if needed
+      // Cleanup if needed
     };
   }, [texts, morphTime, cooldownTime]);
 
   return (
-    <div className={cn("relative", className)}>
+    <div className={cn("relative w-full overflow-visible", className)}>
       <svg className="absolute h-0 w-0" aria-hidden="true" focusable="false">
         <defs>
           <filter id="threshold">
@@ -108,14 +118,27 @@ export function GooeyText({
         </defs>
       </svg>
 
+      {/* Sizer to prevent layout shift: reserves space for the longest word */}
+      <div className="flex items-center justify-center pointer-events-none select-none">
+        <span
+          aria-hidden
+          className={cn(
+            "invisible opacity-0 whitespace-nowrap font-bold text-center text-6xl md:text-[60pt]",
+            textClassName
+          )}
+        >
+          {longest}
+        </span>
+      </div>
+
       <div
-        className="flex items-center justify-center w-full h-full px-4"
+        className="flex items-center justify-center relative -mt-[1.1em]" /* pull overlayed text into the sizer space */
         style={{ filter: "url(#threshold)" }}
       >
         <span
           ref={text1Ref}
           className={cn(
-            "inline-block select-none text-center text-6xl md:text-[60pt] whitespace-nowrap",
+            "absolute inline-block select-none text-center whitespace-nowrap text-6xl md:text-[60pt]",
             "text-foreground",
             textClassName
           )}
@@ -123,7 +146,7 @@ export function GooeyText({
         <span
           ref={text2Ref}
           className={cn(
-            "inline-block select-none text-center text-6xl md:text-[60pt] whitespace-nowrap",
+            "absolute inline-block select-none text-center whitespace-nowrap text-6xl md:text-[60pt]",
             "text-foreground",
             textClassName
           )}

@@ -1,4 +1,4 @@
-import React, { useRef, useMemo } from 'react';
+import React, { useRef, useMemo, useEffect, useState } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 
@@ -18,6 +18,9 @@ precision highp float;
 varying vec2 vUv;
 uniform float time;
 uniform vec4 resolution;
+uniform vec3 color1; // gradient start
+uniform vec3 color2; // gradient end
+uniform vec3 bgColor; // background color
 
 float PI = 3.141592653589793238;
 
@@ -91,37 +94,50 @@ void main() {
     vec2 newUV = (vUv - vec2(0.5)) * resolution.zw + vec2(0.5);
     vec3 cameraPos = vec3(0.0, 0.0, 5.0);
     vec3 ray = normalize(vec3((vUv - vec2(0.5)) * resolution.zw, -1));
-    vec3 color = vec3(0.0);
+    vec3 color = bgColor;
     
     float t = rayMarch(cameraPos, ray);
     if (t > 0.0) {
         vec3 p = cameraPos + ray * t;
         vec3 normal = getNormal(p);
         float fresnel = pow(1.0 + dot(ray, normal), 3.0);
-        
-        // Blue-teal gradient: from teal (hsl(188,100%,63%)) to blue (hsl(210,100%,70%))
-        vec3 tealColor = vec3(0.31, 0.95, 1.0); // #4FF3FF
-        vec3 blueColor = vec3(0.4, 0.7, 1.0);   // Lighter blue
-        color = mix(tealColor, blueColor, fresnel);
-        
+        float shade = clamp(0.5 + 0.5 * normal.z, 0.0, 1.0);
+        vec3 grad = mix(color1, color2, shade);
+        color = mix(grad, grad * 0.85, fresnel);
         gl_FragColor = vec4(color, 1.0);
     } else {
-        gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+        gl_FragColor = vec4(bgColor, 1.0);
     }
 }
 `;
 
-function LavaLampShader() {
-  const meshRef = useRef();
+function LavaLampShader({ isDark }: { isDark: boolean }) {
+  const meshRef = useRef<THREE.Mesh>(null);
   const { size } = useThree();
   
   const uniforms = useMemo(() => ({
     time: { value: 0 },
-    resolution: { value: new THREE.Vector4() }
+    resolution: { value: new THREE.Vector4() },
+    color1: { value: new THREE.Color(0.82, 0.82, 0.82) }, // silver
+    color2: { value: new THREE.Color(0.05, 0.05, 0.05) }, // near-black
+    bgColor: { value: new THREE.Color(0, 0, 0) }, // black
   }), []);
 
+  // Update theme colors when dark/light changes
+  useEffect(() => {
+    if (isDark) {
+      uniforms.bgColor.value.setRGB(0, 0, 0);           // black bg
+      uniforms.color1.value.setRGB(0.82, 0.82, 0.82);   // silver
+      uniforms.color2.value.setRGB(0.05, 0.05, 0.05);   // near-black
+    } else {
+      uniforms.bgColor.value.setRGB(1, 1, 1);           // white bg
+      uniforms.color1.value.setRGB(0.15, 0.15, 0.15);   // dark silver
+      uniforms.color2.value.setRGB(0.9, 0.9, 0.9);      // light silver
+    }
+  }, [isDark, uniforms]);
+
   // Update resolution when size changes
-  React.useEffect(() => {
+  useEffect(() => {
     const { width, height } = size;
     const imageAspect = 1;
     let a1, a2;
@@ -156,8 +172,24 @@ function LavaLampShader() {
 }
 
 export const LavaLamp = () => {
+  const [isDark, setIsDark] = useState<boolean>(() =>
+    typeof document !== 'undefined'
+      ? document.documentElement.classList.contains('dark')
+      : true
+  );
+
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+    const root = document.documentElement;
+    const observer = new MutationObserver(() => {
+      setIsDark(root.classList.contains('dark'));
+    });
+    observer.observe(root, { attributes: true, attributeFilter: ['class'] });
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div style={{ width: '100%', height: '100%', background: '#000', position: "absolute" }}>
+    <div className="absolute inset-0 pointer-events-none" style={{ width: '100%', height: '100%' }}>
       <Canvas
         camera={{
           left: -0.5,
@@ -171,7 +203,7 @@ export const LavaLamp = () => {
         orthographic
         gl={{ antialias: true }}
       >
-        <LavaLampShader />
+        <LavaLampShader isDark={isDark} />
       </Canvas>
     </div>
   );
