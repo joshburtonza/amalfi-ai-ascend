@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { GooeyText } from '@/components/ui/gooey-text-morphing';
-import { LavaLamp } from '@/components/ui/fluid-blob';
+import { BackgroundPaths } from '@/components/ui/background-paths';
 
 const Hero = () => {
   return (
@@ -21,9 +21,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute inset-0 w-full h-full opacity-60">
-        <LavaLamp />
-      </div>
+      <BackgroundPaths />
     </section>
   );
 };
