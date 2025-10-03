@@ -91,17 +91,22 @@ void main() {
     vec2 newUV = (vUv - vec2(0.5)) * resolution.zw + vec2(0.5);
     vec3 cameraPos = vec3(0.0, 0.0, 5.0);
     vec3 ray = normalize(vec3((vUv - vec2(0.5)) * resolution.zw, -1));
-    vec3 color = vec3(1.0);
+    vec3 color = vec3(0.0);
     
     float t = rayMarch(cameraPos, ray);
     if (t > 0.0) {
         vec3 p = cameraPos + ray * t;
         vec3 normal = getNormal(p);
         float fresnel = pow(1.0 + dot(ray, normal), 3.0);
-        color = vec3(fresnel);
+        
+        // Blue-teal gradient: from teal (hsl(188,100%,63%)) to blue (hsl(210,100%,70%))
+        vec3 tealColor = vec3(0.31, 0.95, 1.0); // #4FF3FF
+        vec3 blueColor = vec3(0.4, 0.7, 1.0);   // Lighter blue
+        color = mix(tealColor, blueColor, fresnel);
+        
         gl_FragColor = vec4(color, 1.0);
     } else {
-        gl_FragColor = vec4(1.0);
+        gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
     }
 }
 `;
