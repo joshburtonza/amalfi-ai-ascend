@@ -10,13 +10,13 @@ const About = () => {
     {
       name: "Joshua Burton",
       title: "Founder & CEO",
-      image: "/lovable-uploads/3f5ce215-5fdb-482b-a244-2b67dafc76df.png",
+      image: "/lovable-uploads/c82f3a29-2a00-4659-9f03-92a11af68d26.png",
       bio: "Strategic AI architect with over a decade of experience transforming businesses through intelligent automation and infrastructure design."
     },
     {
       name: "Cheyenne Horn",
       title: "Co-Founder & CTO",
-      image: "/lovable-uploads/f69443ae-ed22-4fad-afd3-6441748d249d.png",
+      image: "/lovable-uploads/bbbe09c8-5a08-44e6-a343-151adaf1bf84.png",
       bio: "Technical visionary specializing in scalable AI systems, MLOps, and building production-grade infrastructure that powers modern enterprises."
     }
   ];
