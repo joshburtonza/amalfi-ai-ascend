@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import Logo from './Logo';
-import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,8 +44,7 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
           <NavLinks currentPath={location.pathname} />
-          <ThemeToggle />
-          <Button 
+          <Button
             variant="outline" 
             className="border border-hsl(var(--amalfi-teal)/0.3) hover:border-hsl(var(--amalfi-teal)/0.8) text-foreground bg-transparent hover:bg-hsl(var(--amalfi-teal)/0.1) transition-all"
             asChild
@@ -87,10 +85,7 @@ const Navbar = () => {
                 <span className="block w-6 h-0.5 bg-hsl(var(--amalfi-teal)) -rotate-45 -mt-0.5"></span>
               </Button>
               <MobileNavLinks setIsMobileMenuOpen={setIsMobileMenuOpen} currentPath={location.pathname} />
-              <div className="pt-6 border-t border-border">
-                <ThemeToggle />
-              </div>
-              <Button 
+              <Button
                 variant="outline" 
                 className="border border-hsl(var(--amalfi-teal)/0.3) hover:border-hsl(var(--amalfi-teal)/0.8) text-foreground bg-transparent hover:bg-hsl(var(--amalfi-teal)/0.1) transition-all"
                 asChild
