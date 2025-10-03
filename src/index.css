@@ -7,70 +7,102 @@
 
 @layer base {
   :root {
-    /* Core Theme Colors - Black + Pastel */
-    --background: 240 11% 4%;          /* #0a0a0b near-black */
-    --foreground: 240 5% 96%;          /* #f4f4f5 white text */
-    --card: 240 8% 7%;                 /* #101113 card backgrounds */
-    --card-foreground: 240 5% 96%;     /* #f4f4f5 white text */
-    --popover: 240 8% 7%;              /* #101113 popover backgrounds */
-    --popover-foreground: 240 5% 96%;  /* #f4f4f5 white text */
-    
-    /* Chrome Brand Colors */
-    --primary: 200 100% 85%;           /* #87ceeb chrome blue */
-    --primary-foreground: 240 11% 4%;  /* #0a0a0b black text on chrome */
-    --primary-glow: 200 100% 90%;      /* lighter chrome for glow */
-    --primary-dark: 200 100% 75%;      /* darker chrome variant */
-    
-    /* Secondary & Accent - Chrome Silver */
-    --secondary: 240 8% 10%;           /* #1c1d22 dark panels */
-    --secondary-foreground: 240 5% 96%; /* #f4f4f5 white text */
-    --accent: 210 40% 88%;             /* #d1dce8 chrome silver */
-    --accent-foreground: 240 11% 4%;   /* #0a0a0b black text on silver */
-    --muted: 240 8% 10%;               /* #1c1d22 muted backgrounds */
-    --muted-foreground: 240 5% 67%;    /* #a1a1aa muted text */
-    
+    /* Core Colors - Dark Mode */
+    --background: 222 47% 3%;
+    --foreground: 200 15% 95%;
+
+    --card: 222 47% 5%;
+    --card-foreground: 200 15% 95%;
+
+    --popover: 222 47% 5%;
+    --popover-foreground: 200 15% 95%;
+
+    --primary: 188 100% 63%;
+    --primary-foreground: 222 47% 5%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 200 15% 95%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 188 100% 63%;
+    --accent-foreground: 222 47% 5%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 200 15% 95%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 188 100% 63%;
+
+    /* Amalfi Brand Colors - Strategic Blue/Teal Palette */
+    --amalfi-ocean: 222 47% 5%;        /* Deep ocean blue #0B0C0E */
+    --amalfi-midnight: 222 47% 11%;    /* Midnight blue #0F172A */
+    --amalfi-teal: 188 100% 63%;       /* Electric teal #4FF3FF */
+    --amalfi-cyan-glow: 188 100% 63%;  /* Cyan glow #4FF3FF */
+    --amalfi-dark: 222 47% 3%;         /* Darkest background */
+    --amalfi-surface: 217 33% 17%;     /* Card/surface color */
+
     /* Status Colors */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 240 5% 96%;
     --success: 142 76% 36%;
-    --success-foreground: 240 5% 96%;
-    --warning: 48 96% 53%;
-    --warning-foreground: 240 11% 4%;
-    
-    /* UI Elements */
-    --border: 240 8% 14%;              /* #1c1d22 borders */
-    --input: 240 8% 10%;               /* #1c1d22 input backgrounds */
-    --ring: 200 100% 85%;              /* chrome blue focus rings */
-    --radius: 0.75rem;
-    
-    /* Chrome Gradient System */
-    --gradient-primary: 200 100% 85%;    /* chrome blue */
-    --gradient-secondary: 210 40% 88%;   /* chrome silver */
-    --gradient-tertiary: 220 60% 80%;    /* steel blue */
-    
-    /* Chrome Color Palette */
-    --chrome-blue: 200 100% 85%;         /* #87ceeb bright chrome */
-    --chrome-silver: 210 40% 88%;        /* #d1dce8 metallic silver */
-    --chrome-steel: 220 60% 80%;         /* #99b3d1 steel blue */
-    --chrome-platinum: 0 0% 90%;         /* #e6e6e6 platinum */
-    --chrome-titanium: 210 20% 75%;      /* #bcc5cf titanium */
-    --chrome-mercury: 200 30% 85%;       /* #c7d9e3 mercury */
-    
-    /* Glass & Chrome Effects */
-    --glass-bg: 240 8% 7% / 0.8;         /* dark glass with opacity */
-    --glass-border: 200 100% 85% / 0.3;  /* chrome glass border */
-    --shadow-color: 200 100% 85% / 0.6;  /* chrome shadow */
-    --glow-color: 200 100% 90% / 0.8;    /* intense chrome glow */
-    
+    --warning: 38 92% 50%;
+    --error: 0 84% 60%;
+    --info: 188 100% 63%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--amalfi-teal)) 0%, hsl(var(--amalfi-cyan-glow)) 100%);
+    --gradient-surface: linear-gradient(180deg, hsl(var(--amalfi-surface)) 0%, hsl(var(--amalfi-ocean)) 100%);
+    --gradient-glow: radial-gradient(circle at 50% 0%, hsl(var(--amalfi-teal) / 0.15) 0%, transparent 50%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--amalfi-dark)) 0%, hsl(var(--amalfi-midnight)) 100%);
+
     /* Sidebar */
-    --sidebar-background: 240 11% 4%;
-    --sidebar-foreground: 240 5% 96%;
-    --sidebar-primary: 200 100% 85%;
-    --sidebar-primary-foreground: 240 11% 4%;
-    --sidebar-accent: 240 8% 10%;
-    --sidebar-accent-foreground: 240 5% 96%;
-    --sidebar-border: 240 8% 14%;
-    --sidebar-ring: 200 100% 85%;
+    --sidebar-background: 222 47% 3%;
+    --sidebar-foreground: 200 15% 95%;
+    --sidebar-primary: 188 100% 63%;
+    --sidebar-primary-foreground: 222 47% 5%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 200 15% 95%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 188 100% 63%;
+  }
+
+  /* Light Mode Overrides */
+  .light {
+    --background: 0 0% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 188 100% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 188 100% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 188 100% 45%;
+
+    --amalfi-ocean: 0 0% 98%;
+    --amalfi-midnight: 210 40% 96%;
+    --amalfi-teal: 188 100% 45%;
+    --amalfi-cyan-glow: 188 100% 45%;
+    --amalfi-dark: 222 47% 11%;
+    --amalfi-surface: 0 0% 100%;
   }
 
   /* No dark mode override needed - using black + pastel as default */

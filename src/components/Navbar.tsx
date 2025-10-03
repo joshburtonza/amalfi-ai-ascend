@@ -1,11 +1,13 @@
-
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import Logo from './Logo';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,21 +38,22 @@ const Navbar = () => {
       }`}
     >
       <div className="max-container flex items-center justify-between px-4 sm:px-6">
-        <div className="flex items-center">
+        <Link to="/" className="flex items-center">
           <Logo />
-        </div>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
-          <NavLinks />
+          <NavLinks currentPath={location.pathname} />
+          <ThemeToggle />
           <Button 
             variant="outline" 
-            className="border border-amalfi-emerald/30 hover:border-amalfi-emerald/80 text-amalfi-white bg-transparent hover:bg-amalfi-emerald/10 transition-all hover:shadow-glow-sm"
+            className="border border-hsl(var(--amalfi-teal)/0.3) hover:border-hsl(var(--amalfi-teal)/0.8) text-foreground bg-transparent hover:bg-hsl(var(--amalfi-teal)/0.1) transition-all"
             asChild
           >
-            <a href="https://soarai.app.n8n.cloud/form/889b9500-9b97-40fd-a200-193ace0f0cca" target="_blank" rel="noopener noreferrer">
+            <Link to="/contact">
               Let&apos;s Chat
-            </a>
+            </Link>
           </Button>
         </div>
 
@@ -59,40 +62,43 @@ const Navbar = () => {
           <Button 
             variant="ghost" 
             size="sm" 
-            className="text-amalfi-white p-1" 
+            className="text-foreground p-1" 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            <span className={`block w-6 relative ${isMobileMenuOpen ? 'h-0' : 'h-0.5 bg-amalfi-emerald'} transition-all`}></span>
-            <span className={`block mt-1.5 w-6 h-0.5 bg-amalfi-emerald transition-all ${isMobileMenuOpen ? 'rotate-45' : ''}`}></span>
-            <span className={`block mt-1.5 w-6 h-0.5 bg-amalfi-emerald transition-all ${isMobileMenuOpen ? '-translate-y-2 -rotate-45' : ''}`}></span>
+            <span className={`block w-6 relative ${isMobileMenuOpen ? 'h-0' : 'h-0.5 bg-hsl(var(--amalfi-teal))'} transition-all`}></span>
+            <span className={`block mt-1.5 w-6 h-0.5 bg-hsl(var(--amalfi-teal)) transition-all ${isMobileMenuOpen ? 'rotate-45' : ''}`}></span>
+            <span className={`block mt-1.5 w-6 h-0.5 bg-hsl(var(--amalfi-teal)) transition-all ${isMobileMenuOpen ? '-translate-y-2 -rotate-45' : ''}`}></span>
           </Button>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden fixed inset-0 top-0 z-40 bg-amalfi-black/95 backdrop-blur-sm">
+          <div className="md:hidden fixed inset-0 top-0 z-40 bg-background/95 backdrop-blur-sm">
             <div className="flex flex-col items-center justify-center h-full space-y-6">
               <Button 
                 variant="ghost" 
                 size="sm" 
-                className="absolute top-4 right-4 text-amalfi-white p-2" 
+                className="absolute top-4 right-4 text-foreground p-2" 
                 onClick={handleMobileMenuClose}
                 aria-label="Close menu"
               >
-                <span className="block w-6 h-0.5 bg-amalfi-emerald rotate-45"></span>
-                <span className="block w-6 h-0.5 bg-amalfi-emerald -rotate-45 -mt-0.5"></span>
+                <span className="block w-6 h-0.5 bg-hsl(var(--amalfi-teal)) rotate-45"></span>
+                <span className="block w-6 h-0.5 bg-hsl(var(--amalfi-teal)) -rotate-45 -mt-0.5"></span>
               </Button>
-              <MobileNavLinks setIsMobileMenuOpen={setIsMobileMenuOpen} />
+              <MobileNavLinks setIsMobileMenuOpen={setIsMobileMenuOpen} currentPath={location.pathname} />
+              <div className="pt-6 border-t border-border">
+                <ThemeToggle />
+              </div>
               <Button 
                 variant="outline" 
-                className="border border-amalfi-emerald/30 hover:border-amalfi-emerald/80 text-amalfi-white bg-transparent hover:bg-amalfi-emerald/10 transition-all hover:shadow-glow-sm"
+                className="border border-hsl(var(--amalfi-teal)/0.3) hover:border-hsl(var(--amalfi-teal)/0.8) text-foreground bg-transparent hover:bg-hsl(var(--amalfi-teal)/0.1) transition-all"
                 asChild
                 onClick={handleMobileMenuClose}
               >
-                <a href="https://soarai.app.n8n.cloud/form/889b9500-9b97-40fd-a200-193ace0f0cca" target="_blank" rel="noopener noreferrer">
+                <Link to="/contact">
                   Let&apos;s Chat
-                </a>
+                </Link>
               </Button>
             </div>
           </div>
@@ -103,45 +109,45 @@ const Navbar = () => {
 };
 
 // Desktop Navigation Links
-interface NavLinksProps {
-  mobile?: boolean;
-  setIsMobileMenuOpen?: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-const NavLinks = () => {
+const NavLinks = ({ currentPath }: { currentPath: string }) => {
   const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Features', href: '#features' },
-    { label: 'Solutions', href: '#solutions' },
-    { label: 'Success Stories', href: '#success' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '/' },
+    { label: 'Services', href: '/services' },
+    { label: 'About', href: '/about' },
+    { label: 'Resources', href: '/resources' },
+    { label: 'Contact', href: '/contact' },
   ];
 
   return (
     <>
       {navItems.map((item) => (
-        <a
+        <Link
           key={item.label}
-          href={item.href}
-          className="text-amalfi-white hover:text-amalfi-emerald transition-colors text-sm lg:text-base"
+          to={item.href}
+          className={`transition-colors text-sm lg:text-base font-medium ${
+            currentPath === item.href 
+              ? 'text-hsl(var(--amalfi-teal))' 
+              : 'text-foreground hover:text-hsl(var(--amalfi-teal))'
+          }`}
         >
           {item.label}
-        </a>
+        </Link>
       ))}
     </>
   );
 };
 
-// Mobile Navigation Links - separated to ensure they only appear in the mobile menu
-const MobileNavLinks: React.FC<{ setIsMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>> }> = ({ setIsMobileMenuOpen }) => {
+// Mobile Navigation Links
+const MobileNavLinks: React.FC<{ 
+  setIsMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  currentPath: string;
+}> = ({ setIsMobileMenuOpen, currentPath }) => {
   const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Features', href: '#features' },
-    { label: 'Solutions', href: '#solutions' },
-    { label: 'Success Stories', href: '#success' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '/' },
+    { label: 'Services', href: '/services' },
+    { label: 'About', href: '/about' },
+    { label: 'Resources', href: '/resources' },
+    { label: 'Contact', href: '/contact' },
   ];
 
   const handleClick = () => {
@@ -151,14 +157,18 @@ const MobileNavLinks: React.FC<{ setIsMobileMenuOpen: React.Dispatch<React.SetSt
   return (
     <>
       {navItems.map((item) => (
-        <a
+        <Link
           key={item.label}
-          href={item.href}
-          className="text-amalfi-white hover:text-amalfi-emerald transition-colors text-xl py-2"
+          to={item.href}
+          className={`transition-colors text-xl py-2 font-medium ${
+            currentPath === item.href
+              ? 'text-hsl(var(--amalfi-teal))'
+              : 'text-foreground hover:text-hsl(var(--amalfi-teal))'
+          }`}
           onClick={handleClick}
         >
           {item.label}
-        </a>
+        </Link>
       ))}
     </>
   );
