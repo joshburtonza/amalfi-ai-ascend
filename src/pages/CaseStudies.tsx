@@ -9,7 +9,7 @@ const CaseStudies = () => {
     {
       category: "Recruitment Automation",
       title: "How a SA Recruitment Firm Cut Admin by 70%",
-      client: "UrbanEdge Digital Solutions, Johannesburg",
+      client: "SA Recruitment, Johannesburg",
       challenge: "Recruitment team spending 30+ hours weekly on manual CV screening, scheduling, and follow-ups",
       solution: [
         "Implemented AI CV Scanner with explainable scoring",
@@ -24,8 +24,8 @@ const CaseStudies = () => {
       ],
       testimonial: {
         quote: "Amalfi AI completely transformed our digital operations. Their AI-driven workflows helped us save 15+ hours every week, and the onboarding was seamless.",
-        author: "Noluthando M.",
-        role: "Owner, UrbanEdge Digital Solutions"
+        author: "Salah Elbaba",
+        role: "Owner, SA Recruitment"
       },
       icon: Users
     },

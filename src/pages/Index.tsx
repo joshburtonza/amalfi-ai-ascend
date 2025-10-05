@@ -133,8 +133,8 @@ const Index = () => {
               image: 'https://images.unsplash.com/photo-1507003211169-0a6dd7228f2d?q=80&w=1780&auto=format&fit=crop',
               audio: 'audio_1.mp3',
               text: "Amalfi AI completely transformed our digital operations. Their AI-driven workflows helped us save 15+ hours every week, and the onboarding was seamless.",
-              name: 'Noluthando M.',
-              jobtitle: 'Owner, UrbanEdge Digital',
+              name: 'Salah Elbaba',
+              jobtitle: 'Owner, SA Recruitment',
             },
             {
               image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1780&auto=format&fit=crop',
