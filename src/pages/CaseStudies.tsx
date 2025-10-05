@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
@@ -192,7 +193,7 @@ const CaseStudies = () => {
               Book a free AI audit and discover how automation can transform your business operations
             </p>
             <Button size="lg" asChild>
-              <a href="/contact">Book Your Free Audit</a>
+              <Link to="/contact">Book Your Free Audit</Link>
             </Button>
           </GlowCard>
         </div>

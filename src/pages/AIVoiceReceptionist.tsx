@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
@@ -214,7 +215,7 @@ const AIVoiceReceptionist = () => {
                     Based on {missedCalls} missed calls per day × R{avgCallValue} average value × 4 weeks
                   </p>
                   <Button size="lg" className="w-full" asChild>
-                    <a href="/contact">Get My Recovery Plan</a>
+                    <Link to="/contact">Get My Recovery Plan</Link>
                   </Button>
                 </div>
               </div>
@@ -267,7 +268,7 @@ const AIVoiceReceptionist = () => {
                   </ul>
                 </div>
                 <Button variant={tier.popular ? 'default' : 'outline'} className="w-full" asChild>
-                  <a href="/contact">Book Free ROI Audit</a>
+                  <Link to="/contact">Book Free ROI Audit</Link>
                 </Button>
               </GlowCard>
             ))}
@@ -344,7 +345,7 @@ const AIVoiceReceptionist = () => {
               Book your free ROI audit and discover exactly how much revenue you're leaving on the table
             </p>
             <Button size="lg" asChild>
-              <a href="/contact">Get My Recovery Plan</a>
+              <Link to="/contact">Get My Recovery Plan</Link>
             </Button>
           </GlowCard>
         </div>

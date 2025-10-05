@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
@@ -59,7 +60,7 @@ const RecruitmentAutomation = () => {
               Source, screen, and schedule smarter — no manual admin
             </p>
             <Button size="lg" asChild>
-              <a href="/contact">Book Free AI Audit</a>
+              <Link to="/contact">Book Free AI Audit</Link>
             </Button>
           </div>
         </div>
@@ -215,7 +216,7 @@ const RecruitmentAutomation = () => {
               We'll identify three automation wins for your recruitment process. If we don't find them, the audit is completely free.
             </p>
             <Button size="lg" asChild>
-              <a href="/contact">Book Your Free Audit</a>
+              <Link to="/contact">Book Your Free Audit</Link>
             </Button>
           </GlowCard>
         </div>

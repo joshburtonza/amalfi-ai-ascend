@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import ProcessTimeline from '../components/ProcessTimeline';
@@ -54,12 +55,12 @@ const Index = () => {
                 ))}
               </ul>
               <Button variant="outline" className="w-full group" asChild>
-                <a href="/recruitment-automation">
+                <Link to="/recruitment-automation">
                   <span className="flex items-center gap-2">
                     Learn More
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </span>
-                </a>
+                </Link>
               </Button>
             </GlowCard>
 
@@ -86,12 +87,12 @@ const Index = () => {
                 ))}
               </ul>
               <Button variant="outline" className="w-full group" asChild>
-                <a href="/ai-voice-receptionist">
+                <Link to="/ai-voice-receptionist">
                   <span className="flex items-center gap-2">
                     Learn More
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </span>
-                </a>
+                </Link>
               </Button>
             </GlowCard>
           </div>
@@ -187,10 +188,10 @@ const Index = () => {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button size="lg" asChild>
-                <a href="/contact">Get an AI Readiness Audit</a>
+                <Link to="/contact">Get an AI Readiness Audit</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <a href="/services">Explore Our Services</a>
+                <Link to="/services">Explore Our Services</Link>
               </Button>
             </div>
           </GlowCard>
