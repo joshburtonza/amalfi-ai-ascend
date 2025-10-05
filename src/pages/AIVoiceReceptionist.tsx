@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
 import { Phone, MessageSquare, TrendingUp, CheckCircle2, Calculator } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { GlowCard } from '@/components/ui/spotlight-card';
 
 const AIVoiceReceptionist = () => {
   const [missedCalls, setMissedCalls] = useState(10);
@@ -107,10 +107,9 @@ const AIVoiceReceptionist = () => {
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               {stats.map((stat, index) => (
-                <div
+                <GlowCard
                   key={index}
-                  className="glassmorphic-strong rounded-3xl p-8 text-center hover-lift animate-slide-up"
-                  style={{ animationDelay: `${index * 150}ms` }}
+                  className="p-8 text-center hover-lift animate-slide-up"
                 >
                   <div className="text-4xl md:text-5xl font-bold text-gradient mb-3">
                     {stat.value}
@@ -118,7 +117,7 @@ const AIVoiceReceptionist = () => {
                   <div className="text-muted-foreground font-medium">
                     {stat.label}
                   </div>
-                </div>
+                </GlowCard>
               ))}
             </div>
           </div>
@@ -139,17 +138,16 @@ const AIVoiceReceptionist = () => {
 
           <div className="grid md:grid-cols-3 gap-8 md:gap-10">
             {features.map((feature, index) => (
-              <div
+              <GlowCard
                 key={index}
-                className="glassmorphic-strong rounded-3xl p-8 hover-lift hover-glow animate-slide-up"
-                style={{ animationDelay: `${index * 200}ms` }}
+                className="p-8 hover-lift animate-slide-up"
               >
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                   <feature.icon className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-foreground">{feature.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
-              </div>
+              </GlowCard>
             ))}
           </div>
         </div>
@@ -159,7 +157,7 @@ const AIVoiceReceptionist = () => {
       <section id="calculator" className="py-20 px-4 bg-gradient-section">
         <div className="max-container">
           <div className="max-w-4xl mx-auto">
-            <div className="glassmorphic-strong rounded-3xl p-8 md:p-12 animate-slide-up">
+            <GlowCard className="p-8 md:p-12 animate-slide-up">
               <div className="flex items-center gap-3 mb-8">
                 <Calculator className="w-8 h-8 text-primary" />
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -218,7 +216,7 @@ const AIVoiceReceptionist = () => {
                   </Button>
                 </div>
               </div>
-            </div>
+            </GlowCard>
           </div>
         </div>
       </section>
@@ -240,12 +238,11 @@ const AIVoiceReceptionist = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {tiers.map((tier, index) => (
-              <div
+              <GlowCard
                 key={index}
-                className={`glassmorphic-strong rounded-3xl p-8 hover-lift animate-slide-up ${
+                className={`p-8 hover-lift animate-slide-up ${
                   tier.popular ? 'border-2 border-primary' : ''
                 }`}
-                style={{ animationDelay: `${index * 150}ms` }}
               >
                 {tier.popular && (
                   <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full border border-primary/20 mb-4">
@@ -269,7 +266,7 @@ const AIVoiceReceptionist = () => {
                 <Button variant={tier.popular ? 'default' : 'outline'} className="w-full" asChild>
                   <a href="/contact">Book Free ROI Audit</a>
                 </Button>
-              </div>
+              </GlowCard>
             ))}
           </div>
           
@@ -289,8 +286,8 @@ const AIVoiceReceptionist = () => {
               Before & After <span className="text-gradient">Amalfi AI</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
-              <Card className="glassmorphic-strong border-destructive/30 animate-slide-up">
-                <CardContent className="p-8">
+              <GlowCard className="border-destructive/30 animate-slide-up">
+                <div className="p-8">
                   <h3 className="text-2xl font-bold mb-6 text-destructive">Before</h3>
                   <ul className="space-y-4">
                     {[
@@ -306,11 +303,11 @@ const AIVoiceReceptionist = () => {
                       </li>
                     ))}
                   </ul>
-                </CardContent>
-              </Card>
+                </div>
+              </GlowCard>
 
-              <Card className="glassmorphic-strong border-primary/30 animate-slide-up" style={{ animationDelay: '200ms' }}>
-                <CardContent className="p-8">
+              <GlowCard className="border-primary/30 animate-slide-up [animation-delay:200ms]">
+                <div className="p-8">
                   <h3 className="text-2xl font-bold mb-6 text-primary">After</h3>
                   <ul className="space-y-4">
                     {[
@@ -326,8 +323,8 @@ const AIVoiceReceptionist = () => {
                       </li>
                     ))}
                   </ul>
-                </CardContent>
-              </Card>
+                </div>
+              </GlowCard>
             </div>
           </div>
         </div>
@@ -336,7 +333,7 @@ const AIVoiceReceptionist = () => {
       {/* Final CTA */}
       <section className="py-20 px-4">
         <div className="max-container">
-          <div className="glassmorphic-strong rounded-3xl p-12 md:p-16 text-center max-w-4xl mx-auto animate-slide-up">
+          <GlowCard className="p-12 md:p-16 text-center max-w-4xl mx-auto animate-slide-up">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gradient">
               Stop Losing Customers to Missed Calls
             </h2>
@@ -346,7 +343,7 @@ const AIVoiceReceptionist = () => {
             <Button size="lg" asChild>
               <a href="/contact">Get My Recovery Plan</a>
             </Button>
-          </div>
+          </GlowCard>
         </div>
       </section>
 

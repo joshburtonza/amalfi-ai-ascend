@@ -10,6 +10,7 @@ const Hero = () => {
       className="relative min-h-screen w-full bg-background flex items-center justify-center pt-20 overflow-hidden"
     >
       <BackgroundPaths 
+        title=""
         topContent={
           <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground">
             <GooeyText 

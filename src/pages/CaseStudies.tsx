@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
 import { TrendingUp, Clock, Users, CheckCircle2 } from 'lucide-react';
+import { GlowCard } from '@/components/ui/spotlight-card';
 
 const CaseStudies = () => {
   const cases = [
@@ -109,9 +110,8 @@ const CaseStudies = () => {
               <div
                 key={index}
                 className="animate-slide-up"
-                style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className="glassmorphic-strong rounded-3xl p-8 md:p-12 hover-lift">
+                <GlowCard className="p-8 md:p-12 hover-lift">
                   {/* Category Badge */}
                   <div className="inline-block px-4 py-2 bg-primary/10 text-primary text-sm font-semibold rounded-full border border-primary/20 mb-6">
                     {caseStudy.category}
@@ -174,7 +174,7 @@ const CaseStudies = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </GlowCard>
               </div>
             ))}
           </div>
@@ -184,7 +184,7 @@ const CaseStudies = () => {
       {/* CTA Section */}
       <section className="py-20 px-4 bg-gradient-section">
         <div className="max-container">
-          <div className="glassmorphic-strong rounded-3xl p-12 md:p-16 text-center max-w-4xl mx-auto animate-slide-up">
+          <GlowCard className="p-12 md:p-16 text-center max-w-4xl mx-auto animate-slide-up">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gradient">
               Ready to Write Your Success Story?
             </h2>
@@ -194,7 +194,7 @@ const CaseStudies = () => {
             <Button size="lg" asChild>
               <a href="/contact">Book Your Free Audit</a>
             </Button>
-          </div>
+          </GlowCard>
         </div>
       </section>
 

@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
 import { CheckCircle2, Clock, Target, TrendingUp, Users, Zap } from 'lucide-react';
+import { GlowCard } from '@/components/ui/spotlight-card';
 
 const RecruitmentAutomation = () => {
   const features = [
@@ -73,16 +74,15 @@ const RecruitmentAutomation = () => {
             </h2>
             <div className="grid gap-6">
               {painPoints.map((point, index) => (
-                <div
+                <GlowCard
                   key={index}
-                  className="glassmorphic-strong rounded-2xl p-6 hover-lift animate-slide-up"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  className="p-6 hover-lift animate-slide-up"
                 >
                   <p className="text-lg text-muted-foreground flex items-start gap-3">
                     <span className="text-primary mt-1">•</span>
                     {point}
                   </p>
-                </div>
+                </GlowCard>
               ))}
             </div>
           </div>
@@ -103,17 +103,16 @@ const RecruitmentAutomation = () => {
 
           <div className="grid md:grid-cols-3 gap-8 md:gap-10">
             {features.map((feature, index) => (
-              <div
+              <GlowCard
                 key={index}
-                className="glassmorphic-strong rounded-3xl p-8 hover-lift hover-glow animate-slide-up"
-                style={{ animationDelay: `${index * 200}ms` }}
+                className="p-8 hover-lift animate-slide-up"
               >
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                   <feature.icon className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-foreground">{feature.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
-              </div>
+              </GlowCard>
             ))}
           </div>
         </div>
@@ -133,10 +132,9 @@ const RecruitmentAutomation = () => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {outcomes.map((outcome, index) => (
-              <div
+              <GlowCard
                 key={index}
-                className="glassmorphic-strong rounded-3xl p-8 text-center hover-lift animate-slide-up"
-                style={{ animationDelay: `${index * 150}ms` }}
+                className="p-8 text-center hover-lift animate-slide-up"
               >
                 <div className="text-4xl md:text-5xl font-bold text-gradient mb-3">
                   {outcome.metric}
@@ -144,7 +142,7 @@ const RecruitmentAutomation = () => {
                 <div className="text-muted-foreground font-medium">
                   {outcome.label}
                 </div>
-              </div>
+              </GlowCard>
             ))}
           </div>
         </div>
@@ -185,10 +183,9 @@ const RecruitmentAutomation = () => {
                 description: "Monthly check-ins ensure your system evolves with your business and delivers consistent ROI."
               }
             ].map((item, index) => (
-              <div
+              <GlowCard
                 key={index}
-                className="glassmorphic-strong rounded-3xl p-8 flex gap-6 items-start hover-lift animate-slide-up"
-                style={{ animationDelay: `${index * 150}ms` }}
+                className="p-8 flex gap-6 items-start hover-lift animate-slide-up"
               >
                 <div className="text-5xl font-bold text-primary/20 flex-shrink-0">
                   {item.step}
@@ -197,7 +194,7 @@ const RecruitmentAutomation = () => {
                   <h3 className="text-2xl font-bold mb-3 text-foreground">{item.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{item.description}</p>
                 </div>
-              </div>
+              </GlowCard>
             ))}
           </div>
         </div>
@@ -206,7 +203,7 @@ const RecruitmentAutomation = () => {
       {/* Final CTA */}
       <section className="py-20 px-4 bg-gradient-section">
         <div className="max-container">
-          <div className="glassmorphic-strong rounded-3xl p-12 md:p-16 text-center max-w-4xl mx-auto animate-slide-up">
+          <GlowCard className="p-12 md:p-16 text-center max-w-4xl mx-auto animate-slide-up">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gradient">
               Start with a 30-Minute Recruitment Audit
             </h2>
@@ -216,7 +213,7 @@ const RecruitmentAutomation = () => {
             <Button size="lg" asChild>
               <a href="/contact">Book Your Free Audit</a>
             </Button>
-          </div>
+          </GlowCard>
         </div>
       </section>
 
