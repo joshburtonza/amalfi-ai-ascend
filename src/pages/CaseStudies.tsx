@@ -111,7 +111,7 @@ const CaseStudies = () => {
                 key={index}
                 className="animate-slide-up"
               >
-                <GlowCard className="p-8 md:p-12 hover-lift">
+                <GlowCard customSize className="p-8 md:p-12 hover-lift">
                   {/* Category Badge */}
                   <div className="inline-block px-4 py-2 bg-primary/10 text-primary text-sm font-semibold rounded-full border border-primary/20 mb-6">
                     {caseStudy.category}
@@ -184,7 +184,7 @@ const CaseStudies = () => {
       {/* CTA Section */}
       <section className="py-20 px-4 bg-gradient-section">
         <div className="max-container">
-          <GlowCard className="p-12 md:p-16 text-center max-w-4xl mx-auto animate-slide-up">
+          <GlowCard customSize className="p-12 md:p-16 text-center max-w-4xl mx-auto animate-slide-up">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gradient">
               Ready to Write Your Success Story?
             </h2>

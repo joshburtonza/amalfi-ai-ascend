@@ -32,7 +32,7 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-10">
             {/* Recruitment Automation */}
-            <GlowCard className="p-8 md:p-10 hover-lift animate-slide-up">
+            <GlowCard customSize className="p-8 md:p-10 hover-lift animate-slide-up">
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                 <Users className="w-8 h-8 text-primary" />
               </div>
@@ -64,7 +64,7 @@ const Index = () => {
             </GlowCard>
 
             {/* AI Voice Receptionist */}
-            <GlowCard className="p-8 md:p-10 hover-lift animate-slide-up [animation-delay:200ms]">
+            <GlowCard customSize className="p-8 md:p-10 hover-lift animate-slide-up [animation-delay:200ms]">
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
                 <Phone className="w-8 h-8 text-primary" />
               </div>

@@ -109,6 +109,7 @@ const AIVoiceReceptionist = () => {
               {stats.map((stat, index) => (
                 <GlowCard
                   key={index}
+                  customSize
                   className="p-8 text-center hover-lift animate-slide-up"
                 >
                   <div className="text-4xl md:text-5xl font-bold text-gradient mb-3">
@@ -140,6 +141,7 @@ const AIVoiceReceptionist = () => {
             {features.map((feature, index) => (
               <GlowCard
                 key={index}
+                customSize
                 className="p-8 hover-lift animate-slide-up"
               >
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
@@ -157,7 +159,7 @@ const AIVoiceReceptionist = () => {
       <section id="calculator" className="py-20 px-4 bg-gradient-section">
         <div className="max-container">
           <div className="max-w-4xl mx-auto">
-            <GlowCard className="p-8 md:p-12 animate-slide-up">
+            <GlowCard customSize className="p-8 md:p-12 animate-slide-up">
               <div className="flex items-center gap-3 mb-8">
                 <Calculator className="w-8 h-8 text-primary" />
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground">
@@ -240,6 +242,7 @@ const AIVoiceReceptionist = () => {
             {tiers.map((tier, index) => (
               <GlowCard
                 key={index}
+                customSize
                 className={`p-8 hover-lift animate-slide-up ${
                   tier.popular ? 'border-2 border-primary' : ''
                 }`}
@@ -286,7 +289,7 @@ const AIVoiceReceptionist = () => {
               Before & After <span className="text-gradient">Amalfi AI</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
-              <GlowCard className="border-destructive/30 animate-slide-up">
+              <GlowCard customSize className="border-destructive/30 animate-slide-up">
                 <div className="p-8">
                   <h3 className="text-2xl font-bold mb-6 text-destructive">Before</h3>
                   <ul className="space-y-4">
@@ -306,7 +309,7 @@ const AIVoiceReceptionist = () => {
                 </div>
               </GlowCard>
 
-              <GlowCard className="border-primary/30 animate-slide-up [animation-delay:200ms]">
+              <GlowCard customSize className="border-primary/30 animate-slide-up [animation-delay:200ms]">
                 <div className="p-8">
                   <h3 className="text-2xl font-bold mb-6 text-primary">After</h3>
                   <ul className="space-y-4">
@@ -333,7 +336,7 @@ const AIVoiceReceptionist = () => {
       {/* Final CTA */}
       <section className="py-20 px-4">
         <div className="max-container">
-          <GlowCard className="p-12 md:p-16 text-center max-w-4xl mx-auto animate-slide-up">
+          <GlowCard customSize className="p-12 md:p-16 text-center max-w-4xl mx-auto animate-slide-up">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gradient">
               Stop Losing Customers to Missed Calls
             </h2>

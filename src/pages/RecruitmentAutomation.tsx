@@ -76,6 +76,7 @@ const RecruitmentAutomation = () => {
               {painPoints.map((point, index) => (
                 <GlowCard
                   key={index}
+                  customSize
                   className="p-6 hover-lift animate-slide-up"
                 >
                   <p className="text-lg text-muted-foreground flex items-start gap-3">
@@ -105,6 +106,7 @@ const RecruitmentAutomation = () => {
             {features.map((feature, index) => (
               <GlowCard
                 key={index}
+                customSize
                 className="p-8 hover-lift animate-slide-up"
               >
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
@@ -134,6 +136,7 @@ const RecruitmentAutomation = () => {
             {outcomes.map((outcome, index) => (
               <GlowCard
                 key={index}
+                customSize
                 className="p-8 text-center hover-lift animate-slide-up"
               >
                 <div className="text-4xl md:text-5xl font-bold text-gradient mb-3">
@@ -185,6 +188,7 @@ const RecruitmentAutomation = () => {
             ].map((item, index) => (
               <GlowCard
                 key={index}
+                customSize
                 className="p-8 flex gap-6 items-start hover-lift animate-slide-up"
               >
                 <div className="text-5xl font-bold text-primary/20 flex-shrink-0">
@@ -203,7 +207,7 @@ const RecruitmentAutomation = () => {
       {/* Final CTA */}
       <section className="py-20 px-4 bg-gradient-section">
         <div className="max-container">
-          <GlowCard className="p-12 md:p-16 text-center max-w-4xl mx-auto animate-slide-up">
+          <GlowCard customSize className="p-12 md:p-16 text-center max-w-4xl mx-auto animate-slide-up">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gradient">
               Start with a 30-Minute Recruitment Audit
             </h2>
