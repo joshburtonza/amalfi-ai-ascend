@@ -36,6 +36,7 @@ export function NavBar({ items, className, onDropdownToggle }: NavBarProps) {
   }, [])
 
   useEffect(() => {
+    // Find the current active item based on pathname
     const currentItem = items.find(item => {
       if (item.url === location.pathname) return true
       if (item.dropdownItems) {
@@ -43,8 +44,12 @@ export function NavBar({ items, className, onDropdownToggle }: NavBarProps) {
       }
       return false
     })
+    
     if (currentItem) {
       setActiveTab(currentItem.name)
+    } else if (items[0]) {
+      // Default to first item if no match
+      setActiveTab(items[0].name)
     }
   }, [location.pathname, items])
 
@@ -63,11 +68,11 @@ export function NavBar({ items, className, onDropdownToggle }: NavBarProps) {
           return (
             <div key={item.name} className="relative group">
               <button
-                onClick={() => setActiveTab(item.name)}
+                onMouseEnter={() => {}}
                 className={cn(
                   "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
                   "text-foreground/80 hover:text-hsl(var(--amalfi-teal))",
-                  isActive && "text-hsl(var(--amalfi-teal))",
+                  isActive && "text-hsl(var(--amalfi-teal)) bg-hsl(var(--amalfi-teal)/0.1)",
                 )}
               >
                 <span>{item.name}</span>
@@ -114,11 +119,10 @@ export function NavBar({ items, className, onDropdownToggle }: NavBarProps) {
           <Link
             key={item.name}
             to={item.url}
-            onClick={() => setActiveTab(item.name)}
             className={cn(
               "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
               "text-foreground/80 hover:text-hsl(var(--amalfi-teal))",
-              isActive && "text-hsl(var(--amalfi-teal))",
+              isActive && "text-hsl(var(--amalfi-teal)) bg-hsl(var(--amalfi-teal)/0.1)",
             )}
           >
             {Icon ? (
