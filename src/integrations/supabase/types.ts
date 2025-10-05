@@ -7,43 +7,244 @@ export type Json =
   | Json[]
 
 export type Database = {
+  // Allows to automatically instantiate createClient with right options
+  // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
+  __InternalSupabase: {
+    PostgrestVersion: "12.2.3 (519615d)"
+  }
   public: {
     Tables: {
+      batch_uploads: {
+        Row: {
+          batch_name: string
+          completed_at: string | null
+          created_at: string | null
+          failed_files: number
+          id: string
+          metadata: Json | null
+          processed_files: number
+          status: string
+          total_files: number
+          user_id: string
+        }
+        Insert: {
+          batch_name: string
+          completed_at?: string | null
+          created_at?: string | null
+          failed_files?: number
+          id?: string
+          metadata?: Json | null
+          processed_files?: number
+          status?: string
+          total_files?: number
+          user_id: string
+        }
+        Update: {
+          batch_name?: string
+          completed_at?: string | null
+          created_at?: string | null
+          failed_files?: number
+          id?: string
+          metadata?: Json | null
+          processed_files?: number
+          status?: string
+          total_files?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
+      candidate_notes: {
+        Row: {
+          created_at: string | null
+          id: string
+          note_text: string
+          note_type: string | null
+          upload_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          note_text: string
+          note_type?: string | null
+          upload_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          note_text?: string
+          note_type?: string | null
+          upload_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "candidate_notes_upload_id_fkey"
+            columns: ["upload_id"]
+            isOneToOne: false
+            referencedRelation: "cv_uploads"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       cv_uploads: {
         Row: {
+          batch_id: string | null
+          candidate_status: string | null
           extracted_json: Json | null
           file_size: number | null
           file_url: string
           id: string
+          last_updated_by: string | null
+          notes: string | null
           original_filename: string
           processing_status: string | null
+          score_breakdown: Json | null
           source_email: string | null
+          tags: string[] | null
           uploaded_at: string | null
           user_id: string
         }
         Insert: {
+          batch_id?: string | null
+          candidate_status?: string | null
           extracted_json?: Json | null
           file_size?: number | null
           file_url: string
           id?: string
+          last_updated_by?: string | null
+          notes?: string | null
           original_filename: string
           processing_status?: string | null
+          score_breakdown?: Json | null
           source_email?: string | null
+          tags?: string[] | null
           uploaded_at?: string | null
           user_id: string
         }
         Update: {
+          batch_id?: string | null
+          candidate_status?: string | null
           extracted_json?: Json | null
           file_size?: number | null
           file_url?: string
           id?: string
+          last_updated_by?: string | null
+          notes?: string | null
           original_filename?: string
           processing_status?: string | null
+          score_breakdown?: Json | null
           source_email?: string | null
+          tags?: string[] | null
           uploaded_at?: string | null
           user_id?: string
         }
+        Relationships: [
+          {
+            foreignKeyName: "cv_uploads_batch_id_fkey"
+            columns: ["batch_id"]
+            isOneToOne: false
+            referencedRelation: "batch_uploads"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      gmail_integrations: {
+        Row: {
+          access_token: string
+          created_at: string
+          gmail_email: string
+          history_id: string | null
+          id: string
+          is_active: boolean
+          refresh_token: string
+          token_expires_at: string
+          updated_at: string
+          user_id: string
+          watch_expiration: string | null
+        }
+        Insert: {
+          access_token: string
+          created_at?: string
+          gmail_email: string
+          history_id?: string | null
+          id?: string
+          is_active?: boolean
+          refresh_token: string
+          token_expires_at: string
+          updated_at?: string
+          user_id: string
+          watch_expiration?: string | null
+        }
+        Update: {
+          access_token?: string
+          created_at?: string
+          gmail_email?: string
+          history_id?: string | null
+          id?: string
+          is_active?: boolean
+          refresh_token?: string
+          token_expires_at?: string
+          updated_at?: string
+          user_id?: string
+          watch_expiration?: string | null
+        }
         Relationships: []
+      }
+      processed_emails: {
+        Row: {
+          cv_upload_ids: string[] | null
+          error_message: string | null
+          gmail_integration_id: string
+          gmail_message_id: string
+          id: string
+          processed_at: string
+          processing_status: string
+          sender_email: string | null
+          subject: string | null
+          user_id: string
+        }
+        Insert: {
+          cv_upload_ids?: string[] | null
+          error_message?: string | null
+          gmail_integration_id: string
+          gmail_message_id: string
+          id?: string
+          processed_at?: string
+          processing_status?: string
+          sender_email?: string | null
+          subject?: string | null
+          user_id: string
+        }
+        Update: {
+          cv_upload_ids?: string[] | null
+          error_message?: string | null
+          gmail_integration_id?: string
+          gmail_message_id?: string
+          id?: string
+          processed_at?: string
+          processing_status?: string
+          sender_email?: string | null
+          subject?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "processed_emails_gmail_integration_id_fkey"
+            columns: ["gmail_integration_id"]
+            isOneToOne: false
+            referencedRelation: "gmail_integrations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "processed_emails_gmail_integration_id_fkey"
+            columns: ["gmail_integration_id"]
+            isOneToOne: false
+            referencedRelation: "gmail_integrations_safe"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       profiles: {
         Row: {
@@ -69,14 +270,105 @@ export type Database = {
         }
         Relationships: []
       }
+      saved_searches: {
+        Row: {
+          created_at: string | null
+          id: string
+          name: string
+          search_criteria: Json
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          name: string
+          search_criteria: Json
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          name?: string
+          search_criteria?: Json
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
-      [_ in never]: never
+      gmail_integrations_safe: {
+        Row: {
+          created_at: string | null
+          gmail_email: string | null
+          history_id: string | null
+          id: string | null
+          is_active: boolean | null
+          token_expires_at: string | null
+          updated_at: string | null
+          user_id: string | null
+          watch_expiration: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          gmail_email?: string | null
+          history_id?: string | null
+          id?: string | null
+          is_active?: boolean | null
+          token_expires_at?: string | null
+          updated_at?: string | null
+          user_id?: string | null
+          watch_expiration?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          gmail_email?: string | null
+          history_id?: string | null
+          id?: string | null
+          is_active?: boolean | null
+          token_expires_at?: string | null
+          updated_at?: string | null
+          user_id?: string | null
+          watch_expiration?: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
+      can_access_upload_by_email: {
+        Args: Record<PropertyKey, never>
+        Returns: boolean
+      }
+      has_gmail_integration: {
+        Args: { user_uuid?: string }
+        Returns: boolean
+      }
       is_admin: {
         Args: Record<PropertyKey, never>
         Returns: boolean
+      }
+      is_joshua_admin: {
+        Args: Record<PropertyKey, never>
+        Returns: boolean
+      }
+      refresh_gmail_token: {
+        Args: {
+          integration_id: string
+          new_access_token: string
+          new_expires_at: string
+        }
+        Returns: undefined
+      }
+      update_batch_progress: {
+        Args: { batch_uuid: string }
+        Returns: undefined
+      }
+      update_gmail_watch: {
+        Args: {
+          integration_id: string
+          new_expiration: string
+          new_history_id?: string
+        }
+        Returns: undefined
       }
     }
     Enums: {
@@ -88,21 +380,25 @@ export type Database = {
   }
 }
 
-type DefaultSchema = Database[Extract<keyof Database, "public">]
+type DatabaseWithoutInternals = Omit<Database, "__InternalSupabase">
+
+type DefaultSchema = DatabaseWithoutInternals[Extract<keyof Database, "public">]
 
 export type Tables<
   DefaultSchemaTableNameOrOptions extends
     | keyof (DefaultSchema["Tables"] & DefaultSchema["Views"])
-    | { schema: keyof Database },
+    | { schema: keyof DatabaseWithoutInternals },
   TableName extends DefaultSchemaTableNameOrOptions extends {
-    schema: keyof Database
+    schema: keyof DatabaseWithoutInternals
   }
-    ? keyof (Database[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
-        Database[DefaultSchemaTableNameOrOptions["schema"]]["Views"])
+    ? keyof (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
+        DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])
     : never = never,
-> = DefaultSchemaTableNameOrOptions extends { schema: keyof Database }
-  ? (Database[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
-      Database[DefaultSchemaTableNameOrOptions["schema"]]["Views"])[TableName] extends {
+> = DefaultSchemaTableNameOrOptions extends {
+  schema: keyof DatabaseWithoutInternals
+}
+  ? (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
+      DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])[TableName] extends {
       Row: infer R
     }
     ? R
@@ -120,14 +416,16 @@ export type Tables<
 export type TablesInsert<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
-    | { schema: keyof Database },
+    | { schema: keyof DatabaseWithoutInternals },
   TableName extends DefaultSchemaTableNameOrOptions extends {
-    schema: keyof Database
+    schema: keyof DatabaseWithoutInternals
   }
-    ? keyof Database[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
+    ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
     : never = never,
-> = DefaultSchemaTableNameOrOptions extends { schema: keyof Database }
-  ? Database[DefaultSchemaTableNameOrOptions["schema"]]["Tables"][TableName] extends {
+> = DefaultSchemaTableNameOrOptions extends {
+  schema: keyof DatabaseWithoutInternals
+}
+  ? DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"][TableName] extends {
       Insert: infer I
     }
     ? I
@@ -143,14 +441,16 @@ export type TablesInsert<
 export type TablesUpdate<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
-    | { schema: keyof Database },
+    | { schema: keyof DatabaseWithoutInternals },
   TableName extends DefaultSchemaTableNameOrOptions extends {
-    schema: keyof Database
+    schema: keyof DatabaseWithoutInternals
   }
-    ? keyof Database[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
+    ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
     : never = never,
-> = DefaultSchemaTableNameOrOptions extends { schema: keyof Database }
-  ? Database[DefaultSchemaTableNameOrOptions["schema"]]["Tables"][TableName] extends {
+> = DefaultSchemaTableNameOrOptions extends {
+  schema: keyof DatabaseWithoutInternals
+}
+  ? DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"][TableName] extends {
       Update: infer U
     }
     ? U
@@ -166,14 +466,16 @@ export type TablesUpdate<
 export type Enums<
   DefaultSchemaEnumNameOrOptions extends
     | keyof DefaultSchema["Enums"]
-    | { schema: keyof Database },
+    | { schema: keyof DatabaseWithoutInternals },
   EnumName extends DefaultSchemaEnumNameOrOptions extends {
-    schema: keyof Database
+    schema: keyof DatabaseWithoutInternals
   }
-    ? keyof Database[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"]
+    ? keyof DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"]
     : never = never,
-> = DefaultSchemaEnumNameOrOptions extends { schema: keyof Database }
-  ? Database[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"][EnumName]
+> = DefaultSchemaEnumNameOrOptions extends {
+  schema: keyof DatabaseWithoutInternals
+}
+  ? DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"][EnumName]
   : DefaultSchemaEnumNameOrOptions extends keyof DefaultSchema["Enums"]
     ? DefaultSchema["Enums"][DefaultSchemaEnumNameOrOptions]
     : never
@@ -181,14 +483,16 @@ export type Enums<
 export type CompositeTypes<
   PublicCompositeTypeNameOrOptions extends
     | keyof DefaultSchema["CompositeTypes"]
-    | { schema: keyof Database },
+    | { schema: keyof DatabaseWithoutInternals },
   CompositeTypeName extends PublicCompositeTypeNameOrOptions extends {
-    schema: keyof Database
+    schema: keyof DatabaseWithoutInternals
   }
-    ? keyof Database[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
+    ? keyof DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
     : never = never,
-> = PublicCompositeTypeNameOrOptions extends { schema: keyof Database }
-  ? Database[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"][CompositeTypeName]
+> = PublicCompositeTypeNameOrOptions extends {
+  schema: keyof DatabaseWithoutInternals
+}
+  ? DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"][CompositeTypeName]
   : PublicCompositeTypeNameOrOptions extends keyof DefaultSchema["CompositeTypes"]
     ? DefaultSchema["CompositeTypes"][PublicCompositeTypeNameOrOptions]
     : never
