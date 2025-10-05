@@ -237,13 +237,6 @@ export type Database = {
             referencedRelation: "gmail_integrations"
             referencedColumns: ["id"]
           },
-          {
-            foreignKeyName: "processed_emails_gmail_integration_id_fkey"
-            columns: ["gmail_integration_id"]
-            isOneToOne: false
-            referencedRelation: "gmail_integrations_safe"
-            referencedColumns: ["id"]
-          },
         ]
       }
       profiles: {
@@ -308,28 +301,6 @@ export type Database = {
           user_id: string | null
           watch_expiration: string | null
         }
-        Insert: {
-          created_at?: string | null
-          gmail_email?: string | null
-          history_id?: string | null
-          id?: string | null
-          is_active?: boolean | null
-          token_expires_at?: string | null
-          updated_at?: string | null
-          user_id?: string | null
-          watch_expiration?: string | null
-        }
-        Update: {
-          created_at?: string | null
-          gmail_email?: string | null
-          history_id?: string | null
-          id?: string | null
-          is_active?: boolean | null
-          token_expires_at?: string | null
-          updated_at?: string | null
-          user_id?: string | null
-          watch_expiration?: string | null
-        }
         Relationships: []
       }
     }
@@ -337,6 +308,20 @@ export type Database = {
       can_access_upload_by_email: {
         Args: Record<PropertyKey, never>
         Returns: boolean
+      }
+      get_gmail_integrations_safe: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          created_at: string
+          gmail_email: string
+          history_id: string
+          id: string
+          is_active: boolean
+          token_expires_at: string
+          updated_at: string
+          user_id: string
+          watch_expiration: string
+        }[]
       }
       has_gmail_integration: {
         Args: { user_uuid?: string }
