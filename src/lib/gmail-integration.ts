@@ -21,13 +21,10 @@ export interface GmailIntegrationMetadata {
 
 /**
  * Fetch Gmail integration metadata for the current user
- * Uses the safe view that excludes OAuth tokens
+ * Calls the secure SECURITY DEFINER function directly via RPC
  */
 export async function getGmailIntegrations(): Promise<GmailIntegrationMetadata[]> {
-  const { data, error } = await supabase
-    .from('gmail_integrations_safe')
-    .select('*')
-    .order('created_at', { ascending: false });
+  const { data, error } = await supabase.rpc('get_gmail_integrations_safe');
 
   if (error) {
     console.error('Failed to fetch Gmail integrations:', error);
@@ -124,6 +121,6 @@ export async function listGmailLabels(integrationId: string) {
  * ```
  * 
  * ✅ ALWAYS USE:
- * - gmail_integrations_safe view for metadata
+ * - get_gmail_integrations_safe() RPC function for metadata
  * - gmail-proxy Edge Function for Gmail API calls
  */

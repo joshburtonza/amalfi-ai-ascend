@@ -289,20 +289,7 @@ export type Database = {
       }
     }
     Views: {
-      gmail_integrations_safe: {
-        Row: {
-          created_at: string | null
-          gmail_email: string | null
-          history_id: string | null
-          id: string | null
-          is_active: boolean | null
-          token_expires_at: string | null
-          updated_at: string | null
-          user_id: string | null
-          watch_expiration: string | null
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Functions: {
       can_access_upload_by_email: {
