@@ -44,6 +44,20 @@
     --amalfi-dark: 222 47% 3%;         /* Darkest background */
     --amalfi-surface: 217 33% 17%;     /* Card/surface color */
 
+    /* Chrome Theme */
+    --chrome-blue: 188 100% 63%;
+    --chrome-silver: 215 20% 75%;
+    --chrome-steel: 217 33% 25%;
+    --chrome-platinum: 200 15% 85%;
+    --chrome-titanium: 215 15% 60%;
+    --chrome-mercury: 200 10% 70%;
+
+    /* Effects */
+    --glow-color: 188 100% 63% / 0.4;
+    --shadow-color: 188 100% 63% / 0.1;
+    --glass-bg: 222 47% 5% / 0.6;
+    --glass-border: 188 100% 63% / 0.2;
+
     /* Status Colors */
     --success: 142 76% 36%;
     --warning: 38 92% 50%;
@@ -236,6 +250,15 @@
   .animate-pulse-glow {
     animation: pulse-glow 2s ease-in-out infinite;
   }
+
+  .animate-blink {
+    animation: blink 1s step-end infinite;
+  }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
 }
 
 /* Media query for smaller screens */

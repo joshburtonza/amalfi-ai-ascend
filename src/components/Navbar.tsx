@@ -107,10 +107,11 @@ const Navbar = () => {
 const NavLinks = ({ currentPath }: { currentPath: string }) => {
   const navItems = [
     { label: 'Home', href: '/' },
-    { label: 'Services', href: '/services' },
-    { label: 'About', href: '/about' },
+    { label: 'Recruitment', href: '/recruitment-automation' },
+    { label: 'Voice AI', href: '/ai-voice-receptionist' },
+    { label: 'Case Studies', href: '/case-studies' },
     { label: 'Resources', href: '/resources' },
-    { label: 'Contact', href: '/contact' },
+    { label: 'About', href: '/about' },
   ];
 
   return (
@@ -139,10 +140,11 @@ const MobileNavLinks: React.FC<{
 }> = ({ setIsMobileMenuOpen, currentPath }) => {
   const navItems = [
     { label: 'Home', href: '/' },
-    { label: 'Services', href: '/services' },
-    { label: 'About', href: '/about' },
+    { label: 'Recruitment', href: '/recruitment-automation' },
+    { label: 'Voice AI', href: '/ai-voice-receptionist' },
+    { label: 'Case Studies', href: '/case-studies' },
     { label: 'Resources', href: '/resources' },
-    { label: 'Contact', href: '/contact' },
+    { label: 'About', href: '/about' },
   ];
 
   const handleClick = () => {

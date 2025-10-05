@@ -7,12 +7,105 @@ import Footer from '../components/Footer';
 import { GlowCard } from '@/components/ui/spotlight-card';
 import { Button } from '@/components/ui/button';
 import { Component as TypewriterTestimonial } from '@/components/ui/typewriter-testimonial';
+import { Users, Phone, ArrowRight } from 'lucide-react';
 
 const Index = () => {
   return (
     <div className="bg-background min-h-screen">
       <Navbar />
       <Hero />
+      
+      {/* Two Pillars Overview */}
+      <section className="py-20 md:py-32 px-4 bg-gradient-section">
+        <div className="max-container">
+          <div className="text-center mb-16 animate-slide-up">
+            <span className="inline-block px-4 py-2 bg-primary/10 text-primary text-sm font-semibold rounded-full border border-primary/20 mb-4">
+              Our Solutions
+            </span>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
+              Two Core <span className="text-gradient">Automation Pillars</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Strategic AI systems designed to save time and win business
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 md:gap-10">
+            {/* Recruitment Automation */}
+            <div className="glassmorphic-strong rounded-3xl p-8 md:p-10 hover-lift hover-glow animate-slide-up">
+              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                <Users className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-3xl font-bold mb-4 text-foreground">Recruitment Automation</h3>
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                Source, screen, and schedule smarter. Reduce admin by 70% and let your recruiters focus on building relationships.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  'AI-powered CV screening',
+                  'Automated scheduling & follow-ups',
+                  'Adzuna position scraping',
+                  'Save 6-12 hours per recruiter weekly'
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-muted-foreground">
+                    <span className="text-primary mt-1">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button variant="outline" className="w-full group" asChild>
+                <a href="/recruitment-automation">
+                  <span className="flex items-center gap-2">
+                    Learn More
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </a>
+              </Button>
+            </div>
+
+            {/* AI Voice Receptionist */}
+            <div className="glassmorphic-strong rounded-3xl p-8 md:p-10 hover-lift hover-glow animate-slide-up" style={{ animationDelay: '200ms' }}>
+              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                <Phone className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-3xl font-bold mb-4 text-foreground">AI Voice Receptionist</h3>
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                Never miss another customer. Recover R40,000+ monthly in lost revenue from unanswered calls.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  'Instant 24/7 call answering',
+                  'WhatsApp booking confirmations',
+                  'Works with any booking system',
+                  '100% answer rate guaranteed'
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-muted-foreground">
+                    <span className="text-primary mt-1">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button variant="outline" className="w-full group" asChild>
+                <a href="/ai-voice-receptionist">
+                  <span className="flex items-center gap-2">
+                    Learn More
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </a>
+              </Button>
+            </div>
+          </div>
+
+          {/* Proof Point */}
+          <div className="text-center mt-16 animate-slide-up" style={{ animationDelay: '400ms' }}>
+            <p className="text-lg text-muted-foreground">
+              Trusted by agencies and service businesses recovering over{' '}
+              <span className="text-gradient font-bold">R40,000/month</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
       <ProcessTimeline />
       
       {/* Testimonials Section */}
