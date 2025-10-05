@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
 import { NavBar } from '@/components/ui/tubelight-navbar';
 import { ChevronDown } from 'lucide-react';
 import Logo from './Logo';
@@ -12,30 +11,19 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(isScrolled || window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  // Close mobile menu when clicking on a link
-  const handleMobileMenuClose = () => {
-    setIsMobileMenuOpen(false);
-  };
 
   return (
     <nav 
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-amalfi-black/80 backdrop-blur-sm py-2' 
-          : 'bg-transparent py-3 md:py-5'
+          ? 'bg-background/80 backdrop-blur-lg py-3' 
+          : 'bg-transparent py-5'
       }`}
     >
       <div className="max-container flex items-center justify-between px-4 sm:px-6">
@@ -44,7 +32,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:block">
           <NavBar 
             items={[
               { name: 'Home', url: '/' },
@@ -60,59 +48,42 @@ const Navbar = () => {
               { name: 'Case Studies', url: '/case-studies' },
               { name: 'Resources', url: '/resources' },
               { name: 'About', url: '/about' },
+              { name: "Let's Chat", url: '/contact' },
             ]}
           />
-          <Button
-            variant="outline" 
-            className="border border-hsl(var(--amalfi-teal)/0.3) hover:border-hsl(var(--amalfi-teal)/0.8) text-foreground bg-transparent hover:bg-hsl(var(--amalfi-teal)/0.1) transition-all ml-4"
-            asChild
-          >
-            <Link to="/contact">
-              Let&apos;s Chat
-            </Link>
-          </Button>
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <Button 
-            variant="ghost" 
-            size="sm" 
-            className="text-foreground p-1" 
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <span className={`block w-6 relative ${isMobileMenuOpen ? 'h-0' : 'h-0.5 bg-hsl(var(--amalfi-teal))'} transition-all`}></span>
-            <span className={`block mt-1.5 w-6 h-0.5 bg-hsl(var(--amalfi-teal)) transition-all ${isMobileMenuOpen ? 'rotate-45' : ''}`}></span>
-            <span className={`block mt-1.5 w-6 h-0.5 bg-hsl(var(--amalfi-teal)) transition-all ${isMobileMenuOpen ? '-translate-y-2 -rotate-45' : ''}`}></span>
-          </Button>
-        </div>
+        <button
+          className="md:hidden p-2"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <div className="w-6 h-5 flex flex-col justify-between">
+            <span className={`block h-0.5 w-full bg-hsl(var(--amalfi-teal)) transition-all ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+            <span className={`block h-0.5 w-full bg-hsl(var(--amalfi-teal)) transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
+            <span className={`block h-0.5 w-full bg-hsl(var(--amalfi-teal)) transition-all ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+          </div>
+        </button>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden fixed inset-0 top-0 z-40 bg-background/95 backdrop-blur-sm">
+          <div className="md:hidden fixed inset-0 top-0 z-40 bg-background/98 backdrop-blur-lg">
             <div className="flex flex-col items-center justify-center h-full space-y-6">
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                className="absolute top-4 right-4 text-foreground p-2" 
-                onClick={handleMobileMenuClose}
+              <button
+                className="absolute top-6 right-6 p-2"
+                onClick={() => setIsMobileMenuOpen(false)}
                 aria-label="Close menu"
               >
-                <span className="block w-6 h-0.5 bg-hsl(var(--amalfi-teal)) rotate-45"></span>
-                <span className="block w-6 h-0.5 bg-hsl(var(--amalfi-teal)) -rotate-45 -mt-0.5"></span>
-              </Button>
-              <MobileNavLinks setIsMobileMenuOpen={setIsMobileMenuOpen} currentPath={location.pathname} isMobileMenuOpen={isMobileMenuOpen} />
-              <Button
-                variant="outline" 
-                className="border border-hsl(var(--amalfi-teal)/0.3) hover:border-hsl(var(--amalfi-teal)/0.8) text-foreground bg-transparent hover:bg-hsl(var(--amalfi-teal)/0.1) transition-all"
-                asChild
-                onClick={handleMobileMenuClose}
-              >
-                <Link to="/contact">
-                  Let&apos;s Chat
-                </Link>
-              </Button>
+                <div className="w-6 h-6 relative">
+                  <span className="absolute block w-full h-0.5 bg-hsl(var(--amalfi-teal)) rotate-45 top-1/2"></span>
+                  <span className="absolute block w-full h-0.5 bg-hsl(var(--amalfi-teal)) -rotate-45 top-1/2"></span>
+                </div>
+              </button>
+              <MobileNavLinks 
+                setIsMobileMenuOpen={setIsMobileMenuOpen} 
+                currentPath={location.pathname} 
+              />
             </div>
           </div>
         )}
@@ -125,8 +96,7 @@ const Navbar = () => {
 const MobileNavLinks: React.FC<{ 
   setIsMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
   currentPath: string;
-  isMobileMenuOpen: boolean;
-}> = ({ setIsMobileMenuOpen, currentPath, isMobileMenuOpen }) => {
+}> = ({ setIsMobileMenuOpen, currentPath }) => {
   const [servicesOpen, setServicesOpen] = useState(false);
 
   const navItems = [
@@ -134,6 +104,7 @@ const MobileNavLinks: React.FC<{
     { label: 'Case Studies', href: '/case-studies' },
     { label: 'Resources', href: '/resources' },
     { label: 'About', href: '/about' },
+    { label: "Let's Chat", href: '/contact' },
   ];
 
   const serviceItems = [
@@ -151,7 +122,7 @@ const MobileNavLinks: React.FC<{
         <Link
           key={item.label}
           to={item.href}
-          className={`transition-colors text-xl py-2 font-medium ${
+          className={`transition-colors text-2xl py-2 font-semibold ${
             currentPath === item.href
               ? 'text-hsl(var(--amalfi-teal))'
               : 'text-foreground hover:text-hsl(var(--amalfi-teal))'
@@ -166,10 +137,10 @@ const MobileNavLinks: React.FC<{
       <div className="flex flex-col items-center">
         <button
           onClick={() => setServicesOpen(!servicesOpen)}
-          className="flex items-center gap-2 text-xl py-2 font-medium text-foreground hover:text-hsl(var(--amalfi-teal)) transition-colors"
+          className="flex items-center gap-2 text-2xl py-2 font-semibold text-foreground hover:text-hsl(var(--amalfi-teal)) transition-colors"
         >
           Services
-          <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
+          <ChevronDown className={`h-5 w-5 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
         </button>
         {servicesOpen && (
           <div className="flex flex-col items-center mt-2 space-y-2">
@@ -195,7 +166,7 @@ const MobileNavLinks: React.FC<{
         <Link
           key={item.label}
           to={item.href}
-          className={`transition-colors text-xl py-2 font-medium ${
+          className={`transition-colors text-2xl py-2 font-semibold ${
             currentPath === item.href
               ? 'text-hsl(var(--amalfi-teal))'
               : 'text-foreground hover:text-hsl(var(--amalfi-teal))'
