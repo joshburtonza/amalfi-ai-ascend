@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { BackgroundPaths } from '@/components/ui/background-paths';
-import { GooeyText } from '@/components/ui/gooey-text-morphing';
 
 const Hero = () => {
   return (
@@ -11,16 +10,6 @@ const Hero = () => {
     >
       <BackgroundPaths 
         title="Unlock AI Excellence with Amalfi AI"
-        topContent={
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground">
-            <GooeyText 
-              words={['Strategic', 'Innovative', 'Transformative', 'Strategic']} 
-              morphTime={0.9}
-              cooldownTime={0.25}
-            />{' '}
-            AI Partners
-          </h2>
-        }
       />
     </section>
   );
