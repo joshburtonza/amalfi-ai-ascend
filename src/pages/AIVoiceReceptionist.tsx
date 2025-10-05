@@ -223,15 +223,18 @@ const AIVoiceReceptionist = () => {
         </div>
       </section>
 
-      {/* Pricing Teaser */}
+      {/* Recovery Tiers */}
       <section className="py-20 md:py-32 px-4">
         <div className="max-container">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
-              Investment That <span className="text-gradient">Pays for Itself</span>
+              How Much Revenue <span className="text-gradient">Can You Recover?</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We begin with an ROI audit — if results don't justify it, we don't proceed
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+              We begin with a free ROI audit to calculate your specific recovery potential
+            </p>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              These are <span className="text-primary font-semibold">revenue recovery estimates</span> based on typical business scenarios, not service costs
             </p>
           </div>
 
@@ -250,21 +253,30 @@ const AIVoiceReceptionist = () => {
                   </div>
                 )}
                 <h3 className="text-2xl font-bold mb-2 text-foreground">{tier.name}</h3>
-                <div className="text-3xl font-bold text-gradient mb-6">{tier.recovery}</div>
-                <p className="text-sm text-muted-foreground mb-6">Revenue recovered monthly</p>
-                <ul className="space-y-3 mb-8">
-                  {tier.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-2 text-muted-foreground">
-                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="text-3xl font-bold text-gradient mb-2">{tier.recovery}</div>
+                <p className="text-sm text-muted-foreground mb-6 font-semibold">Revenue recovered monthly</p>
+                <div className="border-t border-border pt-6 mb-6">
+                  <p className="text-xs text-muted-foreground mb-4">Includes:</p>
+                  <ul className="space-y-3">
+                    {tier.features.map((feature, i) => (
+                      <li key={i} className="flex items-start gap-2 text-muted-foreground">
+                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
                 <Button variant={tier.popular ? 'default' : 'outline'} className="w-full" asChild>
-                  <a href="/contact">Get Started</a>
+                  <a href="/contact">Book Free ROI Audit</a>
                 </Button>
               </div>
             ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+              Your actual service investment will be a fraction of the revenue recovered. We only proceed if the ROI justifies the investment.
+            </p>
           </div>
         </div>
       </section>
