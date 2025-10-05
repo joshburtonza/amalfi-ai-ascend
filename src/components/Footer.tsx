@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Logo from './Logo';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -23,24 +23,29 @@ const Footer = () => {
             <h3 className="text-amalfi-white font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#home" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">
+                <Link to="/" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#about" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">
+                <Link to="/about" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#features" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">
-                  Features
-                </a>
+                <Link to="/case-studies" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">
+                  Case Studies
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">
+                <Link to="/resources" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">
+                  Resources
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

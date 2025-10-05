@@ -55,29 +55,29 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2"
+          className="md:hidden p-3 -mr-2 touch-manipulation"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
           <div className="w-6 h-5 flex flex-col justify-between">
-            <span className={`block h-0.5 w-full bg-hsl(var(--amalfi-teal)) transition-all ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-            <span className={`block h-0.5 w-full bg-hsl(var(--amalfi-teal)) transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
-            <span className={`block h-0.5 w-full bg-hsl(var(--amalfi-teal)) transition-all ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            <span className={`block h-0.5 w-full bg-foreground transition-all ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+            <span className={`block h-0.5 w-full bg-foreground transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
+            <span className={`block h-0.5 w-full bg-foreground transition-all ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
           </div>
         </button>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden fixed inset-0 top-0 z-40 bg-background/98 backdrop-blur-lg">
-            <div className="flex flex-col items-center justify-center h-full space-y-6">
+          <div className="md:hidden fixed inset-0 top-0 z-40 bg-background/98 backdrop-blur-lg animate-fade-in">
+            <div className="flex flex-col items-stretch justify-start h-full pt-20 px-6 overflow-y-auto">
               <button
-                className="absolute top-6 right-6 p-2"
+                className="absolute top-4 right-4 p-3 touch-manipulation"
                 onClick={() => setIsMobileMenuOpen(false)}
                 aria-label="Close menu"
               >
                 <div className="w-6 h-6 relative">
-                  <span className="absolute block w-full h-0.5 bg-hsl(var(--amalfi-teal)) rotate-45 top-1/2"></span>
-                  <span className="absolute block w-full h-0.5 bg-hsl(var(--amalfi-teal)) -rotate-45 top-1/2"></span>
+                  <span className="absolute block w-full h-0.5 bg-foreground rotate-45 top-1/2"></span>
+                  <span className="absolute block w-full h-0.5 bg-foreground -rotate-45 top-1/2"></span>
                 </div>
               </button>
               <MobileNavLinks 
@@ -117,15 +117,15 @@ const MobileNavLinks: React.FC<{
   };
 
   return (
-    <>
+    <div className="w-full space-y-2">
       {navItems.slice(0, 1).map((item) => (
         <Link
           key={item.label}
           to={item.href}
-          className={`transition-colors text-2xl py-2 font-semibold ${
+          className={`block w-full text-left transition-colors text-xl py-4 px-4 rounded-lg font-semibold touch-manipulation ${
             currentPath === item.href
-              ? 'text-hsl(var(--amalfi-teal))'
-              : 'text-foreground hover:text-hsl(var(--amalfi-teal))'
+              ? 'text-primary bg-primary/10'
+              : 'text-foreground hover:text-primary hover:bg-primary/5'
           }`}
           onClick={handleClick}
         >
@@ -134,24 +134,24 @@ const MobileNavLinks: React.FC<{
       ))}
       
       {/* Services Dropdown */}
-      <div className="flex flex-col items-center">
+      <div className="w-full">
         <button
           onClick={() => setServicesOpen(!servicesOpen)}
-          className="flex items-center gap-2 text-2xl py-2 font-semibold text-foreground hover:text-hsl(var(--amalfi-teal)) transition-colors"
+          className="flex items-center justify-between w-full text-left text-xl py-4 px-4 rounded-lg font-semibold text-foreground hover:text-primary hover:bg-primary/5 transition-colors touch-manipulation"
         >
           Services
           <ChevronDown className={`h-5 w-5 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
         </button>
         {servicesOpen && (
-          <div className="flex flex-col items-center mt-2 space-y-2">
+          <div className="mt-1 space-y-1 pl-4">
             {serviceItems.map((item) => (
               <Link
                 key={item.label}
                 to={item.href}
-                className={`transition-colors text-lg py-1 font-medium ${
+                className={`block w-full text-left transition-colors text-lg py-3 px-4 rounded-lg font-medium touch-manipulation ${
                   currentPath === item.href
-                    ? 'text-hsl(var(--amalfi-teal))'
-                    : 'text-muted-foreground hover:text-hsl(var(--amalfi-teal))'
+                    ? 'text-primary bg-primary/10'
+                    : 'text-muted-foreground hover:text-primary hover:bg-primary/5'
                 }`}
                 onClick={handleClick}
               >
@@ -166,17 +166,17 @@ const MobileNavLinks: React.FC<{
         <Link
           key={item.label}
           to={item.href}
-          className={`transition-colors text-2xl py-2 font-semibold ${
+          className={`block w-full text-left transition-colors text-xl py-4 px-4 rounded-lg font-semibold touch-manipulation ${
             currentPath === item.href
-              ? 'text-hsl(var(--amalfi-teal))'
-              : 'text-foreground hover:text-hsl(var(--amalfi-teal))'
+              ? 'text-primary bg-primary/10'
+              : 'text-foreground hover:text-primary hover:bg-primary/5'
           }`}
           onClick={handleClick}
         >
           {item.label}
         </Link>
       ))}
-    </>
+    </div>
   );
 };
 
