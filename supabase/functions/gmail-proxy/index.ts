@@ -6,10 +6,12 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-interface GmailTokens {
-  access_token: string;
-  refresh_token: string;
+interface GmailIntegration {
+  id: string;
+  gmail_email: string;
   token_expires_at: string;
+  access_token_decrypted?: string;
+  refresh_token_decrypted?: string;
 }
 
 serve(async (req) => {
@@ -52,15 +54,15 @@ serve(async (req) => {
 
     console.log(`Gmail proxy request - User: ${user.id}, Action: ${action}`);
 
-    // Fetch the Gmail integration with tokens (only accessible via service role)
-    const { data: integration, error: fetchError } = await supabaseServiceRole
+    // Fetch the Gmail integration with ENCRYPTED tokens (only accessible via service role)
+    const { data: integrationData, error: fetchError } = await supabaseServiceRole
       .from('gmail_integrations')
       .select('id, access_token, refresh_token, token_expires_at, gmail_email')
       .eq('user_id', user.id)
       .eq('id', integrationId)
       .single();
 
-    if (fetchError || !integration) {
+    if (fetchError || !integrationData) {
       console.error('Failed to fetch integration:', fetchError);
       return new Response(
         JSON.stringify({ error: 'Gmail integration not found' }),
@@ -68,22 +70,51 @@ serve(async (req) => {
       );
     }
 
+    // Decrypt tokens using the SECURITY DEFINER function
+    const { data: decryptedTokens, error: decryptError } = await supabaseServiceRole
+      .rpc('decrypt_gmail_token', { encrypted_token: integrationData.access_token });
+
+    if (decryptError) {
+      console.error('Failed to decrypt access token:', decryptError);
+      return new Response(
+        JSON.stringify({ error: 'Failed to decrypt tokens' }),
+        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    const { data: decryptedRefreshToken, error: refreshDecryptError } = await supabaseServiceRole
+      .rpc('decrypt_gmail_token', { encrypted_token: integrationData.refresh_token });
+
+    if (refreshDecryptError) {
+      console.error('Failed to decrypt refresh token:', refreshDecryptError);
+      return new Response(
+        JSON.stringify({ error: 'Failed to decrypt tokens' }),
+        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    const integration: GmailIntegration = {
+      ...integrationData,
+      access_token_decrypted: decryptedTokens,
+      refresh_token_decrypted: decryptedRefreshToken,
+    };
+
     // Check if token needs refresh
     const tokenExpiresAt = new Date(integration.token_expires_at);
     const now = new Date();
-    let accessToken = integration.access_token;
+    let accessToken = integration.access_token_decrypted!;
 
     if (tokenExpiresAt <= now) {
       console.log('Access token expired, refreshing...');
       
-      // Refresh the token
+      // Refresh the token using the decrypted refresh token
       const refreshResponse = await fetch('https://oauth2.googleapis.com/token', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({
           client_id: Deno.env.get('GOOGLE_CLIENT_ID') ?? '',
           client_secret: Deno.env.get('GOOGLE_CLIENT_SECRET') ?? '',
-          refresh_token: integration.refresh_token,
+          refresh_token: integration.refresh_token_decrypted!,
           grant_type: 'refresh_token',
         }),
       });
@@ -99,17 +130,20 @@ serve(async (req) => {
       
       const newExpiresAt = new Date(now.getTime() + refreshData.expires_in * 1000);
 
-      // Update the token in database (using service role)
-      await supabaseServiceRole
-        .from('gmail_integrations')
-        .update({
-          access_token: accessToken,
-          token_expires_at: newExpiresAt.toISOString(),
-          updated_at: new Date().toISOString(),
-        })
-        .eq('id', integration.id);
+      // Update the token in database using the refresh_gmail_token function
+      // This function automatically encrypts the new token
+      const { error: updateError } = await supabaseServiceRole.rpc('refresh_gmail_token', {
+        integration_id: integration.id,
+        new_access_token: accessToken,
+        new_expires_at: newExpiresAt.toISOString(),
+      });
 
-      console.log('Token refreshed successfully');
+      if (updateError) {
+        console.error('Failed to update refreshed token:', updateError);
+        throw new Error('Failed to store refreshed token');
+      }
+
+      console.log('Token refreshed and encrypted successfully');
     }
 
     // Handle different Gmail API actions
@@ -137,8 +171,10 @@ serve(async (req) => {
 
   } catch (error) {
     console.error('Error in gmail-proxy function:', error);
+    // Never log the actual token values in error messages
+    const sanitizedError = error.message.replace(/ya29\.[a-zA-Z0-9_-]+/g, '[REDACTED_TOKEN]');
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: sanitizedError }),
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
   }
