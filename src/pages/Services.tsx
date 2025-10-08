@@ -95,6 +95,32 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Quick Links to Sub-pages */}
+      <section className="py-12 px-4">
+        <div className="max-container">
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
+            <GlowCard customSize className="p-8 text-center hover:scale-105 transition-transform">
+              <h3 className="text-2xl font-bold mb-4">AI Systems</h3>
+              <p className="text-muted-foreground mb-6">
+                Pre-built AI team members: Mark (Receptionist), Clara (Customer Success), and Avery (Recruiter).
+              </p>
+              <Button asChild>
+                <a href="/services/systems">Explore Systems</a>
+              </Button>
+            </GlowCard>
+            <GlowCard customSize className="p-8 text-center hover:scale-105 transition-transform">
+              <h3 className="text-2xl font-bold mb-4">Custom Infrastructure</h3>
+              <p className="text-muted-foreground mb-6">
+                Tailored AI ecosystems, workflows, and integrations built from the ground up.
+              </p>
+              <Button asChild>
+                <a href="/services/infrastructure">Explore Infrastructure</a>
+              </Button>
+            </GlowCard>
+          </div>
+        </div>
+      </section>
+
       {/* Services Grid */}
       <section className="py-20 px-4">
         <div className="max-container">
