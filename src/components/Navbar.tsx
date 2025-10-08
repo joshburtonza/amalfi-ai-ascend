@@ -43,8 +43,6 @@ const Navbar = () => {
                 dropdownItems: [
                   { name: 'AI Systems', url: '/services/systems' },
                   { name: 'Infrastructure', url: '/services/infrastructure' },
-                  { name: 'Recruitment Automation', url: '/recruitment-automation' },
-                  { name: 'AI Voice Receptionist', url: '/ai-voice-receptionist' },
                 ]
               },
               { name: 'Case Studies', url: '/case-studies' },
@@ -112,8 +110,6 @@ const MobileNavLinks: React.FC<{
   const serviceItems = [
     { label: 'AI Systems', href: '/services/systems' },
     { label: 'Infrastructure', href: '/services/infrastructure' },
-    { label: 'Recruitment Automation', href: '/recruitment-automation' },
-    { label: 'AI Voice Receptionist', href: '/ai-voice-receptionist' },
   ];
 
   const handleClick = () => {

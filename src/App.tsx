@@ -10,8 +10,6 @@ import ServicesInfrastructure from "./pages/ServicesInfrastructure";
 import About from "./pages/About";
 import Resources from "./pages/Resources";
 import Contact from "./pages/Contact";
-import RecruitmentAutomation from "./pages/RecruitmentAutomation";
-import AIVoiceReceptionist from "./pages/AIVoiceReceptionist";
 import CaseStudies from "./pages/CaseStudies";
 import NotFound from "./pages/NotFound";
 
@@ -25,8 +23,6 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/recruitment-automation" element={<RecruitmentAutomation />} />
-          <Route path="/ai-voice-receptionist" element={<AIVoiceReceptionist />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/systems" element={<ServicesSystems />} />
