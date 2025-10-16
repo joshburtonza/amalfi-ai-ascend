@@ -6,20 +6,12 @@ import { Target, Users, Shield, Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const About = () => {
-  const founders = [
-    {
-      name: "Joshua Burton",
-      title: "Founder & CEO",
-      image: "/lovable-uploads/c82f3a29-2a00-4659-9f03-92a11af68d26.png",
-      bio: "Strategic AI architect with over a decade of experience transforming businesses through intelligent automation and infrastructure design."
-    },
-    {
-      name: "Cheyenne Horn",
-      title: "Co-Founder & CTO",
-      image: "/lovable-uploads/bbbe09c8-5a08-44e6-a343-151adaf1bf84.png",
-      bio: "Technical visionary specializing in scalable AI systems, MLOps, and building production-grade infrastructure that powers modern enterprises."
-    }
-  ];
+  const founder = {
+    name: "Joshua Burton",
+    title: "Founder & CEO",
+    image: "/lovable-uploads/c82f3a29-2a00-4659-9f03-92a11af68d26.png",
+    bio: "Strategic AI architect with over a decade of experience transforming businesses through intelligent automation and infrastructure design."
+  };
 
   const values = [
     {
@@ -89,30 +81,28 @@ const About = () => {
         <div className="max-container">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Meet Our Founders
+              Meet Our Founder
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Led by experienced AI strategists and technical architects who've built and scaled AI systems for leading organizations.
+              Led by an experienced AI strategist and technical architect who has built and scaled AI systems for leading organizations.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            {founders.map((founder, index) => (
-              <GlowCard key={index} customSize className="rounded-2xl overflow-hidden hover-lift h-full">
-                <div className="aspect-square overflow-hidden rounded-t-2xl">
-                  <img 
-                    src={founder.image} 
-                    alt={founder.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold mb-2">{founder.name}</h3>
-                  <p className="text-hsl(var(--amalfi-teal)) font-semibold mb-4">{founder.title}</p>
-                  <p className="text-muted-foreground leading-relaxed">{founder.bio}</p>
-                </div>
-              </GlowCard>
-            ))}
+          <div className="flex justify-center">
+            <GlowCard customSize className="rounded-2xl overflow-hidden hover-lift max-w-md w-full">
+              <div className="aspect-square overflow-hidden rounded-t-2xl">
+                <img 
+                  src={founder.image} 
+                  alt={founder.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-bold mb-2">{founder.name}</h3>
+                <p className="text-hsl(var(--amalfi-teal)) font-semibold mb-4">{founder.title}</p>
+                <p className="text-muted-foreground leading-relaxed">{founder.bio}</p>
+              </div>
+            </GlowCard>
           </div>
         </div>
       </section>
