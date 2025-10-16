@@ -51,8 +51,8 @@ const Contact = () => {
               <p className="text-muted-foreground mb-6">
                 Download our self-assessment framework to evaluate your organization's AI maturity.
               </p>
-              <Button size="lg" variant="outline" className="w-full">
-                Download Audit
+              <Button size="lg" variant="outline" className="w-full" asChild>
+                <a href="/AI_Readiness_Assessment.pdf" download="AI_Readiness_Assessment.pdf">Download Audit</a>
               </Button>
             </GlowCard>
           </div>
