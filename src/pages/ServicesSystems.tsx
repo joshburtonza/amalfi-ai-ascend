@@ -8,10 +8,8 @@ import { ComparisonTable } from '@/components/ComparisonTable';
 import { ROIComparison } from '@/components/ROIComparison';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-
 const ServicesSystems = () => {
-  return (
-    <div className="bg-background min-h-screen">
+  return <div className="bg-background min-h-screen">
       <Navbar />
       
       {/* Hero Section */}
@@ -23,7 +21,7 @@ const ServicesSystems = () => {
               Never Miss a Lead Again. Build Your AI Team with Amalfi Systems.
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-              Businesses lose up to <span className="text-primary font-bold">42% of leads</span> from missed calls, unanswered emails, and manual admin bottlenecks.
+              Businesses lose up to <span className="text-primary font-bold">62% of leads</span> from missed calls, unanswered emails, and manual admin bottlenecks.
             </p>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
               Amalfi's AI Systems stop the leaks — delivering consistent, 24/7 performance across every channel.
@@ -51,34 +49,10 @@ const ServicesSystems = () => {
           </div>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            <StatCard 
-              value="62%" 
-              label="Calls Go Unanswered" 
-              description="Small-business average"
-              icon={PhoneOff}
-              animated
-            />
-            <StatCard 
-              value="85%" 
-              label="Never Call Back" 
-              description="After one missed call"
-              icon={AlertTriangle}
-              animated
-            />
-            <StatCard 
-              value="78%" 
-              label="Choose First Responder" 
-              description="Buyers select who answers"
-              icon={Target}
-              animated
-            />
-            <StatCard 
-              value="$126K+" 
-              label="Average Annual Loss" 
-              description="From missed calls alone"
-              icon={DollarSign}
-              animated
-            />
+            <StatCard value="62%" label="Calls Go Unanswered" description="Small-business average" icon={PhoneOff} animated />
+            <StatCard value="85%" label="Never Call Back" description="After one missed call" icon={AlertTriangle} animated />
+            <StatCard value="78%" label="Choose First Responder" description="Buyers select who answers" icon={Target} animated />
+            <StatCard value="$126K+" label="Average Annual Loss" description="From missed calls alone" icon={DollarSign} animated />
           </div>
 
           <div className="max-w-3xl mx-auto text-center">
@@ -117,18 +91,10 @@ const ServicesSystems = () => {
                   Core Features
                 </h3>
                 <ul className="space-y-3">
-                  {[
-                    'Real-time voice conversations via phone, WhatsApp, or web',
-                    'Dynamic calendar integration (Google Calendar or n8n backend)',
-                    'Smart FAQ engine (services, hours, pricing)',
-                    'Lead capture and CRM sync',
-                    'Natural human tone with multiple language models'
-                  ].map((feature, index) => (
-                    <li key={index} className="flex items-start gap-2">
+                  {['Real-time voice conversations via phone, WhatsApp, or web', 'Dynamic calendar integration (Google Calendar or n8n backend)', 'Smart FAQ engine (services, hours, pricing)', 'Lead capture and CRM sync', 'Natural human tone with multiple language models'].map((feature, index) => <li key={index} className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                       <span className="text-muted-foreground">{feature}</span>
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
               </div>
 
@@ -170,18 +136,27 @@ const ServicesSystems = () => {
 
             {/* Data Insights Table */}
             <div className="mb-8">
-              <ComparisonTable 
-                title="Data Insights"
-                beforeLabel="Before AI"
-                afterLabel="After Mark"
-                rows={[
-                  { metric: "Missed Calls", before: "35–40%", after: "<1%" },
-                  { metric: "Lead Response Time", before: "4–6 hours", after: "Instant" },
-                  { metric: "Conversion Rate", before: "22%", after: "40%+" },
-                  { metric: "Admin Time Saved", before: "—", after: "70% reduction" },
-                  { metric: "ROI", before: "—", after: "6× in 6 months" }
-                ]}
-              />
+              <ComparisonTable title="Data Insights" beforeLabel="Before AI" afterLabel="After Mark" rows={[{
+              metric: "Missed Calls",
+              before: "35–40%",
+              after: "<1%"
+            }, {
+              metric: "Lead Response Time",
+              before: "4–6 hours",
+              after: "Instant"
+            }, {
+              metric: "Conversion Rate",
+              before: "22%",
+              after: "40%+"
+            }, {
+              metric: "Admin Time Saved",
+              before: "—",
+              after: "70% reduction"
+            }, {
+              metric: "ROI",
+              before: "—",
+              after: "6× in 6 months"
+            }]} />
             </div>
 
             {/* Sales Narrative */}
@@ -196,36 +171,37 @@ const ServicesSystems = () => {
 
             {/* ROI Comparison */}
             <div className="mb-8">
-              <ROIComparison 
-                title="ROI Comparison"
-                traditionalLabel="Human Receptionist"
-                aiLabel="Mark"
-                rows={[
-                  { aspect: "Availability", traditional: "8 hours/day", aiSystem: "24/7" },
-                  { aspect: "Cost", traditional: "R17k–R25k/month", aiSystem: "R1.8k–R2.5k/month" },
-                  { aspect: "Fatigue", traditional: "Yes", aiSystem: "Never" },
-                  { aspect: "Consistency", traditional: "Variable", aiSystem: "100%" },
-                  { aspect: "ROI", traditional: "Moderate", aiSystem: "5–6× monthly cost" }
-                ]}
-              />
+              <ROIComparison title="ROI Comparison" traditionalLabel="Human Receptionist" aiLabel="Mark" rows={[{
+              aspect: "Availability",
+              traditional: "8 hours/day",
+              aiSystem: "24/7"
+            }, {
+              aspect: "Cost",
+              traditional: "R17k–R25k/month",
+              aiSystem: "R1.8k–R2.5k/month"
+            }, {
+              aspect: "Fatigue",
+              traditional: "Yes",
+              aiSystem: "Never"
+            }, {
+              aspect: "Consistency",
+              traditional: "Variable",
+              aiSystem: "100%"
+            }, {
+              aspect: "ROI",
+              traditional: "Moderate",
+              aiSystem: "5–6× monthly cost"
+            }]} />
             </div>
 
             {/* Common Use Cases */}
             <div>
               <h3 className="text-xl font-bold mb-4">Common Use Cases</h3>
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
-                {[
-                  'Dentists & medical practices',
-                  'Salons & spas',
-                  'HVAC, electricians, plumbers',
-                  'Agencies & studios',
-                  'Lodges & hospitality'
-                ].map((useCase, index) => (
-                  <div key={index} className="flex items-center gap-2 bg-primary/5 p-3 rounded">
+                {['Dentists & medical practices', 'Salons & spas', 'HVAC, electricians, plumbers', 'Agencies & studios', 'Lodges & hospitality'].map((useCase, index) => <div key={index} className="flex items-center gap-2 bg-primary/5 p-3 rounded">
                     <CheckCircle className="h-4 w-4 text-primary flex-shrink-0" />
                     <span className="text-sm">{useCase}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </GlowCard>
@@ -257,18 +233,10 @@ const ServicesSystems = () => {
                   Core Features
                 </h3>
                 <ul className="space-y-3">
-                  {[
-                    'Email & multi-channel inbox automation (Gmail, Outlook, WhatsApp, Instagram DMs)',
-                    'Smart intent detection (lead, support, invoice, general inquiry)',
-                    'Automated response drafting & escalation logic',
-                    'Integration with CRMs, Notion, or ticketing systems',
-                    'Sentiment analysis & urgency detection'
-                  ].map((feature, index) => (
-                    <li key={index} className="flex items-start gap-2">
+                  {['Email & multi-channel inbox automation (Gmail, Outlook, WhatsApp, Instagram DMs)', 'Smart intent detection (lead, support, invoice, general inquiry)', 'Automated response drafting & escalation logic', 'Integration with CRMs, Notion, or ticketing systems', 'Sentiment analysis & urgency detection'].map((feature, index) => <li key={index} className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                       <span className="text-muted-foreground">{feature}</span>
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
               </div>
 
@@ -352,18 +320,10 @@ const ServicesSystems = () => {
                   Core Features
                 </h3>
                 <ul className="space-y-3">
-                  {[
-                    'CV & resume parsing via email or upload',
-                    'AI-based scoring and ranking (education, experience, skills)',
-                    'Duplicate detection & candidate justification reports',
-                    'Integration with Supabase or client ATS',
-                    'Dashboard visualization and analytics'
-                  ].map((feature, index) => (
-                    <li key={index} className="flex items-start gap-2">
+                  {['CV & resume parsing via email or upload', 'AI-based scoring and ranking (education, experience, skills)', 'Duplicate detection & candidate justification reports', 'Integration with Supabase or client ATS', 'Dashboard visualization and analytics'].map((feature, index) => <li key={index} className="flex items-start gap-2">
                       <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                       <span className="text-muted-foreground">{feature}</span>
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
               </div>
 
@@ -434,30 +394,10 @@ const ServicesSystems = () => {
           </h2>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <StatCard 
-              value="99%+" 
-              label="Call Capture Rate" 
-              icon={Phone}
-              animated
-            />
-            <StatCard 
-              value="90%" 
-              label="Lower Operational Cost" 
-              icon={DollarSign}
-              animated
-            />
-            <StatCard 
-              value="40%" 
-              label="Faster Service Handling" 
-              icon={Zap}
-              animated
-            />
-            <StatCard 
-              value="4–6×" 
-              label="ROI Within 90 Days" 
-              icon={TrendingUp}
-              animated
-            />
+            <StatCard value="99%+" label="Call Capture Rate" icon={Phone} animated />
+            <StatCard value="90%" label="Lower Operational Cost" icon={DollarSign} animated />
+            <StatCard value="40%" label="Faster Service Handling" icon={Zap} animated />
+            <StatCard value="4–6×" label="ROI Within 90 Days" icon={TrendingUp} animated />
           </div>
 
           <div className="max-w-4xl mx-auto">
@@ -564,39 +504,32 @@ const ServicesSystems = () => {
                 </tr>
               </thead>
               <tbody>
-                {[
-                  {
-                    plan: "Mark",
-                    setup: "R8,000–R12,000",
-                    monthly: "R1,800–R2,500",
-                    includes: "24/7 AI receptionist, CRM, WhatsApp"
-                  },
-                  {
-                    plan: "Clara",
-                    setup: "R10,000",
-                    monthly: "R2,000–R3,000",
-                    includes: "Inbox automation, CRM, sentiment analysis"
-                  },
-                  {
-                    plan: "Avery",
-                    setup: "R15,000",
-                    monthly: "R3,500–R4,000",
-                    includes: "CV scoring dashboard, ATS integration"
-                  },
-                  {
-                    plan: "Custom Infrastructure",
-                    setup: "R25,000+",
-                    monthly: "R3,500+/mo",
-                    includes: "Tailored automation stack, full integration"
-                  }
-                ].map((row, index) => (
-                  <tr key={index} className="border-b border-border hover:bg-primary/5 transition-colors">
+                {[{
+                plan: "Mark",
+                setup: "R8,000–R12,000",
+                monthly: "R1,800–R2,500",
+                includes: "24/7 AI receptionist, CRM, WhatsApp"
+              }, {
+                plan: "Clara",
+                setup: "R10,000",
+                monthly: "R2,000–R3,000",
+                includes: "Inbox automation, CRM, sentiment analysis"
+              }, {
+                plan: "Avery",
+                setup: "R15,000",
+                monthly: "R3,500–R4,000",
+                includes: "CV scoring dashboard, ATS integration"
+              }, {
+                plan: "Custom Infrastructure",
+                setup: "R25,000+",
+                monthly: "R3,500+/mo",
+                includes: "Tailored automation stack, full integration"
+              }].map((row, index) => <tr key={index} className="border-b border-border hover:bg-primary/5 transition-colors">
                     <td className="py-4 px-4 md:px-6 font-bold text-primary">{row.plan}</td>
                     <td className="py-4 px-4 md:px-6 text-muted-foreground">{row.setup}</td>
                     <td className="py-4 px-4 md:px-6 font-semibold">{row.monthly}</td>
                     <td className="py-4 px-4 md:px-6 text-muted-foreground text-sm">{row.includes}</td>
-                  </tr>
-                ))}
+                  </tr>)}
               </tbody>
             </table>
           </div>
@@ -632,8 +565,6 @@ const ServicesSystems = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default ServicesSystems;
