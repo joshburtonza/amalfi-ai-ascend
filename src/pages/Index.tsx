@@ -6,7 +6,7 @@ import Hero from '../components/Hero';
 import ProcessTimeline from '../components/ProcessTimeline';
 import Footer from '../components/Footer';
 import { GlowCard } from '@/components/ui/spotlight-card';
-import { Button } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import { Component as TypewriterTestimonial } from '@/components/ui/typewriter-testimonial';
 import { Users, Phone, ArrowRight } from 'lucide-react';
 
@@ -187,9 +187,9 @@ const Index = () => {
               Transform your organization with AI systems that scale, adapt, and deliver measurable business value.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" asChild>
-                <a href="/AI_Readiness_Assessment.pdf" download="AI_Readiness_Assessment.pdf">Download Audit</a>
-              </Button>
+              <a href="/AI_Readiness_Assessment.pdf" download className={buttonVariants({ variant: 'default', size: 'lg' })}>
+                Download Audit
+              </a>
               <Button size="lg" variant="outline" asChild>
                 <Link to="/services">Explore Our Services</Link>
               </Button>
