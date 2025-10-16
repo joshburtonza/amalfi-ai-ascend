@@ -67,7 +67,7 @@ const ServicesSystems = () => {
       </section>
 
       {/* Mark - AI Receptionist */}
-      <section className="py-20 px-4">
+      <section id="mark" className="py-20 px-4">
         <div className="max-container">
           <GlowCard customSize className="p-8 md:p-12">
             <div className="flex items-start gap-6 mb-6">
@@ -296,7 +296,7 @@ const ServicesSystems = () => {
       </section>
 
       {/* Avery - AI Recruiter */}
-      <section className="py-20 px-4">
+      <section id="avery" className="py-20 px-4">
         <div className="max-container">
           <GlowCard customSize className="p-8 md:p-12">
             <div className="flex items-start gap-6 mb-6">

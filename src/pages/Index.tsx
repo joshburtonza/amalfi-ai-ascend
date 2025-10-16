@@ -55,7 +55,7 @@ const Index = () => {
                 ))}
               </ul>
               <Button variant="outline" className="w-full group" asChild>
-                <Link to="/services/systems">
+                <Link to="/services/systems#avery">
                   <span className="flex items-center gap-2">
                     Learn More
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -87,7 +87,7 @@ const Index = () => {
                 ))}
               </ul>
               <Button variant="outline" className="w-full group" asChild>
-                <Link to="/services/infrastructure">
+                <Link to="/services/systems#mark">
                   <span className="flex items-center gap-2">
                     Learn More
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
