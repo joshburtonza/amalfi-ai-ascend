@@ -103,15 +103,15 @@ export const Component: React.FC<ComponentProps> = ({ testimonials }) => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <motion.img
-            src={testimonial.image}
-            alt={`Testimonial ${index}`}
-            className="w-16 h-16 rounded-full border-4 hover:animate-pulse border-gray-300"
+          <motion.div
+            className="w-16 h-16 rounded-full border-4 hover:animate-pulse border-gray-300 flex items-center justify-center bg-primary text-white text-2xl font-bold"
             animate={{ 
               borderColor: (hoveredIndex === index || hasBeenHovered[index]) ? '#ACA0FB' : '#E5E7EB'
             }}
             transition={{ duration: 0.3 }}
-          />
+          >
+            {testimonial.name.charAt(0).toUpperCase()}
+          </motion.div>
           <AnimatePresence>
             {hoveredIndex === index && (
               <motion.div

@@ -55,7 +55,7 @@ const Index = () => {
                 ))}
               </ul>
               <Button variant="outline" className="w-full group" asChild>
-                <Link to="/recruitment-automation">
+                <Link to="/services/systems">
                   <span className="flex items-center gap-2">
                     Learn More
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -87,7 +87,7 @@ const Index = () => {
                 ))}
               </ul>
               <Button variant="outline" className="w-full group" asChild>
-                <Link to="/ai-voice-receptionist">
+                <Link to="/services/infrastructure">
                   <span className="flex items-center gap-2">
                     Learn More
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -188,7 +188,7 @@ const Index = () => {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button size="lg" asChild>
-                <Link to="/contact">Get an AI Readiness Audit</Link>
+                <a href="/AI_Readiness_Assessment.pdf" download>Download Audit</a>
               </Button>
               <Button size="lg" variant="outline" asChild>
                 <Link to="/services">Explore Our Services</Link>
