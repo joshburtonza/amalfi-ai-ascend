@@ -187,8 +187,18 @@ const Index = () => {
               Transform your organization with AI systems that scale, adapt, and deliver measurable business value.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" asChild>
-                <a href="/AI_Readiness_Assessment.pdf" download>Download Audit</a>
+              <Button 
+                size="lg"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/AI_Readiness_Assessment.pdf';
+                  link.download = 'AI_Readiness_Assessment.pdf';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
+              >
+                Download Audit
               </Button>
               <Button size="lg" variant="outline" asChild>
                 <Link to="/services">Explore Our Services</Link>
