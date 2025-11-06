@@ -282,41 +282,43 @@ const ServicesInfrastructure = () => {
             Engagement Model
           </h2>
           
-          <div className="max-w-4xl mx-auto overflow-x-auto">
-            <table className="w-full border-collapse">
-              <thead>
-                <tr className="border-b border-border">
-                  <th className="text-left py-4 px-6 text-lg font-bold">Phase</th>
-                  <th className="text-left py-4 px-6 text-lg font-bold">Description</th>
-                  <th className="text-left py-4 px-6 text-lg font-bold">Duration</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  {
-                    phase: 'Strategy & Architecture',
-                    description: 'Process audit, AI mapping, scope design',
-                    duration: '1–2 weeks'
-                  },
-                  {
-                    phase: 'Build & Deploy',
-                    description: 'Full infrastructure setup',
-                    duration: '2–4 weeks'
-                  },
-                  {
-                    phase: 'Optimize & Support',
-                    description: 'Maintenance, scaling, fine-tuning',
-                    duration: 'Monthly retainer'
-                  }
-                ].map((row, index) => (
-                  <tr key={index} className="border-b border-border hover:bg-primary/5 transition-colors">
-                    <td className="py-4 px-6 font-semibold">{row.phase}</td>
-                    <td className="py-4 px-6 text-muted-foreground">{row.description}</td>
-                    <td className="py-4 px-6 text-muted-foreground">{row.duration}</td>
+          <div className="max-w-4xl mx-auto overflow-x-auto -mx-4 md:mx-0">
+            <div className="inline-block min-w-full align-middle px-4 md:px-0">
+              <table className="min-w-full border-collapse">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left py-3 md:py-4 px-3 md:px-6 text-sm md:text-base lg:text-lg font-bold whitespace-nowrap">Phase</th>
+                    <th className="text-left py-3 md:py-4 px-3 md:px-6 text-sm md:text-base lg:text-lg font-bold whitespace-nowrap">Description</th>
+                    <th className="text-left py-3 md:py-4 px-3 md:px-6 text-sm md:text-base lg:text-lg font-bold whitespace-nowrap">Duration</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {[
+                    {
+                      phase: 'Strategy & Architecture',
+                      description: 'Process audit, AI mapping, scope design',
+                      duration: '1–2 weeks'
+                    },
+                    {
+                      phase: 'Build & Deploy',
+                      description: 'Full infrastructure setup',
+                      duration: '2–4 weeks'
+                    },
+                    {
+                      phase: 'Optimize & Support',
+                      description: 'Maintenance, scaling, fine-tuning',
+                      duration: 'Monthly retainer'
+                    }
+                  ].map((row, index) => (
+                    <tr key={index} className="border-b border-border hover:bg-primary/5 transition-colors">
+                      <td className="py-3 md:py-4 px-3 md:px-6 font-semibold text-sm md:text-base">{row.phase}</td>
+                      <td className="py-3 md:py-4 px-3 md:px-6 text-muted-foreground text-sm md:text-base">{row.description}</td>
+                      <td className="py-3 md:py-4 px-3 md:px-6 text-muted-foreground text-sm md:text-base">{row.duration}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>

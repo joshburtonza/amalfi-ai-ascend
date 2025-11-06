@@ -192,7 +192,7 @@ const CaseStudies = () => {
             <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
               Book a free AI audit and discover how automation can transform your business operations
             </p>
-            <Button size="lg" asChild>
+            <Button size="lg" className="w-full sm:w-auto" asChild>
               <Link to="/contact">Book Your Free Audit</Link>
             </Button>
           </GlowCard>

@@ -175,7 +175,7 @@ const Services = () => {
           </div>
 
           <div className="text-center">
-            <Button size="lg" asChild>
+            <Button size="lg" className="w-full sm:w-auto max-w-xs mx-auto" asChild>
               <a href="/contact">Discuss Your Needs</a>
             </Button>
           </div>

@@ -143,11 +143,11 @@ const About = () => {
             <p className="text-lg text-muted-foreground mb-8">
               Let's start with a conversation about your strategic objectives and how AI infrastructure can accelerate your business.
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" asChild>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="w-full sm:w-auto" asChild>
                 <a href="/contact">Start a Conversation</a>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" variant="outline" className="w-full sm:w-auto" asChild>
                 <a href="/services">Explore Our Services</a>
               </Button>
             </div>

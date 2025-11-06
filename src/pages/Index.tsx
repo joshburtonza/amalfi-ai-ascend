@@ -186,11 +186,11 @@ const Index = () => {
             <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
               Transform your organization with AI systems that scale, adapt, and deliver measurable business value.
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <a href="/AI_Readiness_Assessment.pdf" download className={buttonVariants({ variant: 'default', size: 'lg' })}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/AI_Readiness_Assessment.pdf" download className={buttonVariants({ variant: 'default', size: 'lg', className: 'w-full sm:w-auto' })}>
                 Download Audit
               </a>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" variant="outline" className="w-full sm:w-auto" asChild>
                 <Link to="/services">Explore Our Services</Link>
               </Button>
             </div>

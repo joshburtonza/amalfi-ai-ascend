@@ -163,9 +163,9 @@ const Resources = () => {
               <Input 
                 type="email" 
                 placeholder="Enter your email" 
-                className="flex-1"
+                className="flex-1 text-base"
               />
-              <Button size="lg">Subscribe</Button>
+              <Button size="lg" className="w-full sm:w-auto">Subscribe</Button>
             </div>
           </GlowCard>
         </div>
