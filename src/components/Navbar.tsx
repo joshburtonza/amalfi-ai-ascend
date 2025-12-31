@@ -46,6 +46,7 @@ const Navbar = () => {
                 ]
               },
               { name: 'Case Studies', url: '/case-studies' },
+              { name: 'Pricing', url: '/pricing' },
               { name: 'Resources', url: '/resources' },
               { name: 'About', url: '/about' },
               { name: "Let's Chat", url: '/contact' },
@@ -102,6 +103,7 @@ const MobileNavLinks: React.FC<{
   const navItems = [
     { label: 'Home', href: '/' },
     { label: 'Case Studies', href: '/case-studies' },
+    { label: 'Pricing', href: '/pricing' },
     { label: 'Resources', href: '/resources' },
     { label: 'About', href: '/about' },
     { label: "Let's Chat", href: '/contact' },

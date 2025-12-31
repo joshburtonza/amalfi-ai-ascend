@@ -1,14 +1,13 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
+# Amalfi AI - https://www.amalfiai.com
+# Allow all crawlers access to all public content
 
 User-agent: *
 Allow: /
+
+# Sitemap location
+Sitemap: https://www.amalfiai.com/sitemap.xml
+
+# Disallow internal/system paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/

@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import ProcessTimeline from '../components/ProcessTimeline';
@@ -9,12 +9,20 @@ import { GlowCard } from '@/components/ui/spotlight-card';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Component as TypewriterTestimonial } from '@/components/ui/typewriter-testimonial';
 import { Users, Phone, ArrowRight } from 'lucide-react';
+import PayNowButton from '@/components/PayNowButton';
 
 const Index = () => {
   return (
-    <div className="bg-background min-h-screen">
-      <Navbar />
-      <Hero />
+    <>
+      <Helmet>
+        <title>Amalfi AI - AI Automation for Service Businesses</title>
+        <meta name="description" content="Amalfi AI provides premium AI automation solutions for service businesses. Automate recruitment, customer service, and operations." />
+        <link rel="canonical" href="https://www.amalfiai.com/" />
+      </Helmet>
+      
+      <div className="bg-background min-h-screen">
+        <Navbar />
+        <Hero />
       
       {/* Two Pillars Overview */}
       <section className="py-20 md:py-32 px-4 bg-gradient-section">
@@ -54,14 +62,17 @@ const Index = () => {
                   </li>
                 ))}
               </ul>
-              <Button variant="outline" className="w-full group" asChild>
-                <Link to="/services/systems#avery">
-                  <span className="flex items-center gap-2">
-                    Learn More
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </span>
-                </Link>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button variant="outline" className="flex-1 group" asChild>
+                  <Link to="/services/systems#avery">
+                    <span className="flex items-center gap-2">
+                      Learn More
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </Link>
+                </Button>
+                <PayNowButton offerId="recruitment-automation-pilot" variant="gradient" size="default" className="flex-1" />
+              </div>
             </GlowCard>
 
             {/* AI Voice Receptionist */}
@@ -86,14 +97,17 @@ const Index = () => {
                   </li>
                 ))}
               </ul>
-              <Button variant="outline" className="w-full group" asChild>
-                <Link to="/services/systems#mark">
-                  <span className="flex items-center gap-2">
-                    Learn More
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </span>
-                </Link>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button variant="outline" className="flex-1 group" asChild>
+                  <Link to="/services/systems#mark">
+                    <span className="flex items-center gap-2">
+                      Learn More
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </Link>
+                </Button>
+                <PayNowButton offerId="ai-voice-receptionist-setup" variant="gradient" size="default" className="flex-1" />
+              </div>
             </GlowCard>
           </div>
 
@@ -187,11 +201,9 @@ const Index = () => {
               Transform your organization with AI systems that scale, adapt, and deliver measurable business value.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/AI_Readiness_Assessment.pdf" download className={buttonVariants({ variant: 'default', size: 'lg', className: 'w-full sm:w-auto' })}>
-                Download Audit
-              </a>
+              <PayNowButton offerId="ai-readiness-audit" variant="gradient" size="lg" className="w-full sm:w-auto" />
               <Button size="lg" variant="outline" className="w-full sm:w-auto" asChild>
-                <Link to="/services">Explore Our Services</Link>
+                <Link to="/pricing">View All Pricing</Link>
               </Button>
             </div>
           </GlowCard>
@@ -200,6 +212,7 @@ const Index = () => {
 
       <Footer />
     </div>
+    </>
   );
 };
 
