@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -124,6 +125,21 @@ const Blog = () => {
                   </Link>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Newsletter Section */}
+        <section className="pb-12 px-4">
+          <div className="container mx-auto max-w-2xl">
+            <div className="bg-secondary/30 border border-border rounded-2xl p-8 text-center">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 text-foreground">
+                Get AI Insights Weekly
+              </h2>
+              <p className="text-muted-foreground mb-6">
+                Join 2,000+ service business owners getting practical AI automation tips.
+              </p>
+              <NewsletterSignup source="blog" className="max-w-md mx-auto" />
             </div>
           </div>
         </section>
