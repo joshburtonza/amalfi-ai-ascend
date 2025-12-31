@@ -106,26 +106,6 @@ export function BackgroundPaths({
                         ))}
                     </h1>
 
-                    <div
-                        className="inline-block group relative glassmorphic p-px rounded-2xl backdrop-blur-lg 
-                        overflow-hidden shadow-glow-md hover:shadow-glow-lg transition-shadow duration-300"
-                    >
-                        <Button
-                            variant="premium"
-                            size="xl"
-                            className="group relative overflow-hidden"
-                            asChild
-                        >
-                            <a href="#contact" className="relative z-10">
-                                <span className="flex items-center gap-2">
-                                    Discover Excellence
-                                    <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                    </svg>
-                                </span>
-                            </a>
-                        </Button>
-                    </div>
                 </motion.div>
             </div>
         </div>
