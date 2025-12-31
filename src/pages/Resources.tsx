@@ -1,178 +1,239 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import ResourceCard from '../components/ResourceCard';
 import { GlowCard } from '@/components/ui/spotlight-card';
-import { FileText, BookOpen, Download } from 'lucide-react';
+import { FileText, Download, ExternalLink, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { Link } from 'react-router-dom';
+import NewsletterSignup from '@/components/NewsletterSignup';
 
 const Resources = () => {
-  const blogPosts = [
+  const frameworks = [
     {
-      type: 'blog' as const,
-      title: "Understanding AI Maturity Models",
-      excerpt: "A comprehensive framework for assessing your organization's AI readiness and planning strategic progression.",
-      date: "2024-01-15",
-      readTime: "8 min read",
-      image: "/lovable-uploads/automation-workflow-3d.png"
+      title: "AI Readiness Assessment",
+      description: "A structured framework to evaluate your business's readiness for AI implementation. Identifies gaps in infrastructure, processes, and team capabilities.",
+      downloadUrl: "/AI_Readiness_Assessment.pdf",
+      pages: "12 pages",
+      highlights: ["Operational audit checklist", "ROI projection template", "Implementation roadmap"]
     },
     {
-      type: 'blog' as const,
-      title: "From Proof of Concept to Production",
-      excerpt: "Navigate the critical journey from experimental AI projects to scalable production systems that deliver business value.",
-      date: "2024-01-10",
-      readTime: "12 min read",
-      image: "/lovable-uploads/automation-workflow-ecosystem.png"
-    },
-    {
-      type: 'blog' as const,
-      title: "Building Responsible AI Systems",
-      excerpt: "Essential principles and practices for developing AI that is ethical, explainable, and aligned with organizational values.",
-      date: "2024-01-05",
-      readTime: "10 min read",
-      image: "/lovable-uploads/c992728c-8637-4a6b-a323-db67c759b05e.png"
-    }
-  ];
-
-  const whitepapers = [
-    {
-      type: 'whitepaper' as const,
-      title: "AI Infrastructure Playbook",
-      excerpt: "A strategic guide to designing, implementing, and scaling AI infrastructure as a core business capability.",
-      pages: "42 pages",
-      image: "/lovable-uploads/automation-workflow-3d.png"
-    },
-    {
-      type: 'whitepaper' as const,
       title: "The ROI of AI Investment",
-      excerpt: "Data-driven insights on measuring and maximizing return on AI investments across industries.",
+      description: "Data-driven insights on measuring and maximizing return on AI investments. Includes real case studies with actual numbers.",
+      downloadUrl: "#",
       pages: "28 pages",
-      image: "/lovable-uploads/automation-workflow-ecosystem.png"
+      highlights: ["Cost-benefit analysis framework", "Benchmarking data", "Risk assessment matrix"],
+      comingSoon: true
     }
   ];
 
-  const caseStudies = [
+  const tools = [
     {
-      type: 'case-study' as const,
-      title: "Transforming Recruitment with AI",
-      excerpt: "How we helped a leading recruitment firm reduce manual screening time by 80% while improving candidate quality.",
-      industry: "Recruitment",
-      image: "/lovable-uploads/c992728c-8637-4a6b-a323-db67c759b05e.png"
+      title: "Bottleneck Mapping Template",
+      description: "Use this template to identify where time and money leak in your operations. The same tool our consultants use in Diagnosis Sessions.",
+      format: "Google Sheets",
+      comingSoon: true
+    },
+    {
+      title: "AI Solution Comparison Matrix",
+      description: "Compare different AI solutions across key dimensions: cost, implementation time, ROI timeline, and maintenance requirements.",
+      format: "PDF + Spreadsheet",
+      comingSoon: true
     }
   ];
 
   return (
-    <div className="bg-background min-h-screen">
-      <Navbar />
-      
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-hsl(var(--amalfi-teal)/0.05) to-transparent" />
-        <div className="max-container relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gradient">
-              AI Infrastructure Insights
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8">
-              Frameworks, guides, and thought leadership to help you build AI as a strategic asset.
-            </p>
-          </div>
-        </div>
-      </section>
+    <>
+      <Helmet>
+        <title>Resources & Frameworks | Amalfi AI</title>
+        <meta name="description" content="Free frameworks, templates, and tools to help you evaluate AI readiness and maximize ROI. Download our AI Readiness Assessment and more." />
+        <link rel="canonical" href="https://amalfi-ai.com/resources" />
+      </Helmet>
 
-      {/* Featured Whitepaper */}
-      <section className="py-12 px-4">
-        <div className="max-container">
-          <GlowCard customSize className="p-12 rounded-3xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-hsl(var(--amalfi-teal)/0.1) to-transparent pointer-events-none" />
-            <div className="relative z-20 max-w-2xl">
-              <div className="inline-block px-4 py-2 bg-hsl(var(--amalfi-teal)/0.1) rounded-full mb-6">
-                <span className="text-sm font-semibold text-hsl(var(--amalfi-teal))">Featured Resource</span>
-              </div>
-              <h2 className="text-4xl font-bold mb-4">AI Infrastructure Playbook</h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                A comprehensive guide to designing and implementing AI infrastructure that scales with your business. Learn our proven frameworks for strategy, architecture, and operationalization.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button size="lg">
-                  <Download className="mr-2 h-5 w-5" />
-                  Download Playbook
-                </Button>
-                <Button size="lg" variant="outline">
-                  Preview Contents
-                </Button>
-              </div>
-            </div>
-          </GlowCard>
-        </div>
-      </section>
-
-      {/* Blog Posts */}
-      <section className="py-20 px-4">
-        <div className="max-container">
-          <div className="flex items-center justify-between mb-12">
-            <div>
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">Latest Insights</h2>
-              <p className="text-lg text-muted-foreground">
-                Expert perspectives on AI infrastructure and strategic implementation.
+      <div className="bg-background min-h-screen">
+        <Navbar />
+        
+        {/* Hero Section */}
+        <section className="relative pt-32 pb-20 px-4 overflow-hidden">
+          <div className="max-container relative z-10">
+            <div className="max-w-3xl mx-auto text-center">
+              <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium bg-primary/10 text-primary rounded-full">
+                Free Resources
+              </span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
+                Frameworks & <span className="text-primary">Tools</span>
+              </h1>
+              <p className="text-lg md:text-xl text-muted-foreground">
+                The same frameworks we use with clients—now available for you to assess your AI readiness and plan your implementation.
               </p>
             </div>
           </div>
+        </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {blogPosts.map((post, index) => (
-              <ResourceCard key={index} {...post} />
-            ))}
+        {/* Featured Download */}
+        <section className="py-12 px-4">
+          <div className="max-container">
+            <GlowCard customSize className="p-8 md:p-12 rounded-3xl relative overflow-hidden">
+              <div className="relative z-20 grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-6">
+                    <span className="text-sm font-semibold text-primary">Featured Resource</span>
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">AI Readiness Assessment</h2>
+                  <p className="text-lg text-muted-foreground mb-6">
+                    A comprehensive framework to evaluate your business's readiness for AI. Identify operational gaps, estimate potential ROI, and create a clear implementation roadmap.
+                  </p>
+                  <ul className="space-y-3 mb-8">
+                    <li className="flex items-center gap-3 text-muted-foreground">
+                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                      12-point operational audit checklist
+                    </li>
+                    <li className="flex items-center gap-3 text-muted-foreground">
+                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                      ROI projection calculator
+                    </li>
+                    <li className="flex items-center gap-3 text-muted-foreground">
+                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                      Implementation priority matrix
+                    </li>
+                  </ul>
+                  <Button size="lg" asChild>
+                    <a href="/AI_Readiness_Assessment.pdf" download>
+                      <Download className="mr-2 h-5 w-5" />
+                      Download Free (PDF)
+                    </a>
+                  </Button>
+                </div>
+                <div className="hidden md:block">
+                  <div className="bg-secondary/30 rounded-2xl p-8 border border-border">
+                    <FileText className="w-16 h-16 text-primary mb-4" />
+                    <p className="text-sm text-muted-foreground">12 pages • PDF format</p>
+                    <p className="text-2xl font-bold text-foreground mt-2">AI Readiness Assessment</p>
+                    <p className="text-muted-foreground mt-2">Used by 50+ businesses to evaluate AI opportunities</p>
+                  </div>
+                </div>
+              </div>
+            </GlowCard>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Whitepapers & Case Studies */}
-      <section className="py-20 px-4 bg-gradient-to-b from-transparent to-hsl(var(--amalfi-surface)/0.3)">
-        <div className="max-container">
-          <h2 className="text-3xl md:text-5xl font-bold mb-12 text-center">
-            Deep Dives & Success Stories
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            {whitepapers.map((paper, index) => (
-              <ResourceCard key={index} {...paper} />
-            ))}
-          </div>
-
-          <div className="grid grid-cols-1 gap-8">
-            {caseStudies.map((study, index) => (
-              <ResourceCard key={index} {...study} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Newsletter Signup */}
-      <section className="py-20 px-4">
-        <div className="max-container">
-          <GlowCard customSize className="p-12 rounded-3xl text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Stay Updated on AI Infrastructure
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Get exclusive insights, frameworks, and case studies delivered to your inbox monthly.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <Input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="flex-1 text-base"
-              />
-              <Button size="lg" className="w-full sm:w-auto">Subscribe</Button>
+        {/* Frameworks Grid */}
+        <section className="py-20 px-4">
+          <div className="max-container">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Frameworks & Whitepapers</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Strategic guides to help you evaluate, plan, and implement AI in your business.
+              </p>
             </div>
-          </GlowCard>
-        </div>
-      </section>
 
-      <Footer />
-    </div>
+            <div className="grid md:grid-cols-2 gap-8">
+              {frameworks.map((framework, index) => (
+                <GlowCard key={index} customSize className="p-8 rounded-2xl">
+                  <div className="flex items-start justify-between mb-4">
+                    <FileText className="w-10 h-10 text-primary" />
+                    {framework.comingSoon && (
+                      <span className="px-3 py-1 text-xs font-medium bg-secondary text-muted-foreground rounded-full">
+                        Coming Soon
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">{framework.title}</h3>
+                  <p className="text-muted-foreground mb-4">{framework.description}</p>
+                  <ul className="space-y-2 mb-6">
+                    {framework.highlights.map((highlight, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                        {highlight}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">{framework.pages}</span>
+                    {!framework.comingSoon ? (
+                      <Button variant="outline" size="sm" asChild>
+                        <a href={framework.downloadUrl} download>
+                          <Download className="mr-2 h-4 w-4" />
+                          Download
+                        </a>
+                      </Button>
+                    ) : (
+                      <Button variant="outline" size="sm" disabled>
+                        Coming Soon
+                      </Button>
+                    )}
+                  </div>
+                </GlowCard>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Tools Section */}
+        <section className="py-20 px-4 bg-secondary/20">
+          <div className="max-container">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Templates & Tools</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Practical tools to help you diagnose bottlenecks and compare solutions.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {tools.map((tool, index) => (
+                <div key={index} className="bg-background border border-border rounded-2xl p-8">
+                  <div className="flex items-start justify-between mb-4">
+                    <h3 className="text-xl font-bold text-foreground">{tool.title}</h3>
+                    <span className="px-3 py-1 text-xs font-medium bg-secondary text-muted-foreground rounded-full">
+                      Coming Soon
+                    </span>
+                  </div>
+                  <p className="text-muted-foreground mb-4">{tool.description}</p>
+                  <p className="text-sm text-muted-foreground">Format: {tool.format}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Blog CTA */}
+        <section className="py-20 px-4">
+          <div className="max-container">
+            <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 md:p-12 text-center">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
+                Looking for AI Insights?
+              </h2>
+              <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
+                Check out our blog for practical strategies, case studies, and implementation guides.
+              </p>
+              <Button asChild size="lg">
+                <Link to="/blog">
+                  Read the Blog
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Newsletter */}
+        <section className="py-12 px-4">
+          <div className="max-container max-w-2xl mx-auto">
+            <GlowCard customSize className="p-8 md:p-12 rounded-2xl text-center">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
+                Get New Resources First
+              </h2>
+              <p className="text-muted-foreground mb-6">
+                Be the first to know when we release new frameworks, tools, and guides.
+              </p>
+              <NewsletterSignup source="resources" className="max-w-md mx-auto" />
+            </GlowCard>
+          </div>
+        </section>
+
+        <Footer />
+      </div>
+    </>
   );
 };
 
