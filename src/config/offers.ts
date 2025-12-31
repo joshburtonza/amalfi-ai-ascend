@@ -4,7 +4,7 @@ export interface Offer {
   description: string;
   price: string;
   cta: string;
-  checkoutUrl: string;
+  shopifyVariantId: string; // Full GraphQL ID
 }
 
 export const offers: Offer[] = [
@@ -14,7 +14,7 @@ export const offers: Offer[] = [
     description: 'Comprehensive assessment of your business AI readiness with actionable recommendations',
     price: 'R2,500',
     cta: 'Pay for Audit',
-    checkoutUrl: '', // TODO: Add Shopify checkout URL
+    shopifyVariantId: 'gid://shopify/ProductVariant/46707861029033',
   },
   {
     id: 'recruitment-automation-pilot',
@@ -22,7 +22,7 @@ export const offers: Offer[] = [
     description: '30-day pilot of our AI recruitment system with full implementation support',
     price: 'R15,000',
     cta: 'Start Pilot',
-    checkoutUrl: '', // TODO: Add Shopify checkout URL
+    shopifyVariantId: 'gid://shopify/ProductVariant/46707861061801',
   },
   {
     id: 'ai-voice-receptionist-setup',
@@ -30,7 +30,7 @@ export const offers: Offer[] = [
     description: 'Complete setup of 24/7 AI voice answering system for your business',
     price: 'R5,000',
     cta: 'Get Set Up',
-    checkoutUrl: '', // TODO: Add Shopify checkout URL
+    shopifyVariantId: 'gid://shopify/ProductVariant/46707861094569',
   },
 ];
 
