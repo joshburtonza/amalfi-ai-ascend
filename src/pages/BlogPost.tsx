@@ -17,6 +17,83 @@ interface BlogPostData {
 }
 
 const blogPostsData: Record<string, BlogPostData> = {
+  "ai-phone-answering-service": {
+    slug: "ai-phone-answering-service",
+    title: "Stop Letting Money Ring Out: The AI Voice Receptionist That Never Clocks Out",
+    excerpt: "Every missed call is lost revenue. Our AI Voice Receptionist answers every call, 24/7, and books it straight into your system. Typical recovery: R40,000+ monthly.",
+    date: "2024-12-31",
+    readTime: "10 min read",
+    category: "AI Voice",
+    image: "/images/blog/ai-phone-answering-hero.webp",
+    content: `
+## Stop Letting Money Ring Out
+
+Every missed call is lost revenue. Our AI Voice Receptionist answers every call, 24/7, and books it straight into your system.
+
+- 100% answer rate guaranteed
+- 24/7 availability
+- WhatsApp booking confirmations
+- Works with any booking system you already use
+
+**Typical outcome:** businesses often recover R40,000+ per month in missed revenue, depending on call volume and service value.
+
+## What You Get
+
+- Instant pickup on every call
+- Smart qualification and routing
+- Live bookings and updates via WhatsApp
+- Clean handover notes to your team
+- Local readiness for South Africa, the UK, and the USA
+
+## Why It Works
+
+![AI Voice Receptionist benefits](/images/blog/ai-voice-receptionist-benefits.webp)
+
+- Always-on coverage replaces gaps: after-hours, lunch, peak times
+- No voicemail dead ends
+- Zero queue frustration
+- Consistent, professional service on every call
+
+## Built for South African Businesses
+
+- WhatsApp confirmations customers actually read
+- Multi-language handling (including English and Afrikaans)
+- Local time zones and public holidays respected
+- Integrates with the systems you already trust
+
+## Fast, Structured Implementation
+
+Our proven 5-step process:
+
+1. **Audit & Strategy** – We map your current call handling gaps
+2. **Architecture & Blueprint** – Design the perfect call flow for your business
+3. **Pilot & Execution** – Test with real calls before full rollout
+4. **Deploy & Operate** – Switch on 24/7 coverage
+5. **Scale & Optimize** – Continuous improvement based on real data
+
+![Client confirming booking](/images/blog/ai-booking-confirmation.webp)
+
+*Compliance note: Revenue recovery varies by call volume, conversion, and pricing. We guarantee the 100% answer rate; we do not guarantee specific revenue.*
+
+## FAQs
+
+### How is this different from a call centre?
+It's your AI Voice Receptionist: brand-trained, always-on, with guaranteed 100% answer rate and direct booking into your systems.
+
+### Will it work with my booking tool?
+Yes. Our AI phone answering service works with any booking system.
+
+### Can I expect R40,000+ recovery?
+Many businesses do, depending on call volume and value per job. It's typical/possible, not guaranteed.
+
+### Do you handle WhatsApp confirmations?
+Yes. We send confirmations and updates via WhatsApp 24/7.
+
+## Choose Your Next Step
+
+Ready to stop losing revenue to missed calls? [Book a 20-minute demo](/contact) or [see pricing and packages](/pricing).
+    `
+  },
   "ai-automation-service-businesses-2025": {
     slug: "ai-automation-service-businesses-2025",
     title: "AI Automation for Service Businesses: The 2025 Playbook",
@@ -56,21 +133,21 @@ The key is starting with a focused pilot. Most service businesses see the fastes
 - **Automated Lead Qualification** – Score and route leads before your team touches them
 - **Smart Scheduling** – Let customers self-book while AI optimizes your calendar
 
-Ready to see what's possible for your business? [Book a free AI readiness audit](/contact) and we'll map out your automation roadmap.
+Ready to see what's possible for your business? [Book a free diagnosis call](/contact) and we'll map out your automation roadmap.
     `
   },
   "missed-calls-revenue-leak": {
     slug: "missed-calls-revenue-leak",
-    title: "The Hidden Cost of Missed Calls: How Service Businesses Lose $50K+ Annually",
+    title: "The Hidden Cost of Missed Calls: How Service Businesses Lose R50K+ Annually",
     excerpt: "Every missed call is a missed opportunity. Learn how AI voice technology captures 100% of inbound leads, even at 2 AM.",
     date: "2024-12-20",
     readTime: "6 min read",
     category: "Revenue Recovery",
     image: "/lovable-uploads/automation-workflow-3d.png",
     content: `
-## The $50,000 Problem You Don't Know You Have
+## The R50,000 Problem You Don't Know You Have
 
-Here's a sobering statistic: the average service business misses 30-40% of incoming calls. At an average job value of $500, that's potentially $50,000+ in lost revenue annually.
+Here's a sobering statistic: the average service business misses 30-40% of incoming calls. At an average job value of R5,000, that's potentially R50,000+ in lost revenue annually.
 
 **But it gets worse.**
 
@@ -104,7 +181,7 @@ AI voice agents represent a fundamental shift. They:
 One HVAC company implemented AI voice reception and recovered:
 
 - **127 after-hours leads** in the first month
-- **$63,500 in new revenue** from previously missed calls
+- **R63,500 in new revenue** from previously missed calls
 - **4.8 star rating** maintained (customers couldn't tell it was AI)
 
 Stop leaving money on the table. [See how AI voice can work for your business](/contact).

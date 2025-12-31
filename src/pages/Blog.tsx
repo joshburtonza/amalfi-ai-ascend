@@ -18,6 +18,15 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    slug: "ai-phone-answering-service",
+    title: "Stop Letting Money Ring Out: The AI Voice Receptionist That Never Clocks Out",
+    excerpt: "Every missed call is lost revenue. Our AI Voice Receptionist answers every call, 24/7, and books it straight into your system. Typical recovery: R40,000+ monthly.",
+    date: "2024-12-31",
+    readTime: "10 min read",
+    category: "AI Voice",
+    image: "/images/blog/ai-phone-answering-hero.webp"
+  },
+  {
     slug: "ai-automation-service-businesses-2025",
     title: "AI Automation for Service Businesses: The 2025 Playbook",
     excerpt: "Discover how service businesses are leveraging AI to reduce operational costs by 40% while improving customer satisfaction scores.",
@@ -28,7 +37,7 @@ const blogPosts: BlogPost[] = [
   },
   {
     slug: "missed-calls-revenue-leak",
-    title: "The Hidden Cost of Missed Calls: How Service Businesses Lose $50K+ Annually",
+    title: "The Hidden Cost of Missed Calls: How Service Businesses Lose R50K+ Annually",
     excerpt: "Every missed call is a missed opportunity. Learn how AI voice technology captures 100% of inbound leads, even at 2 AM.",
     date: "2024-12-20",
     readTime: "6 min read",
