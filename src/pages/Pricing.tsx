@@ -111,11 +111,6 @@ const Pricing = () => {
                       {tier.subhead}
                     </p>
                   </div>
-                    </h2>
-                    <p className="text-muted-foreground text-sm">
-                      {tier.description}
-                    </p>
-                  </div>
 
                   <div className="mb-8">
                     <span className="text-4xl font-bold text-foreground">
