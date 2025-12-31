@@ -25,7 +25,7 @@ const Hero = () => {
             
             {/* Subhead */}
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10">
-              We don't sell tools. We diagnose what's breaking your business and architect AI systems that fix it permanently.
+              Our clients save 15+ hours weekly and recover R40,000+ monthly—within 90 days. No tools for sale. Just solutions that work.
             </p>
             
             {/* CTA */}

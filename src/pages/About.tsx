@@ -18,22 +18,22 @@ const About = () => {
     {
       icon: Target,
       title: "Problems Before Products",
-      description: "We never lead with tools. Every engagement starts with understanding what's actually breaking in your business."
+      description: "We never lead with tools. Every engagement starts with understanding what's actually breaking in your business. That's why our solutions stick—and deliver 4-6× ROI."
     },
     {
       icon: TrendingUp,
       title: "ROI or Nothing",
-      description: "If we can't show you the numbers before we build, we don't build. Every solution comes with clear projections and measurable outcomes."
+      description: "If we can't show you the numbers before we build, we don't build. Average client: R40,000+ recovered monthly within 90 days."
     },
     {
       icon: Users,
       title: "Partnership, Not Projects",
-      description: "We're not vendors who disappear after setup. We're strategic partners invested in your ongoing success."
+      description: "We're not vendors who disappear after setup. Our average client relationship: 12+ months of continuous optimization."
     },
     {
       icon: Shield,
       title: "Built to Last",
-      description: "Our systems are designed to evolve with your business, not become technical debt you inherit."
+      description: "Our systems are designed to scale. One client went from 50 CVs/week to 1,000+ without adding headcount."
     }
   ];
 
@@ -50,7 +50,7 @@ const About = () => {
               Solutions Architects, Not Automation Vendors
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              We're not here to sell you AI. We're here to diagnose what's costing you time and money, then architect systems that fix it permanently.
+              We've helped businesses cut 70% of admin time and recover R40,000+ monthly in lost revenue. We do it by solving problems, not selling tools.
             </p>
           </div>
         </div>
@@ -136,7 +136,7 @@ const About = () => {
               Ready to Diagnose What's Holding You Back?
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Let's start with a conversation about your operations—not our products.
+              30 minutes. Zero pitch. Just a clear map of what's costing you time and money.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="w-full sm:w-auto" asChild>
