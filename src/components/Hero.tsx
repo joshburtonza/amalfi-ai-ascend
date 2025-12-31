@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { BackgroundPaths } from '@/components/ui/background-paths';
-import { GooeyText } from '@/components/ui/gooey-text-morphing';
+import { Button } from '@/components/ui/button';
 
 const Hero = () => {
   return (
@@ -11,19 +12,27 @@ const Hero = () => {
       <BackgroundPaths 
         title=""
         topContent={
-          <>
+          <div className="text-center max-w-5xl mx-auto px-4">
             {/* Primary H1 for SEO - visually hidden but accessible */}
-            <h1 className="sr-only">AI Automation for Service Businesses</h1>
-            {/* Visual heading with animation */}
-            <p className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground" role="heading" aria-level={2}>
-              <GooeyText 
-                words={['Strategic', 'Innovative', 'Transformative', 'Strategic']} 
-                morphTime={0.9}
-                cooldownTime={0.25}
-              />{' '}
-              AI Partners
+            <h1 className="sr-only">Solutions Architecture for Service Businesses</h1>
+            
+            {/* Visual heading */}
+            <p className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6" role="heading" aria-level={2}>
+              Your Business Has Problems.{' '}
+              <span className="text-gradient">AI Has Solutions.</span>{' '}
+              We Bridge The Gap.
             </p>
-          </>
+            
+            {/* Subhead */}
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10">
+              We don't sell tools. We diagnose what's breaking your business and architect AI systems that fix it permanently.
+            </p>
+            
+            {/* CTA */}
+            <Button size="lg" className="text-lg px-8 py-6" asChild>
+              <Link to="/contact">Book a Diagnosis Call</Link>
+            </Button>
+          </div>
         }
       />
     </section>

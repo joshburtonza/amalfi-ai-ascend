@@ -1,78 +1,37 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import ServiceCard from '../components/ServiceCard';
 import { GlowCard } from '@/components/ui/spotlight-card';
-import { Brain, GitBranch, Cog, Activity, Shield, TrendingUp } from 'lucide-react';
+import { Search, Stethoscope, PenTool, Rocket, TrendingUp, Cpu, Wrench } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Services = () => {
-  const services = [
+  const processSteps = [
     {
-      icon: Brain,
-      title: "AI Strategy & Audit",
-      description: "Comprehensive AI readiness assessments, ROI mapping, and maturity modeling to align your AI initiatives with business objectives.",
-      deliverables: [
-        "Current state assessment",
-        "AI opportunity analysis",
-        "ROI projections",
-        "Strategic roadmap"
-      ]
+      icon: Search,
+      title: "Discovery",
+      description: "We map your operations end-to-end. Where does time disappear? Where do leads leak? What's causing the most pain?"
     },
     {
-      icon: GitBranch,
-      title: "AI Architecture & Blueprinting",
-      description: "Design scalable AI infrastructure, governance frameworks, and technical roadmaps that serve as the backbone of your organization.",
-      deliverables: [
-        "Technical architecture design",
-        "Data flow blueprints",
-        "Governance frameworks",
-        "Integration specifications"
-      ]
+      icon: Stethoscope,
+      title: "Diagnosis",
+      description: "We identify root causes, not symptoms. Most businesses are solving the wrong problems with the wrong tools."
     },
     {
-      icon: Cog,
-      title: "Implementation & Automation",
-      description: "Deploy AI pipelines, models, and workflow orchestration systems that transform manual processes into intelligent automation.",
-      deliverables: [
-        "AI pipeline development",
-        "Model deployment",
-        "Workflow automation",
-        "System integration"
-      ]
+      icon: PenTool,
+      title: "Design",
+      description: "We architect a solution tailored to your business model, workflows, and team. No templates. No generic packages."
     },
     {
-      icon: Activity,
-      title: "Operationalization (AI Ops/MLOps)",
-      description: "Establish monitoring, retraining, performance optimization, and incident response protocols for production AI systems.",
-      deliverables: [
-        "Performance monitoring",
-        "Model retraining pipelines",
-        "Incident response",
-        "Continuous optimization"
-      ]
-    },
-    {
-      icon: Shield,
-      title: "Governance & Risk Management",
-      description: "Ensure compliance, explainability, and responsible AI practices with comprehensive audit trails and bias detection.",
-      deliverables: [
-        "Compliance frameworks (GDPR/CCPA)",
-        "Explainability systems",
-        "Bias detection & mitigation",
-        "Audit trail implementation"
-      ]
+      icon: Rocket,
+      title: "Deploy",
+      description: "We build, integrate, train your team, and ensure the system actually works in your environment."
     },
     {
       icon: TrendingUp,
-      title: "Scaling & Optimization",
-      description: "Scale AI capabilities across domains with continuous improvement frameworks and sustained value realization.",
-      deliverables: [
-        "Multi-domain rollout",
-        "Performance optimization",
-        "Value tracking systems",
-        "Continuous improvement"
-      ]
+      title: "Optimize",
+      description: "Monthly reviews, continuous improvement, and scaling as your business grows."
     }
   ];
 
@@ -82,14 +41,14 @@ const Services = () => {
       
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-hsl(var(--amalfi-teal)/0.05) to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
         <div className="max-container relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gradient">
-              AI Infrastructure as a Service
+              Solutions Architecture for Service Businesses
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Full-stack AI solutions from strategy to scale. We design, implement, and operate the AI backbone that powers modern businesses.
+              We diagnose operational bottlenecks and design AI-native systems that eliminate them. Discovery → Diagnosis → Design → Deploy.
             </p>
           </div>
         </div>
@@ -100,83 +59,116 @@ const Services = () => {
         <div className="max-container">
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
             <GlowCard customSize className="p-8 text-center hover:scale-105 transition-transform">
-              <h3 className="text-2xl font-bold mb-4">AI Systems</h3>
+              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Cpu className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Pre-Built Systems</h3>
               <p className="text-muted-foreground mb-6">
-                Pre-built AI team members: Mark (Receptionist), Clara (Customer Success), and Avery (Recruiter).
+                Proven solutions for common problems: reception, recruitment, customer success.
               </p>
               <Button asChild>
-                <a href="/services/systems">Explore Systems</a>
+                <Link to="/services/systems">Explore Systems</Link>
               </Button>
             </GlowCard>
             <GlowCard customSize className="p-8 text-center hover:scale-105 transition-transform">
-              <h3 className="text-2xl font-bold mb-4">Custom Infrastructure</h3>
+              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <Wrench className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4">Custom Architecture</h3>
               <p className="text-muted-foreground mb-6">
-                Tailored AI ecosystems, workflows, and integrations built from the ground up.
+                Bespoke systems designed around your unique operational challenges.
               </p>
               <Button asChild>
-                <a href="/services/infrastructure">Explore Infrastructure</a>
+                <Link to="/services/infrastructure">Explore Infrastructure</Link>
               </Button>
             </GlowCard>
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* Our Process */}
       <section className="py-20 px-4">
         <div className="max-container">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Comprehensive AI Services
+              Our Process
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Our services are designed as a full stack — from strategy to scale, we partner with you at every stage.
+              Every engagement follows the same rigorous approach—because shortcuts create technical debt.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <ServiceCard key={index} {...service} />
+          <div className="max-w-4xl mx-auto">
+            {processSteps.map((step, index) => (
+              <div key={index} className="flex gap-6 mb-8 last:mb-0">
+                <div className="flex flex-col items-center">
+                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <step.icon className="w-7 h-7 text-primary" />
+                  </div>
+                  {index < processSteps.length - 1 && (
+                    <div className="w-0.5 h-full bg-primary/20 mt-4" />
+                  )}
+                </div>
+                <div className="pb-8">
+                  <h3 className="text-2xl font-bold mb-2">{step.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Engagement Models */}
-      <section className="py-20 px-4 bg-gradient-to-b from-transparent to-hsl(var(--amalfi-surface)/0.3)">
+      <section className="py-20 px-4 bg-gradient-to-b from-transparent to-primary/5">
         <div className="max-container">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Flexible Engagement Models
+              Engagement Models
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12">
-              We adapt to your needs with engagement models designed for impact and scalability.
+              Choose the engagement that fits your needs and budget.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <GlowCard customSize className="p-8 text-center h-full">
-              <h3 className="text-2xl font-bold mb-4">Project-Based</h3>
-              <p className="text-muted-foreground">
-                Fixed-scope engagements for specific AI initiatives with clear deliverables and timelines.
+            <GlowCard customSize className="p-8 h-full">
+              <h3 className="text-2xl font-bold mb-2">Diagnosis Session</h3>
+              <p className="text-3xl font-bold text-primary mb-4">R2,500</p>
+              <p className="text-muted-foreground mb-6">
+                A focused deep-dive into your operations. Walk away with a clear map of your bottlenecks and exactly what solving them looks like.
+              </p>
+              <p className="text-sm text-muted-foreground italic">
+                Start here if you're not sure what you need.
               </p>
             </GlowCard>
-            <GlowCard customSize className="p-8 text-center h-full">
-              <h3 className="text-2xl font-bold mb-4">Retainer Partnership</h3>
-              <p className="text-muted-foreground">
-                Ongoing strategic partnership for continuous AI evolution and optimization.
+            
+            <GlowCard customSize className="p-8 h-full border-primary/50">
+              <h3 className="text-2xl font-bold mb-2">Solution Partnership</h3>
+              <p className="text-3xl font-bold text-primary mb-4">From R20,000/mo</p>
+              <p className="text-muted-foreground mb-6">
+                Full architecture, implementation, and ongoing optimization. Monthly retainer for businesses that need bespoke solutions.
+              </p>
+              <p className="text-sm text-muted-foreground italic">
+                For businesses that need custom solutions.
               </p>
             </GlowCard>
-            <GlowCard customSize className="p-8 text-center h-full">
-              <h3 className="text-2xl font-bold mb-4">Build-Operate-Transfer</h3>
-              <p className="text-muted-foreground">
-                We build, operate, and transfer AI systems to your team with full knowledge transfer.
+            
+            <GlowCard customSize className="p-8 h-full">
+              <h3 className="text-2xl font-bold mb-2">System Deployment</h3>
+              <p className="text-3xl font-bold text-primary mb-4">From R8,000 setup</p>
+              <p className="text-muted-foreground mb-6">
+                Pre-built solutions (Mark, Clara, Avery) deployed and customized for your business. Setup + monthly subscription.
+              </p>
+              <p className="text-sm text-muted-foreground italic">
+                Fastest path to solving common problems.
               </p>
             </GlowCard>
           </div>
 
           <div className="text-center">
             <Button size="lg" className="w-full sm:w-auto max-w-xs mx-auto" asChild>
-              <a href="/contact">Discuss Your Needs</a>
+              <Link to="/contact">Discuss Your Needs</Link>
             </Button>
           </div>
         </div>

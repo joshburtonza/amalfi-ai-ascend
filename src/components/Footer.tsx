@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  return <footer className="py-12 md:py-16 relative bg-amalfi-black">
+
+  return (
+    <footer className="py-12 md:py-16 relative bg-amalfi-black">
       {/* Separator Line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amalfi-emerald/50 to-transparent"></div>
       
@@ -14,8 +17,7 @@ const Footer = () => {
               <Logo />
             </div>
             <p className="text-amalfi-white/70 max-w-md">
-              Premium AI automation solutions for modern businesses. 
-              Transform your operations with elegant, efficient AI technology.
+              Solutions Architecture for service businesses. We diagnose operational bottlenecks and design AI systems that eliminate them.
             </p>
           </div>
           
@@ -33,13 +35,13 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/case-studies" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">
-                  Case Studies
+                <Link to="/services" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">
+                  Services
                 </Link>
               </li>
               <li>
-                <Link to="/resources" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">
-                  Resources
+                <Link to="/pricing" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">
+                  Pricing
                 </Link>
               </li>
               <li>
@@ -55,10 +57,10 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="text-amalfi-white/70">Johannesburg, South Africa</li>
               <li>
-                <a href="mailto:hello@amalfi-ai.com" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors break-words">admin@amalfiai.com</a>
+                <a href="mailto:hello@amalfiai.com" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors break-words">hello@amalfiai.com</a>
               </li>
               <li>
-                <a href="tel:+27123456789" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">+27 81 270 5358</a>
+                <a href="tel:+27812705358" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">+27 81 270 5358</a>
               </li>
             </ul>
           </div>
@@ -79,6 +81,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;
