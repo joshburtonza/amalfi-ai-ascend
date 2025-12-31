@@ -3,20 +3,18 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
-import ProcessTimeline from '../components/ProcessTimeline';
 import Footer from '../components/Footer';
 import { GlowCard } from '@/components/ui/spotlight-card';
-import { Button, buttonVariants } from '@/components/ui/button';
+import { Button } from '@/components/ui/button';
 import { Component as TypewriterTestimonial } from '@/components/ui/typewriter-testimonial';
-import { Users, Phone, ArrowRight } from 'lucide-react';
-import PayNowButton from '@/components/PayNowButton';
+import { Search, Wrench, ArrowRight } from 'lucide-react';
 
 const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Amalfi AI - AI Automation for Service Businesses</title>
-        <meta name="description" content="Amalfi AI provides premium AI automation solutions for service businesses. Automate recruitment, customer service, and operations." />
+        <title>Amalfi AI - Solutions Architecture for Service Businesses</title>
+        <meta name="description" content="We diagnose business pain and design AI-native solutions that eliminate operational bottlenecks. Solutions Architecture for South African service businesses." />
         <link rel="canonical" href="https://www.amalfiai.com/" />
       </Helmet>
       
@@ -29,32 +27,32 @@ const Index = () => {
         <div className="max-container">
           <div className="text-center mb-16 animate-slide-up">
             <span className="inline-block px-4 py-2 bg-primary/10 text-primary text-sm font-semibold rounded-full border border-primary/20 mb-4">
-              Our Solutions
+              How We Work
             </span>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
-              Two Core <span className="text-gradient">Automation Pillars</span>
+              Solutions Architecture, <span className="text-gradient">Not Tool Installation</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Strategic AI systems designed to save time and win business
+              We start with your problems, not our products. Every engagement begins with diagnosis.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-10">
-            {/* Recruitment Automation */}
+            {/* Diagnosis & Design */}
             <GlowCard customSize className="p-8 md:p-10 hover-lift animate-slide-up">
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                <Users className="w-8 h-8 text-primary" />
+                <Search className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-3xl font-bold mb-4 text-foreground">Recruitment Automation</h3>
+              <h3 className="text-3xl font-bold mb-4 text-foreground">Diagnosis & Design</h3>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Source, screen, and schedule smarter. Reduce admin by 70% and let your recruiters focus on building relationships.
+                We map your operations, identify where time and money leak, and architect AI-native solutions tailored to your business model.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
-                  'AI-powered CV screening',
-                  'Automated scheduling & follow-ups',
-                  'Adzuna position scraping',
-                  'Save 6-12 hours per recruiter weekly'
+                  'Process audit and bottleneck mapping',
+                  'ROI modeling before any build',
+                  'Custom solution architecture',
+                  'Clear implementation roadmap'
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-muted-foreground">
                     <span className="text-primary mt-1">•</span>
@@ -62,34 +60,31 @@ const Index = () => {
                   </li>
                 ))}
               </ul>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button variant="outline" className="flex-1 group" asChild>
-                  <Link to="/services/systems#avery">
-                    <span className="flex items-center gap-2">
-                      Learn More
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </span>
-                  </Link>
-                </Button>
-                <PayNowButton offerId="recruitment-automation-pilot" variant="gradient" size="default" className="flex-1" />
-              </div>
+              <Button variant="outline" className="group" asChild>
+                <Link to="/services">
+                  <span className="flex items-center gap-2">
+                    Learn More
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Link>
+              </Button>
             </GlowCard>
 
-            {/* AI Voice Receptionist */}
+            {/* Build & Operate */}
             <GlowCard customSize className="p-8 md:p-10 hover-lift animate-slide-up [animation-delay:200ms]">
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                <Phone className="w-8 h-8 text-primary" />
+                <Wrench className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-3xl font-bold mb-4 text-foreground">AI Voice Receptionist</h3>
+              <h3 className="text-3xl font-bold mb-4 text-foreground">Build & Operate</h3>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Never miss another customer. Recover R40,000+ monthly in lost revenue from unanswered calls.
+                We deploy AI systems that integrate with your existing workflows, then optimize continuously as your business evolves.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
-                  'Instant 24/7 call answering',
-                  'WhatsApp booking confirmations',
-                  'Works with any booking system',
-                  '100% answer rate guaranteed'
+                  'Full implementation and integration',
+                  'Staff training and handover',
+                  'Ongoing optimization and support',
+                  'Monthly performance reviews'
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-muted-foreground">
                     <span className="text-primary mt-1">•</span>
@@ -97,31 +92,27 @@ const Index = () => {
                   </li>
                 ))}
               </ul>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button variant="outline" className="flex-1 group" asChild>
-                  <Link to="/services/systems#mark">
-                    <span className="flex items-center gap-2">
-                      Learn More
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </span>
-                  </Link>
-                </Button>
-                <PayNowButton offerId="ai-voice-receptionist-setup" variant="gradient" size="default" className="flex-1" />
-              </div>
+              <Button variant="outline" className="group" asChild>
+                <Link to="/services/systems">
+                  <span className="flex items-center gap-2">
+                    View Systems
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Link>
+              </Button>
             </GlowCard>
           </div>
 
           {/* Proof Point */}
           <div className="text-center mt-16 animate-slide-up" style={{ animationDelay: '400ms' }}>
             <p className="text-lg text-muted-foreground">
-              Trusted by agencies and service businesses recovering over{' '}
-              <span className="text-gradient font-bold">R40,000/month</span>
+              Trusted by recruitment agencies, logistics companies, and service businesses saving{' '}
+              <span className="text-gradient font-bold">15+ hours weekly</span> and recovering{' '}
+              <span className="text-gradient font-bold">R40,000+ monthly</span> in lost revenue.
             </p>
           </div>
         </div>
       </section>
-
-      <ProcessTimeline />
       
       {/* Testimonials Section */}
       <section className="py-20 md:py-32 relative overflow-hidden bg-gradient-section">
@@ -129,13 +120,13 @@ const Index = () => {
           <div className="text-center mb-16 md:mb-20">
             <div className="animate-slide-up">
               <span className="inline-block px-4 py-2 bg-primary/10 text-primary text-sm font-semibold rounded-full border border-primary/20 mb-4">
-                Success Stories
+                Results
               </span>
               <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
-                <span className="text-gradient">Client</span> Success Stories
+                What Happens When <span className="text-gradient">Problems Get Solved</span>
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
-                See how businesses across South Africa are transforming their operations with our AI automation solutions
+                Real businesses. Real bottlenecks. Real solutions.
               </p>
               <p className="text-lg text-primary font-semibold animate-pulse">
                 Hover over the avatars to read their stories
@@ -159,27 +150,6 @@ const Index = () => {
               jobtitle: 'Director, TableView Logistics',
             },
             {
-              image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1780&auto=format&fit=crop',
-              audio: 'audio_3.mp3',
-              text: "We needed automation that could scale with our growing marketing business. Amalfi AI delivered exactly that—a beautiful, intuitive platform.",
-              name: 'Sibongile P.',
-              jobtitle: 'Co-Founder, Pulse Marketing SA',
-            },
-            {
-              image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1780&auto=format&fit=crop',
-              audio: 'audio_4.mp3',
-              text: "The AI automation tools have revolutionized how we handle client data. We can now focus on strategy while the system handles the routine tasks.",
-              name: 'Thabo K.',
-              jobtitle: 'CEO, Cape Analytics',
-            },
-            {
-              image: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=1780&auto=format&fit=crop',
-              audio: 'audio_5.mp3',
-              text: "As a growing startup, we needed efficiency without compromising quality. Amalfi AI gave us enterprise-level automation at a price we could afford.",
-              name: 'Lerato M.',
-              jobtitle: 'Founder, Innovate ZA',
-            },
-            {
               image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1780&auto=format&fit=crop',
               audio: 'audio_6.mp3',
               text: "The support team is incredible. They not only set up our systems but trained our entire team. The ROI was visible within the first month.",
@@ -195,15 +165,17 @@ const Index = () => {
         <div className="max-container">
           <GlowCard customSize className="p-12 md:p-16 rounded-3xl text-center max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gradient">
-              Future-Proof Your Business with AI Infrastructure
+              Stop Buying Tools. Start Solving Problems.
             </h2>
             <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
-              Transform your organization with AI systems that scale, adapt, and deliver measurable business value.
+              Book a 30-minute diagnosis call. We'll identify your biggest operational bottleneck and show you exactly what solving it looks like.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <PayNowButton offerId="ai-readiness-audit" variant="gradient" size="lg" className="w-full sm:w-auto" />
+              <Button size="lg" className="w-full sm:w-auto" asChild>
+                <Link to="/contact">Book Your Diagnosis Call</Link>
+              </Button>
               <Button size="lg" variant="outline" className="w-full sm:w-auto" asChild>
-                <Link to="/pricing">View All Pricing</Link>
+                <Link to="/pricing">View Investment Levels</Link>
               </Button>
             </div>
           </GlowCard>
