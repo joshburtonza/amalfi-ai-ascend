@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { getOfferById, Offer } from '@/config/offers';
+import { getOfferById } from '@/config/offers';
+import { createDirectCheckout } from '@/lib/shopify';
 import { useToast } from '@/hooks/use-toast';
+import { Loader2 } from 'lucide-react';
 
 interface PayNowButtonProps {
   offerId: string;
@@ -19,9 +21,10 @@ const PayNowButton: React.FC<PayNowButtonProps> = ({
   customCta,
 }) => {
   const { toast } = useToast();
+  const [isLoading, setIsLoading] = useState(false);
   const offer = getOfferById(offerId);
 
-  const handleClick = () => {
+  const handleClick = async () => {
     if (!offer) {
       toast({
         title: 'Offer not found',
@@ -31,7 +34,7 @@ const PayNowButton: React.FC<PayNowButtonProps> = ({
       return;
     }
 
-    if (!offer.checkoutUrl) {
+    if (!offer.shopifyVariantId) {
       toast({
         title: 'Coming Soon',
         description: 'Payment processing will be available shortly. Please contact us for now.',
@@ -39,17 +42,26 @@ const PayNowButton: React.FC<PayNowButtonProps> = ({
       return;
     }
 
-    // Build URL with UTM parameters
-    const utmParams = new URLSearchParams({
-      utm_source: 'amalfiai.com',
-      utm_medium: 'cta',
-      utm_campaign: `offer_${offerId}`,
-    });
+    setIsLoading(true);
 
-    const checkoutUrlWithUtm = `${offer.checkoutUrl}${offer.checkoutUrl.includes('?') ? '&' : '?'}${utmParams.toString()}`;
-
-    // Redirect to Shopify checkout
-    window.location.href = checkoutUrlWithUtm;
+    try {
+      // Create checkout via Shopify Storefront API
+      const checkoutUrl = await createDirectCheckout(offer.shopifyVariantId);
+      
+      if (checkoutUrl) {
+        // Open checkout in new tab
+        window.open(checkoutUrl, '_blank');
+      }
+    } catch (error) {
+      console.error('Checkout error:', error);
+      toast({
+        title: 'Checkout Error',
+        description: 'Unable to create checkout. Please try again or contact us.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (!offer) {
@@ -62,8 +74,16 @@ const PayNowButton: React.FC<PayNowButtonProps> = ({
       size={size}
       className={className}
       onClick={handleClick}
+      disabled={isLoading}
     >
-      {customCta || offer.cta}
+      {isLoading ? (
+        <>
+          <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+          Processing...
+        </>
+      ) : (
+        customCta || offer.cta
+      )}
     </Button>
   );
 };
