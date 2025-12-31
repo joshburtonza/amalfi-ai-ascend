@@ -19,9 +19,12 @@ const Contact = () => {
             <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gradient">
               Let's Start With Your Problems
             </h1>
-            <p className="text-xl text-muted-foreground mb-8">
-              Book a 30-minute call. We'll ask questions about your operations—not pitch you products.
+            <p className="text-xl text-muted-foreground mb-6">
+              30 minutes. Zero pitch. Most businesses we talk to discover R20,000+/month in recoverable time and revenue.
             </p>
+            <Button size="lg" asChild>
+              <a href="https://calendly.com/amalfiai" target="_blank" rel="noopener noreferrer">Book a Diagnosis Call</a>
+            </Button>
           </div>
         </div>
       </section>

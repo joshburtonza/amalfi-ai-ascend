@@ -13,12 +13,13 @@ const Pricing = () => {
       name: 'Diagnosis Session',
       price: 'R2,500',
       priceNote: 'once-off',
-      description: 'Start here if you\'re not sure what you need.',
+      subhead: 'Know exactly what\'s costing you—and what fixing it is worth.',
       features: [
         '90-minute operational deep-dive',
         'Bottleneck identification and mapping',
         'ROI projections for potential solutions',
         'Clear next-steps roadmap',
+        'Most clients identify R20,000+/month in recoverable value',
       ],
       cta: 'Book Diagnosis Session',
       ctaLink: '/contact',
@@ -28,12 +29,12 @@ const Pricing = () => {
       name: 'System Deployment',
       price: 'From R8,000',
       priceNote: 'setup + monthly subscription',
-      description: 'Pre-built solutions deployed for your business.',
+      subhead: 'Deployed in 2-3 weeks. ROI within 30-90 days.',
       features: [
         'Mark (Reception): R8-12k setup, R1,800-2,500/mo',
         'Clara (Inbox): R10k setup, R2,000-3,000/mo',
         'Avery (Recruitment): R15k setup, R3,500-4,000/mo',
-        'Includes customization, training, and first month support',
+        'Average client saves 10+ hours weekly',
       ],
       cta: 'Explore Systems',
       ctaLink: '/services/systems',
@@ -43,12 +44,12 @@ const Pricing = () => {
       name: 'Solution Partnership',
       price: 'From R20,000',
       priceNote: 'per month',
-      description: 'For businesses that need bespoke solutions.',
+      subhead: 'Custom architecture. Average ROI: 4-6× within first quarter.',
       features: [
         'Custom architecture and implementation',
         'Ongoing optimization and support',
         'Monthly strategy reviews',
-        'Priority response and continuous improvement',
+        'For businesses that need bespoke solutions',
       ],
       cta: 'Discuss Partnership',
       ctaLink: '/contact',
@@ -78,7 +79,7 @@ const Pricing = () => {
                 Investment Levels
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-                Every engagement starts with diagnosis. We don't quote solutions until we understand your problems.
+                Average client ROI: 4-6× within 90 days. Every engagement starts with diagnosis—we don't quote solutions until we understand your problems.
               </p>
             </div>
 
@@ -105,6 +106,11 @@ const Pricing = () => {
                   <div className="mb-6">
                     <h2 className="text-2xl font-bold text-foreground mb-2">
                       {tier.name}
+                    </h2>
+                    <p className="text-muted-foreground text-sm">
+                      {tier.subhead}
+                    </p>
+                  </div>
                     </h2>
                     <p className="text-muted-foreground text-sm">
                       {tier.description}
@@ -142,7 +148,7 @@ const Pricing = () => {
             {/* Footer text */}
             <div className="mt-16 text-center">
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Not sure where to start? Book a diagnosis session. If we're not the right fit, we'll tell you.
+                Not sure where to start? Book a diagnosis session for R2,500. Most clients identify R20,000+/month in recoverable value—whether they work with us or not.
               </p>
               <Link
                 to="/contact"

@@ -33,7 +33,7 @@ const Index = () => {
               Solutions Architecture, <span className="text-gradient">Not Tool Installation</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              We start with your problems, not our products. Every engagement begins with diagnosis.
+              We start with your problems, not our products. Average client ROI: 4-6× within the first quarter.
             </p>
           </div>
 
@@ -77,7 +77,7 @@ const Index = () => {
               </div>
               <h3 className="text-3xl font-bold mb-4 text-foreground">Build & Operate</h3>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                We deploy AI systems that integrate with your existing workflows, then optimize continuously as your business evolves.
+                We deploy AI systems that integrate with your existing workflows. Average deployment: 2-3 weeks to full operation.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
@@ -106,9 +106,8 @@ const Index = () => {
           {/* Proof Point */}
           <div className="text-center mt-16 animate-slide-up" style={{ animationDelay: '400ms' }}>
             <p className="text-lg text-muted-foreground">
-              Trusted by recruitment agencies, logistics companies, and service businesses saving{' '}
-              <span className="text-gradient font-bold">15+ hours weekly</span> and recovering{' '}
-              <span className="text-gradient font-bold">R40,000+ monthly</span> in lost revenue.
+              <span className="text-gradient font-bold">3 businesses. R180,000+ in monthly recurring savings. 45+ hours reclaimed weekly.</span>{' '}
+              All within 90 days of engagement.
             </p>
           </div>
         </div>
@@ -168,7 +167,7 @@ const Index = () => {
               Stop Buying Tools. Start Solving Problems.
             </h2>
             <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
-              Book a 30-minute diagnosis call. We'll identify your biggest operational bottleneck and show you exactly what solving it looks like.
+              Book a 30-minute diagnosis call. We'll identify your biggest bottleneck and show you exactly what solving it is worth—in rands and hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="w-full sm:w-auto" asChild>

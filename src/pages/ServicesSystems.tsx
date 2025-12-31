@@ -23,10 +23,10 @@ const ServicesSystems = () => {
               Pre-Built Solutions for Common Problems
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-4">
-              Not every business needs custom architecture. These systems solve the problems we see over and over again.
+              Missed calls. Drowning inboxes. CV chaos. We've solved these problems dozens of times.
             </p>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-              Missed calls. Drowning inboxes. CV chaos. If these sound familiar, we've already built the fix.
+              Average client ROI: 90 days to payback.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>
@@ -75,7 +75,7 @@ const ServicesSystems = () => {
               </div>
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-2">Mark — The Missed Call Problem, Solved.</h2>
-                <p className="text-xl text-primary italic">Your 24/7 voice receptionist that never misses a call.</p>
+                <p className="text-xl text-primary italic">100% answer rate. R40,000+ monthly recovered. Deployed in 2-3 days.</p>
               </div>
             </div>
             
@@ -201,7 +201,7 @@ const ServicesSystems = () => {
               </div>
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-2">Clara — The Inbox Chaos Problem, Solved.</h2>
-                <p className="text-xl text-primary italic">Your intelligent inbox assistant that reads, prioritizes, and responds with precision.</p>
+                <p className="text-xl text-primary italic">7 hours → 15 minutes response time. 110+ admin hours saved monthly.</p>
               </div>
             </div>
             
@@ -289,7 +289,7 @@ const ServicesSystems = () => {
               </div>
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-2">Avery — The CV Screening Problem, Solved.</h2>
-                <p className="text-xl text-primary italic">Your intelligent hiring assistant that reads, ranks, and recommends candidates.</p>
+                <p className="text-xl text-primary italic">15 → 250+ CVs screened per hour. 3 days → 3 hours time-to-shortlist.</p>
               </div>
             </div>
             

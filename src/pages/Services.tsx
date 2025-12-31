@@ -11,27 +11,32 @@ const Services = () => {
     {
       icon: Search,
       title: "Discovery",
-      description: "We map your operations end-to-end. Where does time disappear? Where do leads leak? What's causing the most pain?"
+      badge: "Week 1",
+      description: "We map your operations end-to-end. Where does time disappear? Where do leads leak?"
     },
     {
       icon: Stethoscope,
       title: "Diagnosis",
-      description: "We identify root causes, not symptoms. Most businesses are solving the wrong problems with the wrong tools."
+      badge: "Week 1-2",
+      description: "We identify root causes, not symptoms. Most businesses are solving the wrong problems."
     },
     {
       icon: PenTool,
       title: "Design",
-      description: "We architect a solution tailored to your business model, workflows, and team. No templates. No generic packages."
+      badge: "Week 2-3",
+      description: "We architect a solution with clear ROI projections. You know exactly what you're getting before we build."
     },
     {
       icon: Rocket,
       title: "Deploy",
-      description: "We build, integrate, train your team, and ensure the system actually works in your environment."
+      badge: "Week 3-5",
+      description: "We build, integrate, and train your team. Average deployment: 2-3 weeks to full operation."
     },
     {
       icon: TrendingUp,
       title: "Optimize",
-      description: "Monthly reviews, continuous improvement, and scaling as your business grows."
+      badge: "Ongoing",
+      description: "Monthly reviews, continuous improvement. Our clients see ROI compound over time, not diminish."
     }
   ];
 
@@ -48,7 +53,7 @@ const Services = () => {
               Solutions Architecture for Service Businesses
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              We diagnose operational bottlenecks and design AI-native systems that eliminate them. Discovery → Diagnosis → Design → Deploy.
+              Discovery → Diagnosis → Design → Deploy. Average time to ROI: 90 days. Average return: 4-6× your investment.
             </p>
           </div>
         </div>
@@ -94,7 +99,7 @@ const Services = () => {
               Our Process
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Every engagement follows the same rigorous approach—because shortcuts create technical debt.
+              Every engagement follows the same discipline. That's why our clients see results—not just deliverables.
             </p>
           </div>
 
@@ -110,6 +115,9 @@ const Services = () => {
                   )}
                 </div>
                 <div className="pb-8">
+                  <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-2">
+                    {step.badge}
+                  </span>
                   <h3 className="text-2xl font-bold mb-2">{step.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{step.description}</p>
                 </div>
@@ -136,7 +144,7 @@ const Services = () => {
               <h3 className="text-2xl font-bold mb-2">Diagnosis Session</h3>
               <p className="text-3xl font-bold text-primary mb-4">R2,500</p>
               <p className="text-muted-foreground mb-6">
-                A focused deep-dive into your operations. Walk away with a clear map of your bottlenecks and exactly what solving them looks like.
+                90-minute deep-dive. Walk away with a bottleneck map and ROI projection—whether you work with us or not.
               </p>
               <p className="text-sm text-muted-foreground italic">
                 Start here if you're not sure what you need.
@@ -147,10 +155,10 @@ const Services = () => {
               <h3 className="text-2xl font-bold mb-2">Solution Partnership</h3>
               <p className="text-3xl font-bold text-primary mb-4">From R20,000/mo</p>
               <p className="text-muted-foreground mb-6">
-                Full architecture, implementation, and ongoing optimization. Monthly retainer for businesses that need bespoke solutions.
+                Custom architecture + ongoing optimization. Average client: 4-6× ROI within first quarter.
               </p>
               <p className="text-sm text-muted-foreground italic">
-                For businesses that need custom solutions.
+                For businesses that need bespoke solutions.
               </p>
             </GlowCard>
             
@@ -158,7 +166,7 @@ const Services = () => {
               <h3 className="text-2xl font-bold mb-2">System Deployment</h3>
               <p className="text-3xl font-bold text-primary mb-4">From R8,000 setup</p>
               <p className="text-muted-foreground mb-6">
-                Pre-built solutions (Mark, Clara, Avery) deployed and customized for your business. Setup + monthly subscription.
+                Pre-built solutions deployed in 2-3 weeks. Average client saves 10+ hours weekly within 30 days.
               </p>
               <p className="text-sm text-muted-foreground italic">
                 Fastest path to solving common problems.

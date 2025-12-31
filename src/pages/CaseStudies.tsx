@@ -91,13 +91,13 @@ const CaseStudies = () => {
         <div className="max-container relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-slide-up">
             <span className="inline-block px-4 py-2 bg-primary/10 text-primary text-sm font-semibold rounded-full border border-primary/20 mb-6">
-              Case Studies
+              Proof
             </span>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground">
-              Real Results from <span className="text-gradient">Real Businesses</span>
+              R180,000+ Monthly. 45+ Hours Weekly. <span className="text-gradient">Real Results.</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-10 leading-relaxed">
-              See how South African businesses are transforming their operations with AI automation
+              Not theory. Not projections. Actual outcomes from actual businesses.
             </p>
           </div>
         </div>
