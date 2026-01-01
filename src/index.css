@@ -254,6 +254,32 @@
   .animate-blink {
     animation: blink 1s step-end infinite;
   }
+
+  /* Blog Callout Styles */
+  .blog-callout {
+    @apply relative my-6 p-5 rounded-xl border-l-4 border-primary bg-primary/5;
+  }
+  
+  .blog-callout p {
+    @apply text-foreground font-medium m-0;
+  }
+  
+  .blog-callout ul {
+    @apply mt-3 space-y-1;
+  }
+  
+  .blog-callout li {
+    @apply text-foreground;
+  }
+  
+  .blog-callout-highlight {
+    @apply relative my-8 p-6 rounded-2xl border border-primary/30 bg-gradient-to-r from-primary/10 to-primary/5;
+  }
+  
+  .blog-callout-highlight::before {
+    content: '';
+    @apply absolute left-0 top-0 w-1 h-full bg-primary rounded-l-2xl;
+  }
 }
 
 @keyframes blink {
