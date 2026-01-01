@@ -16,8 +16,11 @@ const Footer = () => {
             <div className="mb-4">
               <Logo />
             </div>
-            <p className="text-amalfi-white/70 max-w-md">
-              Solutions Architecture for service businesses. We diagnose operational bottlenecks and design AI systems that eliminate them.
+            <p className="text-amalfi-white/70 max-w-md mb-4">
+              Strategic AI automation partners for service businesses. We diagnose bottlenecks, design systems, and deliver measurable ROI.
+            </p>
+            <p className="text-amalfi-white/50 text-sm italic">
+              "We don't sell tools. We build systems that work inside your business."
             </p>
           </div>
           
@@ -30,23 +33,28 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">
-                  About Us
+                <Link to="/services/systems" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">
+                  Example Systems
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">
-                  Services
+                <Link to="/case-studies" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">
+                  Case Studies
                 </Link>
               </li>
               <li>
                 <Link to="/pricing" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">
-                  Pricing
+                  Investment & Fit
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">
-                  Contact
+                <Link to="/faq" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link to="/apply" className="text-amalfi-white/70 hover:text-amalfi-emerald transition-colors">
+                  Apply
                 </Link>
               </li>
             </ul>
@@ -72,12 +80,12 @@ const Footer = () => {
           </p>
           
           <div className="flex space-x-4 mt-4 sm:mt-0">
-            <a href="#" className="text-amalfi-white/50 hover:text-amalfi-emerald transition-colors">
+            <Link to="/privacy-policy" className="text-amalfi-white/50 hover:text-amalfi-emerald transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="text-amalfi-white/50 hover:text-amalfi-emerald transition-colors">
-              Terms of Service
-            </a>
+            </Link>
+            <Link to="/faq" className="text-amalfi-white/50 hover:text-amalfi-emerald transition-colors">
+              FAQ
+            </Link>
           </div>
         </div>
       </div>
