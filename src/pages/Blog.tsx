@@ -21,16 +21,52 @@ const blogPosts: BlogPost[] = [
     slug: "ai-phone-answering-revenue-recovery-case-studies",
     title: "Are You Losing R40,000+ Monthly? How AI Phone Answering Recovers Lost Revenue",
     excerpt: "Every missed call is money walking out the door. See real case studies showing how AI voice receptionists recover R40,000+ monthly for South African businesses.",
-    date: "2025-01-01",
+    date: "2025-12-29",
     readTime: "12 min read",
     category: "Case Studies",
     image: "/images/blog/revenue-recovery-hero.webp"
   },
   {
+    slug: "ai-framework-roi-18-months",
+    title: "The Proven AI Framework Delivering ROI in 18 Months: A Practical Playbook",
+    excerpt: "Smart businesses start with measurable outcomes, then build AI systems that deliver. This 5-step framework eliminates guesswork and accelerates time-to-value.",
+    date: "2025-12-22",
+    readTime: "14 min read",
+    category: "Strategy",
+    image: "/images/blog/ai-framework-hero.webp"
+  },
+  {
+    slug: "logistics-ai-automation-2026",
+    title: "Why 90% of Logistics Companies Are Switching to AI Automation in 2026",
+    excerpt: "Companies report 15-50% cost reductions and 90%+ fewer human errors after deploying AI automation. Here's how to start without risk.",
+    date: "2025-12-15",
+    readTime: "11 min read",
+    category: "Logistics",
+    image: "/images/blog/logistics-hero.webp"
+  },
+  {
+    slug: "eliminate-admin-work-ai-automation",
+    title: "5 Steps to Eliminate 70% of Admin Work with AI Automation",
+    excerpt: "Admin consumes 40-60% of professional services budgets. Firms using this 5-step framework reclaim 4+ hours weekly per employee with 340% first-year ROI.",
+    date: "2025-12-08",
+    readTime: "10 min read",
+    category: "Professional Services",
+    image: "/images/blog/admin-automation-hero.webp"
+  },
+  {
+    slug: "recruitment-automation-vs-manual-hiring",
+    title: "Recruitment Automation vs Manual Hiring: Which Saves Your Agency 6–12 Hours Weekly?",
+    excerpt: "Real-world data shows automated systems deliver up to 24 hours of weekly savings. See the exact breakdown of where your hours disappear.",
+    date: "2025-12-01",
+    readTime: "9 min read",
+    category: "Recruitment",
+    image: "/images/blog/recruitment-automation-hero.webp"
+  },
+  {
     slug: "ai-phone-answering-service",
     title: "Stop Letting Money Ring Out: The AI Voice Receptionist That Never Clocks Out",
     excerpt: "Every missed call is lost revenue. Our AI Voice Receptionist answers every call, 24/7, and books it straight into your system. Typical recovery: R40,000+ monthly.",
-    date: "2024-12-31",
+    date: "2025-11-24",
     readTime: "10 min read",
     category: "AI Voice",
     image: "/images/blog/ai-phone-answering-hero.webp"
@@ -39,7 +75,7 @@ const blogPosts: BlogPost[] = [
     slug: "ai-automation-service-businesses-2025",
     title: "AI Automation for Service Businesses: The 2025 Playbook",
     excerpt: "Discover how service businesses are leveraging AI to reduce operational costs by 40% while improving customer satisfaction scores.",
-    date: "2024-12-28",
+    date: "2025-11-17",
     readTime: "8 min read",
     category: "AI Strategy",
     image: "/lovable-uploads/automation-workflow-ecosystem.png"
@@ -48,19 +84,10 @@ const blogPosts: BlogPost[] = [
     slug: "missed-calls-revenue-leak",
     title: "The Hidden Cost of Missed Calls: How Service Businesses Lose R50K+ Annually",
     excerpt: "Every missed call is a missed opportunity. Learn how AI voice technology captures 100% of inbound leads, even at 2 AM.",
-    date: "2024-12-20",
+    date: "2025-11-10",
     readTime: "6 min read",
     category: "Revenue Recovery",
     image: "/lovable-uploads/automation-workflow-3d.png"
-  },
-  {
-    slug: "recruitment-automation-hiring-faster",
-    title: "From 40 Hours to 4: How AI Transforms Recruitment Workflows",
-    excerpt: "Manual resume screening is costing you top talent. See how automated recruitment pipelines accelerate hiring by 10x.",
-    date: "2024-12-15",
-    readTime: "7 min read",
-    category: "Recruitment",
-    image: "/lovable-uploads/9bb8f7b5-a01b-4363-96f7-918cc27305ef.png"
   }
 ];
 
