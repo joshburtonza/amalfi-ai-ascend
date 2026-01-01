@@ -37,20 +37,19 @@ const Navbar = () => {
             items={[
               { name: 'Home', url: '/' },
               { 
-                name: 'Services', 
+                name: 'Solutions', 
                 url: '#',
                 isDropdown: true,
                 dropdownItems: [
-                  { name: 'AI Systems', url: '/services/systems' },
-                  { name: 'Infrastructure', url: '/services/infrastructure' },
+                  { name: 'Example Systems', url: '/services/systems' },
+                  { name: 'Partnership', url: '/services/partnership' },
                 ]
               },
               { name: 'Case Studies', url: '/case-studies' },
-              { name: 'Pricing', url: '/pricing' },
-              { name: 'Blog', url: '/blog' },
-              { name: 'Resources', url: '/resources' },
+              { name: 'Investment & Fit', url: '/pricing' },
+              { name: 'FAQ', url: '/faq' },
               { name: 'About', url: '/about' },
-              { name: "Let's Chat", url: '/contact' },
+              { name: 'Apply', url: '/apply' },
             ]}
           />
         </div>
@@ -104,16 +103,15 @@ const MobileNavLinks: React.FC<{
   const navItems = [
     { label: 'Home', href: '/' },
     { label: 'Case Studies', href: '/case-studies' },
-    { label: 'Pricing', href: '/pricing' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'Resources', href: '/resources' },
+    { label: 'Investment & Fit', href: '/pricing' },
+    { label: 'FAQ', href: '/faq' },
     { label: 'About', href: '/about' },
-    { label: "Let's Chat", href: '/contact' },
+    { label: 'Apply', href: '/apply' },
   ];
 
   const serviceItems = [
-    { label: 'AI Systems', href: '/services/systems' },
-    { label: 'Infrastructure', href: '/services/infrastructure' },
+    { label: 'Example Systems', href: '/services/systems' },
+    { label: 'Partnership', href: '/services/partnership' },
   ];
 
   const handleClick = () => {
@@ -137,13 +135,13 @@ const MobileNavLinks: React.FC<{
         </Link>
       ))}
       
-      {/* Services Dropdown */}
+      {/* Solutions Dropdown */}
       <div className="w-full">
         <button
           onClick={() => setServicesOpen(!servicesOpen)}
           className="flex items-center justify-between w-full text-left text-xl py-4 px-4 rounded-lg font-semibold text-foreground hover:text-primary hover:bg-primary/5 transition-colors touch-manipulation"
         >
-          Services
+          Solutions
           <ChevronDown className={`h-5 w-5 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
         </button>
         {servicesOpen && (
