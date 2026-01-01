@@ -18,6 +18,15 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    slug: "ai-phone-answering-revenue-recovery-case-studies",
+    title: "Are You Losing R40,000+ Monthly? How AI Phone Answering Recovers Lost Revenue",
+    excerpt: "Every missed call is money walking out the door. See real case studies showing how AI voice receptionists recover R40,000+ monthly for South African businesses.",
+    date: "2025-01-01",
+    readTime: "12 min read",
+    category: "Case Studies",
+    image: "/images/blog/revenue-recovery-hero.webp"
+  },
+  {
     slug: "ai-phone-answering-service",
     title: "Stop Letting Money Ring Out: The AI Voice Receptionist That Never Clocks Out",
     excerpt: "Every missed call is lost revenue. Our AI Voice Receptionist answers every call, 24/7, and books it straight into your system. Typical recovery: R40,000+ monthly.",
