@@ -59,6 +59,57 @@ export type Database = {
         }
         Relationships: []
       }
+      diagnostic_leads: {
+        Row: {
+          additional_notes: string | null
+          budget: string
+          company: string
+          created_at: string
+          diagnosis_result: Json | null
+          email: string
+          frustration: string
+          id: string
+          industry: string
+          name: string
+          outcome: string
+          phone: string | null
+          situation: string
+          source: string | null
+        }
+        Insert: {
+          additional_notes?: string | null
+          budget: string
+          company: string
+          created_at?: string
+          diagnosis_result?: Json | null
+          email: string
+          frustration: string
+          id?: string
+          industry: string
+          name: string
+          outcome: string
+          phone?: string | null
+          situation: string
+          source?: string | null
+        }
+        Update: {
+          additional_notes?: string | null
+          budget?: string
+          company?: string
+          created_at?: string
+          diagnosis_result?: Json | null
+          email?: string
+          frustration?: string
+          id?: string
+          industry?: string
+          name?: string
+          outcome?: string
+          phone?: string | null
+          situation?: string
+          source?: string | null
+        }
+        Relationships: []
+      }
       newsletter_subscribers: {
         Row: {
           email: string
