@@ -227,12 +227,43 @@ const CaseStudies = () => {
     }
   ];
 
+  // Generate review schemas for case studies
+  const reviewSchemas = cases.map((caseStudy, index) => ({
+    "@type": "Review",
+    "itemReviewed": {
+      "@type": "Service",
+      "name": "AI Automation by Amalfi AI",
+      "provider": {
+        "@type": "Organization",
+        "name": "Amalfi AI"
+      }
+    },
+    "reviewBody": caseStudy.testimonial.quote,
+    "author": {
+      "@type": "Person",
+      "name": caseStudy.testimonial.author
+    },
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    }
+  }));
+
+  const caseStudySchema = {
+    "@context": "https://schema.org",
+    "@graph": reviewSchemas
+  };
+
   return (
     <>
       <Helmet>
         <title>Case Studies - Amalfi AI | Real Results from Real Businesses</title>
         <meta name="description" content="See how South African businesses save 15+ hours weekly and recover R40,000+ monthly with Amalfi AI automation. Logistics, recruitment, and healthcare case studies." />
         <link rel="canonical" href="https://www.amalfiai.com/case-studies" />
+        <script type="application/ld+json">
+          {JSON.stringify(caseStudySchema)}
+        </script>
       </Helmet>
 
       <div className="bg-background min-h-screen">

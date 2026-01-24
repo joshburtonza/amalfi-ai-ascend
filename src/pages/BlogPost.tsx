@@ -98,17 +98,50 @@ const BlogPost = () => {
     });
   };
 
+  // Article schema for structured data
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "description": post.excerpt,
+    "image": post.image,
+    "datePublished": post.date,
+    "dateModified": post.date,
+    "author": {
+      "@type": "Person",
+      "name": "Joshua Burton",
+      "url": "https://www.amalfiai.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Amalfi AI",
+      "url": "https://www.amalfiai.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.amalfiai.com/lovable-uploads/72de146d-3fae-404a-b3be-acfba75767a7.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://www.amalfiai.com/blog/${post.slug}`
+    },
+    "articleSection": post.category
+  };
+
   return (
     <>
       <Helmet>
         <title>{post.title} | Amalfi AI Blog</title>
         <meta name="description" content={post.excerpt} />
-        <link rel="canonical" href={`https://amalfi-ai.com/blog/${post.slug}`} />
+        <link rel="canonical" href={`https://www.amalfiai.com/blog/${post.slug}`} />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />
         <meta property="og:image" content={post.image} />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={post.date} />
+        <script type="application/ld+json">
+          {JSON.stringify(articleSchema)}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-background">

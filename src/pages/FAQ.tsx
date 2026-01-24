@@ -128,12 +128,31 @@ const FAQ = () => {
     }
   ];
 
+  // Generate FAQ schema
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSections.flatMap(section => 
+      section.questions.map(q => ({
+        "@type": "Question",
+        "name": q.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": q.a
+        }
+      }))
+    )
+  };
+
   return (
     <>
       <Helmet>
         <title>Frequently Asked Questions - Amalfi AI</title>
         <meta name="description" content="Common questions about Amalfi AI's diagnosis sessions, pricing, timelines, integrations, and our 90-day ROI guarantee." />
         <link rel="canonical" href="https://www.amalfiai.com/faq" />
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-background">
