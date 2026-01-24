@@ -1,0 +1,108 @@
+# Amalfi AI - Frequently Asked Questions
+# Structured for AI consumption
+# Last updated: January 2026
+
+---
+
+## Getting Started
+
+Q: What is a Diagnosis Session?
+A: A 60-90 minute operational deep-dive where we map your workflows, identify bottlenecks, and estimate the ROI of automating them. You walk away with a bottleneck map and recommended roadmap—whether you work with us or not. Investment: R2,500 once-off.
+
+Q: Why do I need to apply before booking?
+A: We confirm fit by email before booking to respect your time. Not every business is ready for automation (insufficient volume, unwilling to standardize processes, etc.). A quick review ensures we only schedule calls where there's genuine potential.
+
+Q: What happens after the Diagnosis Session?
+A: You receive a written summary with bottleneck mapping and ROI projections. If there's a fit, we propose either a System Deployment (2-3 weeks, productized solution) or a Solution Partnership (bespoke, ongoing). If we can't see clear ROI, we tell you.
+
+---
+
+## Pricing & Investment
+
+Q: Why doesn't Amalfi AI show exact pricing upfront?
+A: Pricing depends on call volume, integrations, and workflow complexity. We quote after understanding your specific situation in the Diagnosis Session. Typical ranges: System Deployment is R10,000-R25,000 setup + R2,000-R6,000/month. Solution Partnership is from R20,000/month.
+
+Q: What is included in a System Deployment?
+A: Setup, configuration, integration with your existing tools, staff training, and ongoing monitoring. Typical timeline: 2-3 weeks to live. Examples include AI Voice Receptionist, Recruitment Automation, and Inbox/Admin Automation.
+
+Q: What is included in a Solution Partnership?
+A: Custom architecture, full implementation, ongoing optimization, and monthly strategy reviews. Minimum 6-month commitment. Best for businesses with multiple workflows or continuous improvement needs. Investment: from R20,000/month.
+
+Q: Is there a contract with Amalfi AI?
+A: System Deployments are month-to-month after the setup phase. Solution Partnerships have a 6-month minimum commitment, then month-to-month.
+
+---
+
+## Timelines & Rollout
+
+Q: How fast can Amalfi AI deploy solutions?
+A: System Deployments typically go live in 2-3 weeks. Solution Partnerships vary by scope—usually 4-8 weeks for the initial implementation, then ongoing optimization.
+
+Q: What do I need to provide to Amalfi AI?
+A: Access to your existing systems (CRM, calendar, booking system, ATS, etc.), a point of contact for questions, and willingness to participate in workflow design. We handle the rest.
+
+---
+
+## Integrations & Tooling
+
+Q: Does Amalfi AI integrate with existing tools?
+A: Yes. We work with whatever you're already using—Google Calendar, Outlook, WhatsApp, most CRMs, booking systems, and ATS platforms. If there's an API, we can connect it.
+
+Q: What if I don't have a CRM or booking system?
+A: We can recommend and help set up appropriate tools as part of the engagement. Many clients use simple, affordable solutions that work perfectly with our automation.
+
+---
+
+## Results & Measurement
+
+Q: What results should I expect from Amalfi AI?
+A: Results vary by business, but typical outcomes include: 15+ hours saved weekly per team member, R40,000+ monthly revenue recovered from missed calls/slow follow-ups, and 4-6x ROI within the first quarter. We set specific success metrics during Diagnosis.
+
+Q: How does Amalfi AI measure success?
+A: We establish baseline metrics before deployment (current call answer rate, response times, admin hours, etc.) and track against them monthly. You get a dashboard showing actual impact.
+
+---
+
+## 90-Day ROI Guarantee
+
+Q: How does the 90-Day ROI Guarantee work?
+A: If, after 90 days from go-live, you've seen no measurable progress against the success metrics we agreed upfront, you can request a refund of the monthly service fees paid during that 90-day period.
+
+Q: What counts as measurable progress?
+A: Progress is measured against a baseline established before deployment. It includes at least one of: revenue recovered (missed calls, bookings, response speed), time saved (admin hours reduced), or conversion/response speed improvements.
+
+Q: What are the qualification conditions for the guarantee?
+A: To qualify: tracking must be enabled, you must provide required access, your team must use the workflow as designed, and you must attend scheduled check-ins. We're partners in this—we need your participation.
+
+Q: What is excluded from the guarantee?
+A: Refunds don't apply if progress was blocked by: missing access or approvals from your side, significant scope changes after deployment, insufficient lead/call volume to measure impact, or non-adoption by your team. Setup fees are also non-refundable—only monthly service fees are covered.
+
+---
+
+## Data Privacy & Security
+
+Q: How does Amalfi AI handle my data?
+A: We follow POPIA (South Africa) and GDPR-aligned practices. Data is encrypted, access is limited to essential personnel, and we never sell or share your information with third parties.
+
+Q: Does Amalfi AI record calls?
+A: Only if you choose to enable call recording for training or compliance purposes. All recordings are stored securely and you control retention policies.
+
+---
+
+## Industries & Fit
+
+Q: What industries does Amalfi AI serve?
+A: We primarily serve B2B service businesses: Logistics & Transport, Recruitment & Staffing, Healthcare & Medical, and Professional Services (Legal, Accounting, Consulting).
+
+Q: How do I know if Amalfi AI is a good fit for my business?
+A: Good fit indicators: spending 15+ hours/week on manual processes, willing to standardize workflows, want measurable ROI. Not a good fit: need results in under 2 weeks, not ready to change processes, insufficient volume to measure impact.
+
+---
+
+## Contact
+
+Q: How do I get started with Amalfi AI?
+A: Visit https://www.amalfiai.com/apply to submit a Diagnosis application. We'll confirm fit by email before booking.
+
+Q: Where is Amalfi AI located?
+A: Headquartered in Johannesburg, South Africa. We serve clients in South Africa, United Kingdom, and United States.

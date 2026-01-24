@@ -1,0 +1,96 @@
+# Amalfi AI
+
+> Solutions Architecture for Service Businesses. We diagnose operational bottlenecks and design AI systems that eliminate them.
+
+## About
+
+Amalfi AI is a South African AI automation consultancy founded by Joshua Burton. We serve B2B service businesses across logistics, recruitment, healthcare, and professional services in South Africa, UK, and US.
+
+## What We Do
+
+- Diagnose operational bottlenecks in service businesses
+- Design AI-native solutions that deliver measurable ROI
+- Deploy systems in 2-3 weeks with typical 4-6x ROI in first quarter
+
+## Core Services
+
+### Diagnosis Session (R2,500 once-off)
+60-90 minute operational deep-dive. Bottleneck mapping and ROI projections. Required first step before any solution is quoted.
+
+### System Deployment (R10,000-R25,000 setup + R2,000-R6,000/month)
+
+**AI Voice Receptionist**
+- 24/7 call answering with 100% answer rate
+- WhatsApp confirmations and reminders
+- After-hours coverage included
+- Works with any booking system
+
+**Recruitment Automation**
+- CV screening: 15 → 250+ per hour
+- Time-to-shortlist: 3 days → 3 hours
+- Automated scheduling and follow-ups
+- Adzuna scraping for candidate sourcing
+
+**Inbox & Admin Automation**
+- Response time: 7 hours → 15 minutes
+- Smart triage, routing, and replies
+- 110+ admin hours saved monthly
+- Works across email, WhatsApp, DMs
+
+### Solution Partnership (From R20,000/month, 6-month minimum)
+- Custom architecture design
+- Multi-workflow integration
+- Monthly strategy reviews
+- Continuous optimization
+
+## Typical Results
+
+- 15+ hours saved weekly per team member
+- R40,000+ monthly revenue recovered
+- 4-6x ROI within first quarter
+- 90 days or less to measurable impact
+
+## 90-Day ROI Guarantee
+
+If no measurable progress (revenue recovered, time saved, or conversion speed) within 90 days of go-live, monthly service fees are refunded. Qualification conditions apply.
+
+## Industries Served
+
+- Logistics & Transport
+- Recruitment & Staffing
+- Healthcare & Medical
+- Professional Services (Legal, Accounting, Consulting)
+- E-commerce & Retail
+
+## Our Process
+
+1. **Diagnose**: Map operations and identify where time and money leak
+2. **Blueprint**: Design solution with clear ROI projections
+3. **Pilot**: Deploy focused first phase to prove value (2-3 weeks)
+4. **Deploy**: Roll out full solution, integrate with workflows, train team
+5. **Optimize**: Monthly reviews, continuous improvement
+
+## Founder
+
+**Joshua Burton** - Founder & Solutions Architect
+Former finance professional turned AI strategist. Built systems that eliminate operational chaos—manual processes, missed calls, drowning inboxes.
+
+## Location
+
+Headquartered in Johannesburg, South Africa. Serving clients in South Africa, United Kingdom, and United States.
+
+## Contact
+
+- Website: https://www.amalfiai.com
+- Apply for Diagnosis: https://www.amalfiai.com/apply
+
+## Links
+
+- [Services](/services): Overview of engagement models
+- [Systems](/services/systems): Productized AI solutions
+- [Partnership](/services/partnership): Custom architecture
+- [Case Studies](/case-studies): Real results from real businesses
+- [Pricing](/pricing): Investment levels and fit criteria
+- [FAQ](/faq): Common questions answered
+- [Blog](/blog): AI automation insights
+- [About](/about): Our approach and values

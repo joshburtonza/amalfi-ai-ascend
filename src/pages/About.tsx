@@ -39,12 +39,30 @@ const About = () => {
     }
   ];
 
+  // Person schema for founder
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Joshua Burton",
+    "jobTitle": "Founder & Solutions Architect",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Amalfi AI",
+      "url": "https://www.amalfiai.com"
+    },
+    "description": "Former finance professional turned AI strategist. Architect of AI systems that eliminate operational chaos.",
+    "knowsAbout": ["AI Automation", "Business Process Automation", "Solutions Architecture"]
+  };
+
   return (
     <>
       <Helmet>
         <title>About - Amalfi AI | Strategic AI Automation Partners</title>
         <meta name="description" content="Solutions architects, not automation vendors. We diagnose bottlenecks and build AI systems that deliver 4-6× ROI. Based in Johannesburg, serving SA, UK, and US." />
         <link rel="canonical" href="https://www.amalfiai.com/about" />
+        <script type="application/ld+json">
+          {JSON.stringify(personSchema)}
+        </script>
       </Helmet>
 
       <div className="bg-background min-h-screen">

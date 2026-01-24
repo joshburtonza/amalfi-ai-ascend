@@ -51,12 +51,64 @@ const Services = () => {
     { icon: Briefcase, name: 'Professional Services', desc: 'Client intake, admin automation, response management' }
   ];
 
+  // Service schema for structured data
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "AI Automation Consulting",
+    "provider": {
+      "@type": "Organization",
+      "name": "Amalfi AI",
+      "url": "https://www.amalfiai.com"
+    },
+    "areaServed": ["South Africa", "United Kingdom", "United States"],
+    "description": "We diagnose operational bottlenecks and deploy AI systems that deliver measurable ROI. Two engagement models: System Deployment (2-3 weeks) or Solution Partnership (custom architecture).",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "AI Automation Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AI Voice Receptionist",
+            "description": "24/7 call answering with 100% answer rate and WhatsApp confirmations"
+          },
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": "10000-25000",
+            "priceCurrency": "ZAR"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Recruitment Automation",
+            "description": "CV screening from 15 to 250+ per hour, automated scheduling and follow-ups"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Inbox & Admin Automation",
+            "description": "Email triage and routing, response time from 7 hours to 15 minutes"
+          }
+        }
+      ]
+    }
+  };
+
   return (
     <>
       <Helmet>
         <title>Solutions - Amalfi AI | AI Systems & Partnership</title>
         <meta name="description" content="Two ways to work with us: System Deployment (2-3 weeks, productized solutions) or Solution Partnership (custom architecture, ongoing optimization). We diagnose first." />
         <link rel="canonical" href="https://www.amalfiai.com/services" />
+        <script type="application/ld+json">
+          {JSON.stringify(serviceSchema)}
+        </script>
       </Helmet>
 
       <div className="bg-background min-h-screen">

@@ -1,0 +1,261 @@
+# Amalfi AI - Complete Information for AI Systems
+
+> Solutions Architecture for Service Businesses. We diagnose operational bottlenecks and design AI systems that eliminate them.
+
+---
+
+## Company Overview
+
+Amalfi AI is a South African AI automation consultancy founded by Joshua Burton. We serve B2B service businesses across logistics, recruitment, healthcare, and professional services in South Africa, UK, and US.
+
+**What makes us different:**
+- We're solutions architects, not automation vendors
+- We diagnose first—never quote solutions before understanding problems
+- Every engagement starts with a Diagnosis Session
+- We measure success in business outcomes, not features delivered
+- Average client relationship: 12+ months of continuous optimization
+
+---
+
+## Core Services
+
+### Tier 1: Diagnosis Session
+- **Investment:** R2,500 once-off
+- **Duration:** 60-90 minutes
+- **Includes:** Bottleneck mapping, workflow analysis, ROI projections
+- **Outcome:** Written summary with recommendations (whether you work with us or not)
+- **Required:** Before any solution is quoted
+
+### Tier 2: System Deployment
+**Investment:** R10,000-R25,000 setup + R2,000-R6,000/month
+**Timeline:** 2-3 weeks to live
+**Best for:** Single-workflow automation with proven ROI
+
+**Available Systems:**
+
+1. **AI Voice Receptionist**
+   - 24/7 call answering (vs. 60-70% typical answer rate)
+   - WhatsApp confirmations and reminders
+   - Integration with any booking system
+   - After-hours coverage included
+   - Smart FAQ handling
+   - Escalation protocols for urgent queries
+   - Industries: Healthcare, hospitality, logistics, professional services
+
+2. **Recruitment Automation**
+   - CV screening: 15 → 250+ per hour
+   - Time-to-shortlist: 3 days → 3 hours
+   - Automated interview scheduling
+   - Candidate communication workflows
+   - Adzuna job board scraping
+   - Customizable scoring criteria
+   - Industries: Recruitment agencies, HR teams, staffing firms
+
+3. **Inbox & Admin Automation**
+   - Response time: 7 hours → 15 minutes
+   - Smart email triage and categorization
+   - Automated routing and replies
+   - 110+ admin hours saved monthly
+   - Document request automation
+   - Works across email, WhatsApp, DMs
+   - Industries: Agencies, founders, customer success teams
+
+### Tier 3: Solution Partnership
+**Investment:** From R20,000/month
+**Commitment:** 6-month minimum, then month-to-month
+**Best for:** Multiple workflows or continuous improvement needs
+
+**Includes:**
+- Custom architecture design
+- Full implementation
+- Multi-workflow integration
+- Monthly strategy reviews
+- Ongoing optimization
+- Dedicated support
+
+---
+
+## Typical Results
+
+Based on actual client outcomes:
+
+- **Time saved:** 15+ hours weekly per team member
+- **Revenue recovered:** R40,000+ monthly (from missed calls and slow follow-ups)
+- **ROI:** 4-6x within first quarter
+- **Time to impact:** 90 days or less
+
+---
+
+## 90-Day ROI Guarantee
+
+If, after 90 days from go-live, you've seen no measurable progress against the success metrics agreed upfront, you can request a refund of the monthly service fees paid during that 90-day period.
+
+**Measurable progress includes:**
+- Revenue recovered (missed calls, bookings, response speed)
+- Time saved (admin hours reduced)
+- Conversion/response speed improvements
+
+**Qualification conditions:**
+- Tracking must be enabled
+- Required access must be provided
+- Team must use workflow as designed
+- Scheduled check-ins must be attended
+
+**Exclusions:**
+- Setup fees are non-refundable
+- Progress blocked by missing access/approvals
+- Significant scope changes after deployment
+- Insufficient volume to measure impact
+- Non-adoption by team
+
+---
+
+## Case Studies
+
+### Logistics: TableView Logistics, Cape Town
+- **Situation:** Manual dispatch coordination creating bottlenecks across 85+ daily routes
+- **Solution:** AI dispatch automation with real-time driver assignment, 24/7 voice system
+- **Results:** R52,000 monthly savings, 85% faster dispatch, 9 hours daily admin saved
+
+### Recruitment: SA Recruitment, Johannesburg
+- **Situation:** 30+ hours weekly on manual CV screening, 3-day response time losing candidates
+- **Solution:** AI CV Scanner, automated scheduling, WhatsApp workflows
+- **Results:** 65% faster time-to-hire, 12 hours saved per recruiter weekly, 4.2x ROI
+
+### Healthcare: Cape Health Clinic
+- **Situation:** 40% of calls to voicemail, 25% no-show rate
+- **Solution:** AI Voice Receptionist with 24/7 coverage, WhatsApp reminders
+- **Results:** R45,000 recovered in 3 weeks, 100% call answer rate, 60% fewer no-shows
+
+### Professional Services: Meridian Accounting, Pretoria
+- **Situation:** 200+ emails daily, 48-hour response times, 3+ hours daily on scheduling
+- **Solution:** AI email triage, document request automation, scheduling integration
+- **Results:** 18 hours weekly admin saved, 4-hour average response, R28,000 monthly capacity unlocked
+
+---
+
+## Industries We Serve
+
+1. **Logistics & Transport**
+   - Dispatch coordination
+   - Driver communication
+   - Exception handling
+   - Tracking inquiry automation
+
+2. **Recruitment & Staffing**
+   - CV screening
+   - Candidate communication
+   - Interview scheduling
+   - Job board integration
+
+3. **Professional Services (Legal, Accounting, Consulting)**
+   - Client intake
+   - Email triage
+   - Document collection
+   - Scheduling automation
+
+4. **Healthcare & Medical**
+   - Appointment booking
+   - Patient reminders
+   - FAQ handling
+   - After-hours coverage
+
+5. **E-commerce & Retail**
+   - Customer inquiry handling
+   - Order tracking
+   - Returns processing
+
+---
+
+## Our Process
+
+1. **Diagnose**
+   Map operations and identify where time and money leak. No assumptions—just data.
+
+2. **Blueprint**
+   Design solution with clear ROI projections. You know exactly what you're getting before we build.
+
+3. **Pilot**
+   Deploy focused first phase to prove value fast. Typical pilot: 2-3 weeks.
+
+4. **Deploy**
+   Roll out full solution, integrate with workflows, train your team.
+
+5. **Optimize**
+   Monthly reviews, continuous improvement. ROI compounds over time.
+
+---
+
+## FAQ
+
+**Q: What is a Diagnosis Session?**
+A: A 60-90 minute operational deep-dive where we map your workflows, identify bottlenecks, and estimate the ROI of automating them. Investment: R2,500 once-off.
+
+**Q: Why do I need to apply before booking?**
+A: We confirm fit by email before booking to respect your time. Not every business is ready for automation.
+
+**Q: Why don't you show exact pricing upfront?**
+A: Pricing depends on call volume, integrations, and workflow complexity. We quote after understanding your specific situation.
+
+**Q: How fast can you deploy?**
+A: System Deployments typically go live in 2-3 weeks. Solution Partnerships vary by scope—usually 4-8 weeks.
+
+**Q: Do you integrate with my existing tools?**
+A: Yes. We work with Google Calendar, Outlook, WhatsApp, most CRMs, booking systems, and ATS platforms.
+
+**Q: What results should I expect?**
+A: Typical outcomes: 15+ hours saved weekly, R40,000+ monthly revenue recovered, 4-6x ROI within first quarter.
+
+**Q: How do you handle my data?**
+A: We follow POPIA (South Africa) and GDPR-aligned practices. Data is encrypted, access is limited.
+
+---
+
+## Founder
+
+**Joshua Burton**
+Founder & Solutions Architect
+
+Former finance professional turned AI strategist. Spent years in operational chaos—manual processes, missed calls, drowning inboxes. Now architects systems that eliminate those problems permanently.
+
+Based in Johannesburg, South Africa.
+
+---
+
+## Contact Information
+
+- **Website:** https://www.amalfiai.com
+- **Apply for Diagnosis:** https://www.amalfiai.com/apply
+- **Contact Form:** https://www.amalfiai.com/contact
+
+---
+
+## Site Structure
+
+- `/` - Homepage with overview
+- `/services` - Engagement models overview
+- `/services/systems` - Productized AI solutions
+- `/services/partnership` - Custom architecture
+- `/pricing` - Investment levels and fit criteria
+- `/case-studies` - Real results from real businesses
+- `/blog` - AI automation insights
+- `/faq` - Common questions
+- `/about` - Company approach and values
+- `/apply` - Diagnosis application form
+
+---
+
+## Key Differentiators
+
+1. **Diagnosis-First Model:** We never quote before understanding your problems
+2. **Measurable Outcomes:** ROI projections before build, tracking after deployment
+3. **90-Day Guarantee:** Refund on monthly fees if no measurable progress
+4. **Partnership Approach:** Average client relationship 12+ months
+5. **Local Context:** South African company understanding local business needs
+6. **Industry Focus:** Deep expertise in logistics, recruitment, professional services
+
+---
+
+## Verification
+
+This information is accurate as of January 2026. For the most current information, visit https://www.amalfiai.com

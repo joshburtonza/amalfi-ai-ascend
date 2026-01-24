@@ -1,7 +1,32 @@
 # Amalfi AI - https://www.amalfiai.com
-# Allow all crawlers access to all public content
+# Solutions Architecture for Service Businesses
 
 User-agent: *
+Allow: /
+
+# AI Discovery Files
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /ai.txt
+Allow: /faq-ai.txt
+
+# AI Crawlers - Welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: CCBot
 Allow: /
 
 # Sitemap location
