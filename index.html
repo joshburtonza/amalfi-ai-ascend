@@ -30,6 +30,68 @@
     
     <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/y8Ek6YJaoVWlbqRttzC9szirSWJ3/social-images/social-1768575593122-WhatsApp Image 2026-01-15 at 10.17.33.jpeg">
 
+    <!-- Structured Data: Service (Primary AEO Schema) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "AI Automation and Systems Architecture",
+      "provider": {
+        "@type": "Organization",
+        "name": "Amalfi AI",
+        "url": "https://www.amalfiai.com",
+        "logo": "https://www.amalfiai.com/lovable-uploads/72de146d-3fae-404a-b3be-acfba75767a7.png",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Johannesburg",
+          "addressCountry": "South Africa"
+        },
+        "description": "Amalfi AI specializes in strategic AI automation, including Recruitment Automation and AI Voice Receptionist services for high-volume service businesses. We diagnose operational bottlenecks and deploy AI systems that save 15+ hours weekly and recover R40,000+ monthly."
+      },
+      "areaServed": ["ZA", "GB", "US"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Amalfi AI Automation Pillars",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI Voice Receptionist",
+              "description": "24/7 automated call answering with 100% answer rate, recovering R40,000+ monthly in lost revenue. Includes WhatsApp booking confirmations and CRM integration."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Recruitment Automation",
+              "description": "AI-powered CV screening and scheduling saving 6-12 hours per recruiter weekly while reducing admin by 70%. Time-to-shortlist reduced from 3 days to 3 hours."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Inbox & Admin Automation",
+              "description": "Email triage, routing, and automated responses. Reduces response time from 7 hours to 15 minutes. Saves 110+ hours monthly."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Diagnosis Session",
+              "description": "60-90 minute operational deep-dive with bottleneck mapping and ROI projections. Investment: R2,500 once-off."
+            },
+            "price": "2500",
+            "priceCurrency": "ZAR"
+          }
+        ]
+      }
+    }
+    </script>
+
     <!-- Structured Data: ProfessionalService (LocalBusiness) -->
     <script type="application/ld+json">
     {
@@ -65,15 +127,23 @@
         "addressLocality": "Johannesburg",
         "addressCountry": "ZA"
       },
-      "priceRange": "R10,000 - R60,000/month",
+      "telephone": "+27812705358",
+      "email": "hello@amalfiai.com",
+      "priceRange": "R2,500 - R60,000/month",
+      "paymentAccepted": "Bank Transfer, Credit Card",
+      "currenciesAccepted": "ZAR, GBP, USD",
       "knowsAbout": [
         "AI Automation",
         "Business Process Automation",
         "Voice AI",
+        "AI Voice Receptionist",
         "Recruitment Automation",
+        "CV Screening Automation",
         "Logistics Automation",
         "Professional Services Automation",
-        "Customer Service Automation"
+        "Customer Service Automation",
+        "Revenue Recovery",
+        "Operational Efficiency"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -93,30 +163,28 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "AI Voice Receptionist",
-              "description": "24/7 call answering with 100% answer rate and WhatsApp confirmations"
+              "name": "System Deployment",
+              "description": "Productized AI systems deployed in 2-3 weeks"
             },
             "priceSpecification": {
               "@type": "PriceSpecification",
               "price": "10000-25000",
               "priceCurrency": "ZAR",
-              "description": "Setup fee"
+              "description": "Setup fee, plus R2,000-R6,000/month"
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Recruitment Automation",
-              "description": "CV screening, scheduling, and candidate communication automation"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Inbox & Admin Automation",
-              "description": "Email triage, routing, and automated responses"
+              "name": "Solution Partnership",
+              "description": "Custom architecture, full implementation, ongoing optimization"
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "20000",
+              "priceCurrency": "ZAR",
+              "description": "From R20,000/month, 6-month minimum"
             }
           }
         ]
@@ -124,8 +192,16 @@
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "sales",
-        "url": "https://www.amalfiai.com/contact",
+        "url": "https://www.amalfiai.com/apply",
+        "email": "hello@amalfiai.com",
+        "telephone": "+27812705358",
         "availableLanguage": "English"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "12",
+        "bestRating": "5"
       },
       "sameAs": []
     }
@@ -152,14 +228,20 @@
       "@context": "https://schema.org",
       "@type": "HowTo",
       "name": "How Amalfi AI Delivers AI Automation Solutions",
-      "description": "Our 5-step process for diagnosing and deploying AI systems that deliver measurable ROI",
+      "description": "Our 5-step process for diagnosing and deploying AI systems that deliver measurable ROI for South African service businesses",
       "totalTime": "P90D",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "ZAR",
+        "value": "2500-60000"
+      },
       "step": [
         {
           "@type": "HowToStep",
           "position": 1,
           "name": "Diagnose",
-          "text": "We map your operations and identify where time and money leak. No assumptions—just data."
+          "text": "We map your operations and identify where time and money leak. No assumptions—just data. Investment: R2,500 for a 60-90 minute session.",
+          "url": "https://www.amalfiai.com/apply"
         },
         {
           "@type": "HowToStep",
@@ -183,7 +265,53 @@
           "@type": "HowToStep",
           "position": 5,
           "name": "Optimize",
-          "text": "Monthly reviews, continuous improvement. Our clients see ROI compound over time."
+          "text": "Monthly reviews, continuous improvement. Our clients see ROI compound over time. 90-day ROI guarantee included."
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: Speakable (Voice Search) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Amalfi AI - Strategic AI Automation Partners",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".hero-headline", ".value-proposition", "h1", "h2", ".text-gradient"]
+      },
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Amalfi AI",
+        "description": "Strategic AI automation partners for South African service businesses. We diagnose bottlenecks and deploy AI systems that save 15+ hours weekly and recover R40,000+ monthly."
+      }
+    }
+    </script>
+
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.amalfiai.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.amalfiai.com/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "AI Systems",
+          "item": "https://www.amalfiai.com/services/systems"
         }
       ]
     }

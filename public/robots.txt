@@ -1,20 +1,27 @@
 # Amalfi AI - https://www.amalfiai.com
-# Solutions Architecture for Service Businesses
+# Strategic AI Automation Partners for Service Businesses
 
 User-agent: *
 Allow: /
 
-# AI Discovery Files
+# AI Discovery Files - Priority
 Allow: /llms.txt
 Allow: /llms-full.txt
 Allow: /ai.txt
 Allow: /faq-ai.txt
+Allow: /ai-manifest.json
 
-# AI Crawlers - Welcome
+# AI Crawlers - Full Access
 User-agent: GPTBot
 Allow: /
 
+User-agent: ChatGPT-User
+Allow: /
+
 User-agent: Claude-Web
+Allow: /
+
+User-agent: Anthropic-AI
 Allow: /
 
 User-agent: PerplexityBot
@@ -23,16 +30,14 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-User-agent: Anthropic-AI
+User-agent: cohere-ai
 Allow: /
 
-User-agent: CCBot
+User-agent: Meta-ExternalAgent
 Allow: /
 
-# Sitemap location
+# Sitemap
 Sitemap: https://www.amalfiai.com/sitemap.xml
 
-# Disallow internal/system paths
-Disallow: /api/
-Disallow: /_next/
-Disallow: /admin/
+# AI Manifest
+AI-Manifest: https://www.amalfiai.com/ai-manifest.json

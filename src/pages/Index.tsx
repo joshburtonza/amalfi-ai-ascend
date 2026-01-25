@@ -11,6 +11,9 @@ import { Phone, Mail, Brain, ArrowRight, CheckCircle, Clock, TrendingUp, Shield 
 import HowWeWork from '@/components/HowWeWork';
 import GuaranteeBlock from '@/components/GuaranteeBlock';
 import CTABlock from '@/components/CTABlock';
+import AIFactSheet from '@/components/AIFactSheet';
+import AEOFAQSection from '@/components/AEOFAQSection';
+import InternalLinkFooter from '@/components/InternalLinkFooter';
 
 const Index = () => {
   const systemCards = [
@@ -50,9 +53,10 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Amalfi AI - Strategic AI Automation Partners for Service Businesses</title>
-        <meta name="description" content="We diagnose bottlenecks and deploy AI systems that save 15+ hours weekly and recover R40,000+ monthly. Solutions architecture for South African service businesses." />
+        <title>Amalfi AI - Strategic AI Automation & Systems Architecture for Service Businesses</title>
+        <meta name="description" content="We diagnose bottlenecks and deploy AI systems that save 15+ hours weekly and recover R40,000+ monthly. Strategic AI automation for South African service businesses. 4-6x ROI within 90 days." />
         <link rel="canonical" href="https://www.amalfiai.com/" />
+        <meta name="keywords" content="AI automation South Africa, AI voice receptionist, recruitment automation, business process automation, revenue recovery, Johannesburg AI consultant" />
       </Helmet>
       
       <div className="bg-background min-h-screen">
@@ -60,7 +64,7 @@ const Index = () => {
         <Hero />
       
         {/* What We Do */}
-        <section className="py-20 md:py-32 px-4 bg-gradient-section">
+        <section id="what-we-do" className="py-20 md:py-32 px-4 bg-gradient-section">
           <div className="max-container">
             <div className="text-center mb-16 animate-slide-up">
               <span className="inline-block px-4 py-2 bg-primary/10 text-primary text-sm font-semibold rounded-full border border-primary/20 mb-4">
@@ -95,6 +99,9 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+        {/* AI Fact Sheet - AEO Magnet */}
+        <AIFactSheet />
 
         {/* Example Systems */}
         <section className="py-20 md:py-32 px-4">
@@ -231,33 +238,17 @@ const Index = () => {
           </div>
         </section>
 
-        {/* FAQ Teaser */}
-        <section className="py-20 px-4 bg-gradient-section">
-          <div className="max-container">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold mb-8 text-center">Common Questions</h2>
-              <div className="space-y-6">
-                {faqTeaser.map((faq, i) => (
-                  <GlowCard key={i} customSize className="p-6">
-                    <h3 className="font-bold text-foreground mb-2">{faq.q}</h3>
-                    <p className="text-muted-foreground">{faq.a}</p>
-                  </GlowCard>
-                ))}
-              </div>
-              <div className="text-center mt-8">
-                <Link to="/faq" className="text-primary hover:underline font-medium">
-                  View all FAQs →
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* AEO-Optimized FAQ Section */}
+        <AEOFAQSection />
       
         {/* CTA Section */}
         <CTABlock 
           headline="Ready to Eliminate Your Operational Bottlenecks?"
           subtext="We confirm fit by email before booking. Most clients identify R20,000+/month in recoverable value."
         />
+
+        {/* Internal Link Footer for AI Crawlers */}
+        <InternalLinkFooter />
 
         <Footer />
       </div>

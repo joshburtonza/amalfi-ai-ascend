@@ -1,0 +1,175 @@
+{
+  "$schema": "https://aeo.schema.org/ai-manifest/v1",
+  "name": "Amalfi AI",
+  "shortName": "Amalfi AI",
+  "description": "Strategic AI automation partners for South African service businesses. We diagnose operational bottlenecks and deploy AI systems that deliver measurable ROI.",
+  "url": "https://www.amalfiai.com",
+  "logo": "https://www.amalfiai.com/lovable-uploads/72de146d-3fae-404a-b3be-acfba75767a7.png",
+  "founder": "Joshua Burton",
+  "foundingDate": "2024",
+  "headquarters": {
+    "city": "Johannesburg",
+    "country": "South Africa",
+    "countryCode": "ZA"
+  },
+  "contact": {
+    "email": "hello@amalfiai.com",
+    "phone": "+27812705358",
+    "applyUrl": "https://www.amalfiai.com/apply"
+  },
+  "areasServed": ["ZA", "GB", "US"],
+  "languages": ["en"],
+  "industries": [
+    "Logistics & Transport",
+    "Recruitment & Staffing",
+    "Healthcare & Medical",
+    "Professional Services"
+  ],
+  "services": [
+    {
+      "name": "Diagnosis Session",
+      "description": "60-90 minute operational deep-dive with bottleneck mapping and ROI projections",
+      "price": {
+        "amount": 2500,
+        "currency": "ZAR",
+        "type": "one-time"
+      },
+      "duration": "60-90 minutes"
+    },
+    {
+      "name": "AI Voice Receptionist",
+      "description": "24/7 automated call answering with 100% answer rate and WhatsApp confirmations",
+      "metrics": {
+        "callAnswerRate": "100%",
+        "revenueRecovery": "R40,000+/month",
+        "availability": "24/7/365"
+      },
+      "price": {
+        "setup": {
+          "min": 10000,
+          "max": 25000,
+          "currency": "ZAR"
+        },
+        "monthly": {
+          "min": 2000,
+          "max": 6000,
+          "currency": "ZAR"
+        }
+      }
+    },
+    {
+      "name": "Recruitment Automation",
+      "description": "AI-powered CV screening and scheduling",
+      "metrics": {
+        "adminReduction": "70%",
+        "timeSaved": "6-12 hours/week per recruiter",
+        "timeToShortlist": "3 days → 3 hours"
+      },
+      "price": {
+        "setup": {
+          "min": 10000,
+          "max": 25000,
+          "currency": "ZAR"
+        },
+        "monthly": {
+          "min": 2000,
+          "max": 6000,
+          "currency": "ZAR"
+        }
+      }
+    },
+    {
+      "name": "Inbox & Admin Automation",
+      "description": "Email triage, routing, and automated responses",
+      "metrics": {
+        "responseTime": "7h → 15min",
+        "hoursSavedMonthly": "110+"
+      }
+    },
+    {
+      "name": "Solution Partnership",
+      "description": "Custom architecture, full implementation, ongoing optimization, monthly strategy reviews",
+      "price": {
+        "monthly": {
+          "min": 20000,
+          "currency": "ZAR"
+        },
+        "commitment": "6-month minimum"
+      }
+    }
+  ],
+  "typicalResults": {
+    "timeSaved": "15+ hours weekly per team member",
+    "revenueRecovered": "R40,000+ monthly",
+    "roi": "4-6× within first quarter",
+    "timeToROI": "90 days or less"
+  },
+  "guarantee": {
+    "name": "90-Day ROI Guarantee",
+    "description": "If no measurable progress against agreed success metrics after 90 days, monthly service fees are refunded",
+    "conditions": [
+      "Tracking must be enabled",
+      "Required access must be provided",
+      "Team must use workflow as designed",
+      "Must attend scheduled check-ins"
+    ],
+    "exclusions": [
+      "Setup fees are non-refundable",
+      "Missing access or approvals",
+      "Significant scope changes after deployment",
+      "Insufficient lead/call volume",
+      "Non-adoption by team"
+    ]
+  },
+  "process": [
+    {
+      "step": 1,
+      "name": "Diagnose",
+      "description": "Map operations and identify bottlenecks"
+    },
+    {
+      "step": 2,
+      "name": "Blueprint",
+      "description": "Design solution with clear ROI projections"
+    },
+    {
+      "step": 3,
+      "name": "Pilot",
+      "description": "Deploy focused first phase in 2-3 weeks"
+    },
+    {
+      "step": 4,
+      "name": "Deploy",
+      "description": "Roll out full solution with team training"
+    },
+    {
+      "step": 5,
+      "name": "Optimize",
+      "description": "Monthly reviews and continuous improvement"
+    }
+  ],
+  "caseStudies": [
+    {
+      "industry": "Logistics",
+      "result": "R25k monthly savings, 8 hours daily admin eliminated",
+      "metric": "85% faster dispatch"
+    },
+    {
+      "industry": "Recruitment",
+      "result": "70% admin reduction, 12 hours saved per recruiter weekly",
+      "metric": "3× faster response"
+    },
+    {
+      "industry": "Healthcare",
+      "result": "R45k revenue recovered in 3 weeks",
+      "metric": "100% call answer rate"
+    }
+  ],
+  "aiDiscoveryFiles": {
+    "llms": "/llms.txt",
+    "llmsFull": "/llms-full.txt",
+    "permissions": "/ai.txt",
+    "faq": "/faq-ai.txt"
+  },
+  "lastUpdated": "2026-01-25"
+}
