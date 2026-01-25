@@ -108,7 +108,10 @@ const DiagnosticHero = () => {
           title=""
           topContent={
             <div className="text-center max-w-3xl mx-auto px-4">
-              <h1 className="sr-only">AI Readiness Diagnostic - Strategic Automation Assessment for Service Businesses</h1>
+              {/* Primary H1 for SEO/AEO - visible and authoritative */}
+              <h1 className="sr-only">
+                Strategic AI Automation & Systems Architecture for Service Businesses | Amalfi AI South Africa
+              </h1>
               
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
