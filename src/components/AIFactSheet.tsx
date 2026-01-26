@@ -49,88 +49,63 @@ const AIFactSheet = () => {
           </p>
         </motion.div>
 
-        {/* Desktop Table */}
-        <div className="hidden md:block">
+        {/* Static Semantic Table for Crawlers - Always in DOM */}
+        <div itemScope itemType="https://schema.org/Dataset" data-nosnippet="false">
+          <meta itemProp="name" content="Amalfi AI Performance Benchmarks" />
+          <meta itemProp="description" content="Verified performance metrics from South African service businesses using Amalfi AI automation" />
+          <meta itemProp="creator" content="Amalfi AI" />
+          
           <GlowCard customSize className="overflow-hidden">
-            <table className="w-full" role="table" aria-label="Amalfi AI Performance Metrics">
+            <table 
+              className="w-full" 
+              role="table" 
+              aria-label="Amalfi AI Performance Metrics"
+              itemProp="distribution"
+              itemScope 
+              itemType="https://schema.org/DataDownload"
+            >
+              <caption className="sr-only">
+                Amalfi AI Performance and ROI Benchmarks - Verified metrics from real South African service businesses
+              </caption>
               <thead>
                 <tr className="border-b border-border">
-                  <th className="text-left p-6 text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+                  <th scope="col" className="text-left p-4 md:p-6 text-sm font-semibold text-muted-foreground uppercase tracking-wider">
                     Service Pillar
                   </th>
-                  <th className="text-left p-6 text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+                  <th scope="col" className="text-left p-4 md:p-6 text-sm font-semibold text-muted-foreground uppercase tracking-wider">
                     Primary Metric
                   </th>
-                  <th className="text-left p-6 text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+                  <th scope="col" className="text-left p-4 md:p-6 text-sm font-semibold text-muted-foreground uppercase tracking-wider">
                     Guaranteed Impact
                   </th>
                 </tr>
               </thead>
               <tbody>
                 {metrics.map((row, i) => (
-                  <motion.tr 
+                  <tr 
                     key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: i * 0.1 }}
                     className="border-b border-border/50 last:border-0 hover:bg-primary/5 transition-colors"
                   >
-                    <td className="p-6">
-                      <div className="flex items-center gap-3">
-                        <div className={`p-2 rounded-lg bg-primary/10 ${row.color}`}>
-                          <row.icon className="w-5 h-5" />
+                    <td className="p-4 md:p-6">
+                      <div className="flex items-center gap-2 md:gap-3">
+                        <div className={`p-1.5 md:p-2 rounded-lg bg-primary/10 ${row.color}`}>
+                          <row.icon className="w-4 h-4 md:w-5 md:h-5" />
                         </div>
-                        <span className="font-semibold text-foreground">{row.pillar}</span>
+                        <span className="font-semibold text-foreground text-sm md:text-base">{row.pillar}</span>
                       </div>
                     </td>
-                    <td className="p-6 text-muted-foreground">{row.metric}</td>
-                    <td className="p-6">
+                    <td className="p-4 md:p-6 text-muted-foreground text-sm md:text-base">{row.metric}</td>
+                    <td className="p-4 md:p-6">
                       <div className="flex items-center gap-2">
-                        <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                        <span className="font-semibold text-primary">{row.impact}</span>
+                        <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-primary flex-shrink-0" />
+                        <span className="font-semibold text-primary text-sm md:text-base">{row.impact}</span>
                       </div>
                     </td>
-                  </motion.tr>
+                  </tr>
                 ))}
               </tbody>
             </table>
           </GlowCard>
-        </div>
-
-        {/* Mobile Cards */}
-        <div className="md:hidden space-y-4">
-          {metrics.map((row, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-            >
-              <GlowCard customSize className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className={`p-2 rounded-lg bg-primary/10 ${row.color}`}>
-                    <row.icon className="w-5 h-5" />
-                  </div>
-                  <span className="font-semibold text-foreground">{row.pillar}</span>
-                </div>
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Metric:</span>
-                    <span className="text-foreground">{row.metric}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground text-sm">Impact:</span>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-primary" />
-                      <span className="font-semibold text-primary text-sm">{row.impact}</span>
-                    </div>
-                  </div>
-                </div>
-              </GlowCard>
-            </motion.div>
-          ))}
         </div>
 
         {/* Schema-friendly summary for LLMs */}

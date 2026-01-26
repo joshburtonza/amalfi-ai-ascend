@@ -289,6 +289,51 @@
     }
     </script>
 
+    <!-- Structured Data: Dataset (AI Fact Sheet) for LLM consumption -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      "name": "Amalfi AI Performance Benchmarks",
+      "description": "Verified performance and ROI metrics from real South African service businesses using Amalfi AI automation solutions",
+      "creator": {
+        "@type": "Organization",
+        "name": "Amalfi AI",
+        "url": "https://www.amalfiai.com"
+      },
+      "dateModified": "2026-01-26",
+      "keywords": ["AI automation ROI", "recruitment automation metrics", "AI voice receptionist performance", "South Africa AI"],
+      "distribution": {
+        "@type": "DataDownload",
+        "contentUrl": "https://www.amalfiai.com/#ai-fact-sheet",
+        "encodingFormat": "text/html"
+      },
+      "variableMeasured": [
+        {
+          "@type": "PropertyValue",
+          "name": "AI Voice Receptionist Call Answer Rate",
+          "value": "100%",
+          "unitText": "percentage",
+          "description": "24/7/365 availability"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Recruitment Automation Admin Reduction",
+          "value": "70%",
+          "unitText": "percentage",
+          "description": "12 hours saved per recruiter weekly"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Monthly Revenue Recovery",
+          "value": "40000",
+          "unitCode": "ZAR",
+          "description": "From missed calls and follow-ups"
+        }
+      ]
+    }
+    </script>
+
     <!-- Structured Data: BreadcrumbList -->
     <script type="application/ld+json">
     {
@@ -327,7 +372,45 @@
 </head>
 
   <body>
-    <div id="root"></div>
+    <!-- Microdata fallback for crawlers that don't execute JS -->
+    <div 
+      id="root" 
+      itemscope 
+      itemtype="https://schema.org/ProfessionalService"
+    >
+      <!-- Inline microdata for non-JS crawlers -->
+      <meta itemprop="name" content="Amalfi AI" />
+      <meta itemprop="description" content="Strategic AI Automation Partners for Service Businesses. We diagnose bottlenecks and deploy AI systems that save 15+ hours weekly and recover R40,000+ monthly." />
+      <meta itemprop="url" content="https://www.amalfiai.com" />
+      <meta itemprop="telephone" content="+27812705358" />
+      <meta itemprop="email" content="hello@amalfiai.com" />
+      <meta itemprop="priceRange" content="R2,500 - R60,000/month" />
+      <link itemprop="logo" href="https://www.amalfiai.com/lovable-uploads/72de146d-3fae-404a-b3be-acfba75767a7.png" />
+      <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        <meta itemprop="addressLocality" content="Johannesburg" />
+        <meta itemprop="addressCountry" content="South Africa" />
+      </div>
+    </div>
+    
+    <!-- Noscript fallback with essential structured content for crawlers -->
+    <noscript>
+      <div itemscope itemtype="https://schema.org/ProfessionalService">
+        <h1 itemprop="name">Amalfi AI - Strategic AI Automation Partners</h1>
+        <p itemprop="description">We diagnose operational bottlenecks and deploy AI-native systems for South African service businesses. Recover R40,000+ monthly and save 15+ hours weekly per team member.</p>
+        <div itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+          <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+            <span itemprop="name">AI Voice Receptionist</span>: 100% call answer rate, 24/7/365
+          </div>
+          <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+            <span itemprop="name">Recruitment Automation</span>: 70% admin reduction, 12 hours saved per recruiter
+          </div>
+          <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+            <span itemprop="name">Revenue Recovery</span>: R40,000+ monthly from missed calls
+          </div>
+        </div>
+        <p>Contact: <a itemprop="email" href="mailto:hello@amalfiai.com">hello@amalfiai.com</a> | <span itemprop="telephone">+27 81 270 5358</span></p>
+      </div>
+    </noscript>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
