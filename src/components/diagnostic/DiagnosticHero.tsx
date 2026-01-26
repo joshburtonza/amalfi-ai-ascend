@@ -107,11 +107,9 @@ const DiagnosticHero = () => {
         <BackgroundPaths 
           title=""
           topContent={
-            <div className="text-center max-w-3xl mx-auto px-4">
-              {/* Primary H1 for SEO/AEO - visible and authoritative */}
-              <h1 className="sr-only">
-                Strategic AI Automation & Systems Architecture for Service Businesses | Amalfi AI South Africa
-              </h1>
+            <div className="text-center max-w-3xl mx-auto px-4" itemScope itemType="https://schema.org/Service">
+              <meta itemProp="serviceType" content="AI Automation and Systems Architecture" />
+              <meta itemProp="provider" content="Amalfi AI" />
               
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -122,10 +120,15 @@ const DiagnosticHero = () => {
                   2-MINUTE ASSESSMENT
                 </p>
                 
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-                  Is Your Business{' '}
-                  <span className="text-gradient">AI-Ready?</span>
-                </h2>
+                {/* Primary H1 - VISIBLE and authoritative for SEO/AEO */}
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight hero-headline" itemProp="name">
+                  AI Readiness{' '}
+                  <span className="text-gradient">Diagnostic</span>
+                </h1>
+                
+                <p className="text-2xl md:text-3xl font-semibold text-muted-foreground mb-4 value-proposition">
+                  Is Your Business AI-Ready?
+                </p>
                 
                 <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-4">
                   Most South African businesses automate the wrong things. They buy tools, not solutions.
