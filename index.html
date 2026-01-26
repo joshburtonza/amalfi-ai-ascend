@@ -30,8 +30,9 @@
     
     <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/y8Ek6YJaoVWlbqRttzC9szirSWJ3/social-images/social-1768575593122-WhatsApp Image 2026-01-15 at 10.17.33.jpeg">
 
-    <!-- Structured Data: Service (Primary AEO Schema) -->
-    <script type="application/ld+json">
+    <!-- PRIMARY AEO SCHEMA - This is the main structured data for AI crawlers -->
+    <!-- CRITICAL: Do not modify without understanding AEO implications -->
+    <script type="application/ld+json" id="primary-schema">
     {
       "@context": "https://schema.org",
       "@type": "Service",
@@ -372,6 +373,9 @@
 </head>
 
   <body>
+    <!-- STATIC H1 FOR SEO/AEO CRAWLERS - visible before JS loads -->
+    <h1 id="main-heading" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;">Amalfi AI: Strategic AI Automation for Service Businesses</h1>
+    
     <!-- Microdata fallback for crawlers that don't execute JS -->
     <div 
       id="root" 
