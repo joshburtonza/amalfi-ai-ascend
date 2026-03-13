@@ -20,7 +20,7 @@ export const Component: React.FC<ComponentProps> = ({ testimonials }) => {
   const audioPlayerRef = useRef<HTMLAudioElement | null>(null); 
   const [hasBeenHovered, setHasBeenHovered] = useState<boolean[]>(new Array(testimonials.length).fill(false));
   const [typedText, setTypedText] = useState('');
-  const typewriterTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const typewriterTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const currentTextRef = useRef('');
 
   const stopAudio = useCallback(() => {
